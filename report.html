@@ -8,16 +8,9 @@
 <title>Message Media Space</title>
 <meta name="description" content="Pranks • Fun • Mini games — quick share." />
 
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Message Media Space" />
-<meta property="og:description" content="Pranks • Fun • Mini games — quick share." />
-<meta property="og:image" content="https://xstajayx.github.io/message-media-space/preview.png" />
-<meta property="og:url" content="https://xstajayx.github.io/message-media-space/report.html" />
-
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Message Media Space" />
-<meta name="twitter:description" content="Pranks • Fun • Mini games — quick share." />
-<meta name="twitter:image" content="https://xstajayx.github.io/message-media-space/preview.png" />
+<!-- 🔹 AdSense Loader (GOES IN HEAD ONCE) -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8837377060291347"
+     crossorigin="anonymous"></script>
 
 <style>
   :root{
@@ -27,10 +20,8 @@
     --muted: rgba(255,255,255,.72);
     --accent:#3a82f7;
     --accent2:#7c3aed;
-    --chip: rgba(255,255,255,.06);
   }
   *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
-  html,body{ height:100%; }
   body{
     margin:0;
     background:
@@ -39,196 +30,75 @@
       var(--bg);
     color:var(--txt);
     font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    overflow-x:hidden;
   }
   .wrap{
-    max-width: 500px; /* slightly tighter for phones */
-    margin: 0 auto;
-    padding: 16px 12px calc(18px + env(safe-area-inset-bottom));
+    max-width:500px;
+    margin:0 auto;
+    padding:16px 12px calc(18px + env(safe-area-inset-bottom));
   }
-
-  .top{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:10px;
-    margin-bottom: 12px;
-    min-width:0;
-  }
-  .brand{ display:flex; align-items:center; gap:10px; min-width:0; }
-  .logo{
-    width:40px; height:40px; border-radius:16px;
-    background: linear-gradient(135deg, rgba(58,130,247,.98), rgba(124,58,237,.98));
-    box-shadow: 0 18px 45px rgba(0,0,0,.45);
-    flex:0 0 auto;
-  }
-  .btxt{ min-width:0; }
-  .btxt .h{
-    font-weight: 950;
-    letter-spacing:.2px;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-  }
-  .btxt .s{
-    margin-top:2px;
-    font-size:12px;
-    color: var(--muted);
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-  }
-  .chip{
-    font-size:12px;
-    padding: 7px 10px;
-    border-radius: 999px;
-    border:1px solid var(--line);
-    background: var(--chip);
-    color: rgba(255,255,255,.78);
-    white-space:nowrap;
-    flex:0 0 auto;
-  }
-
   .card{
     background: rgba(255,255,255,.05);
-    border: 1px solid var(--line);
-    border-radius: 22px;
-    padding: 14px;
-    box-shadow: 0 20px 70px rgba(0,0,0,.45);
+    border:1px solid var(--line);
+    border-radius:22px;
+    padding:14px;
+    box-shadow:0 20px 70px rgba(0,0,0,.45);
   }
-  .title{
-    margin: 2px 0 6px;
-    font-size: 20px;
-    font-weight: 950;
-    letter-spacing:.2px;
-  }
-  .sub{
-    margin:0;
-    font-size: 14px;
-    color: var(--muted);
-    line-height: 1.45;
-  }
+  .title{ font-size:20px; font-weight:900; margin-bottom:6px; }
+  .sub{ font-size:14px; color:var(--muted); }
 
-  .section{ margin-top: 12px; }
+  .section{ margin-top:14px; }
   .section h3{
-    margin: 0 0 10px;
-    font-size: 12px;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,.68);
+    font-size:12px;
+    text-transform:uppercase;
+    color:rgba(255,255,255,.6);
+    margin-bottom:10px;
   }
-
-  .list{ display:grid; gap:10px; }
 
   .item{
-    background: rgba(255,255,255,.04);
-    border:1px solid var(--line);
-    border-radius: 18px;
-    padding: 12px;
     display:flex;
-    align-items:center;
     justify-content:space-between;
-    gap:12px;
-    min-width:0; /* important */
-  }
-
-  .left{
-    display:flex;
-    gap:12px;
     align-items:center;
-    min-width:0; /* allow text to shrink */
-    flex: 1 1 auto;
+    gap:10px;
+    padding:12px;
+    border-radius:18px;
+    border:1px solid var(--line);
+    background:rgba(255,255,255,.04);
+    margin-bottom:10px;
   }
-
-  .ico{
-    width:42px; height:42px; border-radius: 16px;
-    background: rgba(255,255,255,.08);
-    border: 1px solid rgba(255,255,255,.10);
-    display:flex; align-items:center; justify-content:center;
-    font-size: 18px;
-    flex:0 0 auto;
-  }
-
-  .txt{
-    min-width:0;
-  }
-  .txt .t{
-    font-weight: 950;
-    line-height: 1.2;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-  }
-  .txt .d{
-    margin-top:3px;
-    color: var(--muted);
-    font-size: 13px;
-    line-height: 1.25;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-  }
-
-  .actions{
-    display:flex;
-    gap:8px;
-    flex: 0 0 auto;
-    flex-wrap: wrap;          /* key: wrap instead of overflow */
-    justify-content:flex-end;
-    max-width: 160px;         /* keep actions tight on phones */
-  }
-
-  .btn{
-    border:none;
-    border-radius: 14px;
-    padding: 10px 12px;
-    font-weight: 900;
+  .left{ display:flex; align-items:center; gap:10px; }
+  .ico{ font-size:20px; }
+  .btn, .btn2{
+    border-radius:14px;
+    padding:10px 12px;
+    font-weight:900;
     cursor:pointer;
+    border:none;
+  }
+  .btn{
+    background:linear-gradient(135deg,#3a82f7,#7c3aed);
     color:#fff;
-    background: linear-gradient(135deg, rgba(58,130,247,.98), rgba(124,58,237,.98));
-    flex: 1 1 72px;           /* wraps nicely */
-    min-width: 72px;
   }
   .btn2{
-    border-radius: 14px;
-    padding: 10px 12px;
-    font-weight: 900;
-    cursor:pointer;
-    background: rgba(255,255,255,.06);
-    border: 1px solid var(--line);
-    color: rgba(255,255,255,.92);
-    flex: 1 1 72px;
-    min-width: 72px;
+    background:rgba(255,255,255,.06);
+    border:1px solid var(--line);
+    color:#fff;
   }
 
-  /* On very small screens stack the buttons */
-  @media (max-width: 360px){
-    .actions{ max-width: 120px; }
-    .btn,.btn2{ padding: 10px 10px; }
+  /* Ad container styling */
+  .adSlot{
+    margin-top:12px;
+    padding:10px;
+    border-radius:18px;
+    border:1px dashed rgba(255,255,255,.15);
+    background:rgba(0,0,0,.25);
+    overflow:hidden;
   }
-
-  .ad{
-    border-radius: 18px;
-    border: 1px dashed rgba(255,255,255,.18);
-    background: rgba(0,0,0,.25);
-    min-height: 110px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding: 14px;
-    color: rgba(255,255,255,.60);
-    font-size: 12px;
-    line-height: 1.35;
-  }
-  .ad small{ display:block; margin-top:6px; opacity:.75; }
 
   .tiny{
-    margin-top: 12px;
+    margin-top:14px;
     text-align:center;
-    color: rgba(255,255,255,.55);
-    font-size: 12px;
-    line-height: 1.4;
+    color:rgba(255,255,255,.5);
+    font-size:12px;
   }
 </style>
 </head>
@@ -236,114 +106,81 @@
 <body>
 <div class="wrap">
 
-  <div class="top">
-    <div class="brand">
-      <div class="logo" aria-hidden="true"></div>
-      <div class="btxt">
-        <div class="h">Message Media Space</div>
-        <div class="s">Pranks • Fun • Mini games</div>
-      </div>
-    </div>
-    <div class="chip">Safe</div>
-  </div>
-
   <div class="card">
     <div class="title">Quick share</div>
-    <p class="sub">
-      This is just a web prank hub. Nothing on the phone was accessed.
-      Pick one below and share it 😈
-    </p>
-  </div>
-
-  <!-- AD SLOT (top) -->
-  <div class="section">
-    <div class="ad" id="adTop">
-      AD SLOT (Top)
-      <small>Paste your AdSense code here when approved.</small>
+    <div class="sub">
+      This was just a web prank. Nothing on the phone was accessed.
+      Pick one below and send it to a friend 😈
     </div>
   </div>
+
+  <!-- 🔹 TOP AD -->
+  <div class="adSlot">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-8837377060291347"
+         data-ad-slot="1111111111"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+  </div>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
   <div class="section">
     <h3>Pranks</h3>
-    <div class="list">
 
-      <!-- MESSAGE (root) -->
-      <div class="item">
-        <div class="left">
-          <div class="ico" aria-hidden="true">💬</div>
-          <div class="txt">
-            <div class="t">Message loading</div>
-            <div class="d">Looks like a normal media message</div>
-          </div>
-        </div>
-        <div class="actions">
-          <button class="btn2" id="openMessage">Open</button>
-          <button class="btn" id="shareMessage">Share</button>
-        </div>
+    <div class="item">
+      <div class="left">
+        <div class="ico">💬</div>
+        <div>Message loading</div>
       </div>
-
-      <!-- CCTV (folder) -->
-      <div class="item">
-        <div class="left">
-          <div class="ico" aria-hidden="true">📹</div>
-          <div class="txt">
-            <div class="t">CCTV viewer</div>
-            <div class="d">Security clip style (mobile friendly)</div>
-          </div>
-        </div>
-        <div class="actions">
-          <button class="btn2" id="openCctv">Open</button>
-          <button class="btn" id="shareCctv">Share</button>
-        </div>
+      <div>
+        <button class="btn2" onclick="location.href='https://xstajayx.github.io/message-media-space/'">Open</button>
+        <button class="btn" onclick="sharePrank('https://xstajayx.github.io/message-media-space/')">Share</button>
       </div>
+    </div>
 
+    <div class="item">
+      <div class="left">
+        <div class="ico">📹</div>
+        <div>CCTV viewer</div>
+      </div>
+      <div>
+        <button class="btn2" onclick="location.href='https://xstajayx.github.io/message-media-space/p/scenario-b/'">Open</button>
+        <button class="btn" onclick="sharePrank('https://xstajayx.github.io/message-media-space/p/scenario-b/')">Share</button>
+      </div>
     </div>
   </div>
 
-  <!-- AD SLOT (mid) -->
-  <div class="section">
-    <div class="ad" id="adMid">
-      AD SLOT (Mid)
-      <small>Good position for mobile RPM once you have traffic.</small>
-    </div>
+  <!-- 🔹 MID AD -->
+  <div class="adSlot">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-8837377060291347"
+         data-ad-slot="2222222222"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
   </div>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
   <div class="tiny">
-    Built by <b>Jworldcreations</b>.
+    Built by Jworldcreations
   </div>
 
 </div>
 
 <script>
-/* ========= LINKS (MATCH YOUR STRUCTURE) ========= */
-const BASE = "https://xstajayx.github.io/message-media-space";
-const MESSAGE_URL = BASE + "/";                 // root prank
-const CCTV_URL    = BASE + "/p/scenario-b/";    // folder prank
-
-/* ========= SHARE TEXT ========= */
-const SHARE_TITLE = "Wait… what is this?";
-const SHARE_TEXT  = "I’ve never seen this before…";
-
-/* ========= SHARE HELPER ========= */
-async function share(url){
-  const data = { title: SHARE_TITLE, text: SHARE_TEXT, url };
+async function sharePrank(url){
+  const data = {
+    title: "Wait… what is this?",
+    text: "I’ve never seen this before…",
+    url
+  };
   if(navigator.share){
     try{ await navigator.share(data); return; }catch(e){}
   }
-  try{
-    await navigator.clipboard.writeText(url);
-    alert("Link copied ✅");
-  }catch(e){
-    prompt("Copy this link:", url);
-  }
+  navigator.clipboard.writeText(url);
+  alert("Link copied ✅");
 }
-
-/* ========= BUTTONS ========= */
-document.getElementById("openMessage").addEventListener("click", ()=> location.href = MESSAGE_URL);
-document.getElementById("openCctv").addEventListener("click",   ()=> location.href = CCTV_URL);
-
-document.getElementById("shareMessage").addEventListener("click", ()=> share(MESSAGE_URL));
-document.getElementById("shareCctv").addEventListener("click",    ()=> share(CCTV_URL));
 </script>
 </body>
 </html>
