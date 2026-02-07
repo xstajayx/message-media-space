@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="theme-color" content="#0f0f10" />
 
-<!-- Scenario B share preview -->
 <title>Wait… what is this?</title>
 <meta name="description" content="I’ve never seen this before…" />
 
@@ -192,7 +191,7 @@
     pointer-events:none;
   }
 
-  /* === FACE SLAM JUMPSCARE === */
+  /* === FACE SLAM OVERLAY === */
   #scare{
     position:fixed; inset:0;
     display:none;
@@ -213,9 +212,9 @@
     transform: scale(.7);
     opacity:0;
     filter: contrast(1.35) saturate(.75);
+    background: #000;
   }
 
-  /* build-up zoom */
   .slam.prep{
     animation: prepZoom .18s ease-out forwards;
   }
@@ -224,7 +223,6 @@
     to{ transform: scale(.92); opacity: 1; }
   }
 
-  /* SLAM zoom */
   .slam.hit{
     animation: slamHit .42s cubic-bezier(.05,.95,.05,1) forwards,
                slamJitter .08s infinite;
@@ -243,7 +241,50 @@
     100%{ transform: translate(0,0) scale(1.22); }
   }
 
-  #scareCanvas{ width:100%; height:100%; display:block; background:#000; }
+  /* Eye flicker overlay (assumes face is centered) */
+  .eyes{
+    position:absolute; inset:0;
+    pointer-events:none;
+    mix-blend-mode: screen;
+    opacity:0;
+    filter: blur(0.3px);
+  }
+
+  .slam.hit .eyes{
+    opacity: 1;
+    animation: eyeFlicker 0.13s infinite steps(2, end);
+  }
+
+  /* Two eye glows using radial gradients */
+  .eyes::before,
+  .eyes::after{
+    content:"";
+    position:absolute;
+    width: 22%;
+    height: 16%;
+    top: 38%;
+    border-radius: 999px;
+    background: radial-gradient(circle at 50% 50%,
+      rgba(255,255,255,0.95) 0%,
+      rgba(255,255,255,0.55) 22%,
+      rgba(255,255,255,0.18) 52%,
+      rgba(255,255,255,0) 75%);
+    box-shadow:
+      0 0 18px rgba(255,255,255,0.20),
+      0 0 44px rgba(255,255,255,0.10);
+  }
+  .eyes::before{ left: 26%; }
+  .eyes::after{ right: 26%; }
+
+  @keyframes eyeFlicker{
+    0%   { opacity: 0.15; filter: blur(0.2px); transform: translate(0,0) scale(1); }
+    12%  { opacity: 0.90; filter: blur(0.4px); transform: translate(-1px,0) scale(1.02); }
+    25%  { opacity: 0.35; filter: blur(0.2px); transform: translate(1px,0) scale(0.99); }
+    38%  { opacity: 1.00; filter: blur(0.6px); transform: translate(0,-1px) scale(1.03); }
+    55%  { opacity: 0.18; filter: blur(0.2px); transform: translate(0,1px) scale(1); }
+    72%  { opacity: 0.85; filter: blur(0.5px); transform: translate(-1px,1px) scale(1.02); }
+    100% { opacity: 0.25; filter: blur(0.2px); transform: translate(0,0) scale(1); }
+  }
 
   .scanlines{
     position:absolute; inset:-20%;
@@ -270,7 +311,6 @@
     pointer-events:none;
   }
 
-  /* heavy strobe for the first 500ms only */
   .strobe{
     position:absolute; inset:0;
     background:#fff;
@@ -338,12 +378,13 @@
 
 <div id="tapHint">tap once for fullscreen + sound</div>
 
-<!-- Face slam overlay -->
+<!-- Face slam overlay (image) -->
 <div id="scare" aria-hidden="true">
   <div class="slam" id="slamBox">
-       <div class="scanlines"></div>
-    <div class="strobe"></div>
-    <div class="edgeV"></div>
+    <div class="eyes" aria-hidden="true"></div>
+    <div class="scanlines" aria-hidden="true"></div>
+    <div class="strobe" aria-hidden="true"></div>
+    <div class="edgeV" aria-hidden="true"></div>
   </div>
 </div>
 
@@ -372,6 +413,7 @@
 <script>
 /* ========= CONFIG ========= */
 const REPORT_URL = "../../report.html?src=scenario-b";
+const FACE_IMAGE = "faceslam.png"; // in same folder
 
 /* ========= Fullscreen + audio ========= */
 let armed = false;
@@ -383,7 +425,7 @@ function initAudio(){
   if(audioCtx) return;
   audioCtx = new (window.AudioContext || window.webkitAudioContext)();
   masterGain = audioCtx.createGain();
-  masterGain.gain.value = 0.22; // slightly louder
+  masterGain.gain.value = 0.22;
   masterGain.connect(audioCtx.destination);
 }
 
@@ -437,13 +479,12 @@ document.getElementById("muteBtn").addEventListener("click", async ()=>{
   if(!muted) beep(660,0.05,"square",0.10);
 });
 
-/* ========= FACE SLAM SOUND (riser + scream-ish + bass THUMP) ========= */
+/* ========= Face slam sound ========= */
 function playFaceSlamSound(){
   if(!audioCtx || muted) return;
 
   const t0 = audioCtx.currentTime;
 
-  // Master chain for slam
   const g = audioCtx.createGain();
   g.gain.value = 0.0001;
 
@@ -467,51 +508,46 @@ function playFaceSlamSound(){
   bp.frequency.value = 900;
   bp.Q.value = 8;
 
-  // Connect chain
   g.connect(bp);
   bp.connect(shaper);
   shaper.connect(comp);
   comp.connect(masterGain);
 
-  // Noise buffer (harsh start)
+  // noise
   const dur = 1.25;
   const size = Math.floor(audioCtx.sampleRate * dur);
   const buf = audioCtx.createBuffer(1, size, audioCtx.sampleRate);
   const data = buf.getChannelData(0);
   for(let i=0;i<size;i++){
     const k = 1 - (i/size);
-    // harsher early, fades down
     data[i] = (Math.random()*2-1) * (0.95 * Math.pow(k, 0.35));
   }
   const noise = audioCtx.createBufferSource();
   noise.buffer = buf;
 
-  // Riser oscillator (sawtooth + FM wobble)
+  // riser + scream
   const osc = audioCtx.createOscillator();
   osc.type = "sawtooth";
   osc.frequency.setValueAtTime(160, t0);
   osc.frequency.exponentialRampToValueAtTime(2200, t0 + 0.35);
   osc.frequency.exponentialRampToValueAtTime(900, t0 + dur);
 
-  // “Scream” tone (bandpassed square)
   const scream = audioCtx.createOscillator();
   scream.type = "square";
   scream.frequency.setValueAtTime(520, t0 + 0.12);
   scream.frequency.exponentialRampToValueAtTime(1400, t0 + 0.30);
   scream.frequency.exponentialRampToValueAtTime(700, t0 + 0.55);
 
-  // Envelope for main chain
   g.gain.setValueAtTime(0.0001, t0);
   g.gain.exponentialRampToValueAtTime(0.55, t0 + 0.06);
   g.gain.exponentialRampToValueAtTime(0.18, t0 + 0.40);
   g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
 
-  // Filter sweep for “screech”
   bp.frequency.setValueAtTime(700, t0);
   bp.frequency.exponentialRampToValueAtTime(2600, t0 + 0.28);
   bp.frequency.exponentialRampToValueAtTime(900, t0 + 0.60);
 
-  // Bass thump (separate so it hits clean)
+  // bass thump
   const bass = audioCtx.createOscillator();
   bass.type = "sine";
   bass.frequency.setValueAtTime(58, t0 + 0.12);
@@ -523,23 +559,14 @@ function playFaceSlamSound(){
   bass.connect(bassG);
   bassG.connect(masterGain);
 
-  // Connect sources into chain
   noise.connect(g);
   osc.connect(g);
   scream.connect(g);
 
-  // Start/stop
-  noise.start(t0);
-  noise.stop(t0 + dur);
-
-  osc.start(t0);
-  osc.stop(t0 + dur);
-
-  scream.start(t0 + 0.10);
-  scream.stop(t0 + 0.62);
-
-  bass.start(t0 + 0.12);
-  bass.stop(t0 + 0.40);
+  noise.start(t0); noise.stop(t0 + dur);
+  osc.start(t0);   osc.stop(t0 + dur);
+  scream.start(t0 + 0.10); scream.stop(t0 + 0.62);
+  bass.start(t0 + 0.12); bass.stop(t0 + 0.40);
 }
 
 /* ========= CCTV feed ========= */
@@ -707,128 +734,62 @@ function glitchHit(ms=520){
   }, ms);
 }
 
-/* ========= FACE SLAM VISUAL (better than the old “face”) ========= */
+/* ========= FACE SLAM (IMAGE) ========= */
 const scare = document.getElementById("scare");
 const slamBox = document.getElementById("slamBox");
-const scareImg = new Image();
-scareImg.src = "faceslam.png";
 
-  sctx.putImageData(img,0,0);
+// Preload image (so there’s no blank flash)
+const preload = new Image();
+preload.src = FACE_IMAGE;
 
-  // eyes (too bright = unsettling)
-  function eye(ex,ey,rx,ry){
-    const g = sctx.createRadialGradient(ex,ey, 2, ex,ey, rx);
-    g.addColorStop(0, "rgba(255,255,255,0.98)");
-    g.addColorStop(0.25, "rgba(255,255,255,0.72)");
-    g.addColorStop(0.7, "rgba(255,255,255,0.15)");
-    g.addColorStop(1, "rgba(255,255,255,0)");
-    sctx.fillStyle = g;
-    sctx.beginPath();
-    sctx.ellipse(ex,ey, rx, ry, 0, 0, Math.PI*2);
-    sctx.fill();
-
-    // pupil (jitter)
-    const px = ex + Math.sin(tt*22 + ex*0.01)*rx*0.18;
-    const py = ey + Math.cos(tt*18 + ey*0.01)*ry*0.18;
-    sctx.fillStyle = "rgba(0,0,0,0.95)";
-    sctx.beginPath();
-    sctx.ellipse(px,py, rx*0.25, ry*0.25, 0, 0, Math.PI*2);
-    sctx.fill();
-  }
-
-  const pulse = 1 + Math.sin(tt*12)*0.03;
-  eye(w*0.36, h*0.42, w*0.15*pulse, h*0.10*pulse);
-  eye(w*0.64, h*0.42, w*0.15*pulse, h*0.10*pulse);
-
-  // mouth (open)
-  sctx.fillStyle = "rgba(0,0,0,0.95)";
-  sctx.beginPath();
-  sctx.ellipse(w*0.5, h*0.68, w*0.18, h*0.14, 0, 0, Math.PI*2);
-  sctx.fill();
-
-  // teeth glint
-  sctx.fillStyle = "rgba(255,255,255,0.45)";
-  for(let k=0;k<7;k++){
-    const tx = (w*0.38) + k*(w*0.035);
-    sctx.fillRect(tx, h*0.60, w*0.018, h*0.04);
-  }
-
-  // extra glitch bars
-  if(Math.random() < 0.55){
-    sctx.fillStyle = "rgba(255,255,255,0.12)";
-    for(let k=0;k<10;k++){
-      const yy = Math.random()*h;
-      sctx.fillRect(0, yy, w, 2 + Math.random()*4);
-    }
-  }
-
-  // vignette
-  const vg = sctx.createRadialGradient(w*0.5,h*0.55, w*0.12, w*0.5,h*0.55, w*0.75);
-  vg.addColorStop(0, "rgba(0,0,0,0)");
-  vg.addColorStop(1, "rgba(0,0,0,0.88)");
-  sctx.fillStyle = vg;
-  sctx.fillRect(0,0,w,h);
-}
-
-/* ========= FACE SLAM SEQUENCE ========= */
 let slamBusy = false;
+
 async function faceSlam(){
   if(slamBusy) return;
   slamBusy = true;
 
   await arm();
-  resizeScare();
 
-  // Build-up: freeze + tiny zoom + warning text
+  // Build-up
   msgEl.textContent = "Re-syncing…";
   modeEl.textContent = "RE-SYNC";
   frame.style.transform = "scale(1.02)";
   glitchHit(240);
 
-  // Prep overlay (0.18s)
+  // Show overlay
   scare.classList.add("show");
-scare.setAttribute("aria-hidden","false");
+  scare.setAttribute("aria-hidden","false");
 
-slamBox.classList.remove("hit");
-slamBox.classList.remove("prep");
-void slamBox.offsetWidth;
-slamBox.classList.add("prep");
+  // Apply image
+  slamBox.style.backgroundImage = "url('" + FACE_IMAGE + "')";
+  slamBox.style.backgroundSize = "cover";
+  slamBox.style.backgroundPosition = "center";
+  slamBox.style.backgroundRepeat = "no-repeat";
 
-// Set the slam image as background
-slamBox.style.backgroundImage = "url('faceslam.png')";
-slamBox.style.backgroundSize = "cover";
-slamBox.style.backgroundPosition = "center";
-slamBox.style.backgroundRepeat = "no-repeat";
+  // Prep then slam
+  slamBox.classList.remove("hit");
+  slamBox.classList.remove("prep");
+  void slamBox.offsetWidth;
+  slamBox.classList.add("prep");
 
-
-  const start = performance.now();
-  const run = (now)=>{
-    drawFaceFrame(now - start);
-    scareRAF = requestAnimationFrame(run);
-  };
-  scareRAF = requestAnimationFrame(run);
-
-  // SLAM after a short beat
   setTimeout(()=>{
-    // slam animation + strongest sound
     slamBox.classList.add("hit");
     doFlash();
     playFaceSlamSound();
     if(navigator.vibrate) navigator.vibrate([90,30,120,40,160]);
-
-    // release the CCTV zoom
     setTimeout(()=>{ frame.style.transform = ""; }, 90);
   }, 170);
 
-  // Hold it on screen long enough to actually land
+  // KEEP ON SCREEN for 2.5 seconds
+  const HOLD_MS = 2500;
+
   setTimeout(()=>{
-    if(scareRAF) cancelAnimationFrame(scareRAF);
     scare.classList.remove("show");
     scare.setAttribute("aria-hidden","true");
     slamBox.classList.remove("hit");
     slamBox.classList.remove("prep");
     slamBusy = false;
-  }, 1250);
+  }, HOLD_MS);
 }
 
 /* ========= Timeline ========= */
@@ -856,12 +817,11 @@ document.getElementById("d1ok").addEventListener("click", async ()=>{
   msgEl.textContent = "Continuing…";
   modeEl.textContent = "ANALYSE";
 
-  // FACE SLAM right after Continue
+  // Slam, then ONLY AFTER 2.5s show the report dialog
   await faceSlam();
 
-  // then show report prompt
   msgEl.textContent = "Viewer error detected";
-  setTimeout(()=>{ showDialog("d2", true); }, 960);
+  setTimeout(()=>{ showDialog("d2", true); }, 300); // after overlay hides
 });
 
 document.getElementById("d2ok").addEventListener("click", ()=>{
