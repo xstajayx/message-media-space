@@ -433,6 +433,11 @@ function initAudio(){
   masterGain.connect(audioCtx.destination);
 }
 
+
+ function sleep(ms){
+  return new Promise(res => setTimeout(res, ms));
+}
+
 function beep(freq=880, dur=0.06, type="square", gain=0.12){
   if(!audioCtx || muted) return;
   const o = audioCtx.createOscillator();
@@ -760,41 +765,41 @@ async function faceSlam(){
   frame.style.transform = "scale(1.02)";
   glitchHit(240);
 
-  // Show overlay
-  scare.classList.add("show");
-  scare.setAttribute("aria-hidden","false");
-
-  // Apply image
+  // Apply image BEFORE showing overlay (prevents blank moment)
   slamBox.style.backgroundImage = "url('" + FACE_IMAGE + "')";
   slamBox.style.backgroundSize = "cover";
   slamBox.style.backgroundPosition = "center";
   slamBox.style.backgroundRepeat = "no-repeat";
 
+  // Show overlay
+  scare.classList.add("show");
+  scare.setAttribute("aria-hidden","false");
+
   // Prep then slam
-  slamBox.classList.remove("hit");
-  slamBox.classList.remove("prep");
+  slamBox.classList.remove("hit", "prep");
   void slamBox.offsetWidth;
   slamBox.classList.add("prep");
 
-  setTimeout(()=>{
-    slamBox.classList.add("hit");
-    doFlash();
-    playFaceSlamSound();
-    if(navigator.vibrate) navigator.vibrate([90,30,120,40,160]);
-    setTimeout(()=>{ frame.style.transform = ""; }, 90);
-  }, 170);
+  await sleep(170);
 
-  // KEEP ON SCREEN for 2.5 seconds
-  const HOLD_MS = 3200; // 3.2 seconds
+  slamBox.classList.add("hit");
+  doFlash();
+  playFaceSlamSound();
+  if(navigator.vibrate) navigator.vibrate([90,30,120,40,160]);
+  frame.style.transform = "";
 
-  setTimeout(()=>{
-    scare.classList.remove("show");
-    scare.setAttribute("aria-hidden","true");
-    slamBox.classList.remove("hit");
-    slamBox.classList.remove("prep");
-    slamBusy = false;
-  }, HOLD_MS);
+  // HOLD on screen for 2.5 seconds (REAL wait)
+  const HOLD_MS = 2500;
+  await sleep(HOLD_MS);
+
+  // Hide overlay
+  scare.classList.remove("show");
+  scare.setAttribute("aria-hidden","true");
+  slamBox.classList.remove("hit", "prep");
+
+  slamBusy = false;
 }
+
 
 /* ========= Timeline ========= */
 msgEl.textContent = "Loading feed…";
@@ -824,8 +829,9 @@ document.getElementById("d1ok").addEventListener("click", async ()=>{
   // Slam, then ONLY AFTER 2.5s show the report dialog
   await faceSlam();
 
-  msgEl.textContent = "Viewer error detected";
-  setTimeout(()=>{ showDialog("d2", true); }, 300); // after overlay hides
+msgEl.textContent = "Viewer error detected";
+showDialog("d2", true);
+
 });
 
 document.getElementById("d2ok").addEventListener("click", ()=>{
