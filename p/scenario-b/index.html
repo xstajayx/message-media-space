@@ -406,7 +406,7 @@
 
 <script>
 /* ========= CONFIG ========= */
-const REPORT_URL = "/message-media-space/report/?src=scenario-b";
+const REPORT_URL = "https://xstajayx.github.io/";
 const FACE_IMAGE = "faceslam.png"; // in same folder
 
 /* ========= sleep + timer manager (FIXES GAP / BACKGROUND TIMERS) ========= */
@@ -785,7 +785,7 @@ async function faceSlam(){
   if(navigator.vibrate) navigator.vibrate([90,30,120,40,160]);
   frame.style.transform = "";
 
-  const HOLD_MS = 3000;
+  const HOLD_MS = 2000;
   await sleep(HOLD_MS);
 
   // Keep overlay visible (do not hide)
