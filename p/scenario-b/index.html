@@ -191,149 +191,90 @@
     pointer-events:none;
   }
 
-  /* === FACE SLAM OVERLAY === */
-  #scare{
+  /* === SAFE “GLITCH EVENT” OVERLAY (NO JUMPSCARE) === */
+  #eventOverlay{
     position:fixed; inset:0;
     display:none;
     z-index:260;
-    background:#000;
     align-items:center;
     justify-content:center;
+    background: rgba(0,0,0,.88);
+    opacity:0;
+    transition: opacity .22s ease;
   }
-  #scare.show{ display:flex; }
+  #eventOverlay.show{ display:flex; opacity:1; }
 
-  .slam{
-    width:min(620px, 98vw);
-    aspect-ratio: 1/1;
-    border-radius: 26px;
+  .eventCard{
+    width:min(560px, 94vw);
+    border-radius: 22px;
+    border:1px solid rgba(255,255,255,.12);
+    background: rgba(20,20,22,.85);
+    box-shadow: 0 30px 100px rgba(0,0,0,.75);
     overflow:hidden;
     position:relative;
-    box-shadow: 0 0 160px rgba(255,255,255,.06);
-    transform: scale(.7);
-    opacity:0;
-    filter: contrast(1.35) saturate(.75);
-    background: #000;
   }
-
-  .slam.prep{
-    animation: prepZoom .18s ease-out forwards;
+  .eventTop{
+    padding: 14px 14px 12px;
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    align-items:center;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    background: rgba(255,255,255,.04);
   }
-  @keyframes prepZoom{
-    from{ transform: scale(.78); opacity: .0; }
-    to{ transform: scale(.92); opacity: 1; }
+  .eventTop .l{
+    font-weight: 850;
+    letter-spacing:.2px;
   }
-
-.slam.hit{
-  animation: slamHit .85s cubic-bezier(.05,.95,.05,1) forwards,
-             slamJitter .16s infinite;
-}
-
-
+  .eventTop .r{
+    font-size: 12px;
+    color: rgba(255,255,255,.72);
   }
-  @keyframes slamHit{
-    0%{ transform: scale(.92); }
-    35%{ transform: scale(1.32); }
-    70%{ transform: scale(1.18); }
-    100%{ transform: scale(1.22); }
+  .eventBody{
+    padding: 14px;
   }
-  @keyframes slamHit{
-  0%   { transform: scale(.88); }
-  30%  { transform: scale(1.15); }
-  55%  { transform: scale(1.28); }
-  75%  { transform: scale(1.22); }
-  100% { transform: scale(1.25); }
-}
-
-
-  /* Eye flicker overlay (assumes face is centered) */
-  .eyes{
-    position:absolute; inset:0;
-    pointer-events:none;
-    mix-blend-mode: screen;
-    opacity:0;
-    filter: blur(0.3px);
+  .bigErr{
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing:.2px;
+    margin: 0 0 8px;
   }
-
-  .slam.hit .eyes{
-  opacity: 1;
-  animation: eyeFlicker 0.22s infinite steps(2, end);
-}
-
-  /* Two eye glows using radial gradients */
-  .eyes::before,
-  .eyes::after{
-    content:"";
-    position:absolute;
-    width: 22%;
-    height: 16%;
-    top: 38%;
+  .subErr{
+    margin: 0 0 14px;
+    color: rgba(255,255,255,.74);
+    line-height: 1.45;
+    font-size: 14px;
+  }
+  .bar{
+    height: 10px;
     border-radius: 999px;
-    background: radial-gradient(circle at 50% 50%,
-      rgba(255,255,255,0.95) 0%,
-      rgba(255,255,255,0.55) 22%,
-      rgba(255,255,255,0.18) 52%,
-      rgba(255,255,255,0) 75%);
-    box-shadow:
-      0 0 18px rgba(255,255,255,0.20),
-      0 0 44px rgba(255,255,255,0.10);
+    border:1px solid rgba(255,255,255,.12);
+    background: rgba(255,255,255,.06);
+    overflow:hidden;
   }
-  .eyes::before{ left: 26%; }
-  .eyes::after{ right: 26%; }
-
-  @keyframes eyeFlicker{
-    0%   { opacity: 0.15; filter: blur(0.2px); transform: translate(0,0) scale(1); }
-    12%  { opacity: 0.90; filter: blur(0.4px); transform: translate(-1px,0) scale(1.02); }
-    25%  { opacity: 0.35; filter: blur(0.2px); transform: translate(1px,0) scale(0.99); }
-    38%  { opacity: 1.00; filter: blur(0.6px); transform: translate(0,-1px) scale(1.03); }
-    55%  { opacity: 0.18; filter: blur(0.2px); transform: translate(0,1px) scale(1); }
-    72%  { opacity: 0.85; filter: blur(0.5px); transform: translate(-1px,1px) scale(1.02); }
-    100% { opacity: 0.25; filter: blur(0.2px); transform: translate(0,0) scale(1); }
+  .bar > div{
+    height:100%;
+    width:0%;
+    background: linear-gradient(90deg, rgba(58,130,247,.95), rgba(124,58,237,.95));
+    transition: width .12s linear;
   }
-
-  .scanlines{
-    position:absolute; inset:-20%;
+  .glitchLines{
+    position:absolute; inset:0;
     background: repeating-linear-gradient(
       to bottom,
-      rgba(255,255,255,.14),
-      rgba(255,255,255,.14) 1px,
+      rgba(255,255,255,.10),
+      rgba(255,255,255,.10) 1px,
       rgba(0,0,0,0) 4px,
-      rgba(0,0,0,0) 7px
+      rgba(0,0,0,0) 8px
     );
+    opacity:.16;
     mix-blend-mode: screen;
-    opacity:.22;
     pointer-events:none;
-    animation: scanMove .22s infinite linear;
+    animation: scanMove .28s infinite linear;
   }
   @keyframes scanMove{
-    from{ transform: translateY(-12%); }
-    to{ transform: translateY(12%); }
-  }
-
-  .edgeV{
-    position:absolute; inset:0;
-    background: radial-gradient(circle at 50% 45%, rgba(0,0,0,0) 28%, rgba(0,0,0,.78) 70%, rgba(0,0,0,.96) 100%);
-    pointer-events:none;
-  }
-
-  .strobe{
-    position:absolute; inset:0;
-    background:#fff;
-    opacity:0;
-    pointer-events:none;
-    mix-blend-mode: screen;
-    animation: strobe 0.55s ease-out forwards;
-  }
-  @keyframes strobe{
-    0%{opacity:0}
-    8%{opacity:.50}
-    14%{opacity:0}
-    22%{opacity:.46}
-    28%{opacity:0}
-    40%{opacity:.34}
-    46%{opacity:0}
-    55%{opacity:.22}
-    60%{opacity:0}
-    100%{opacity:0}
+    from{ transform: translateY(-10%); }
+    to{ transform: translateY(10%); }
   }
 </style>
 </head>
@@ -382,13 +323,19 @@
 
 <div id="tapHint">tap once for fullscreen + sound</div>
 
-<!-- Face slam overlay (image) -->
-<div id="scare" aria-hidden="true">
-  <div class="slam" id="slamBox">
-    <div class="eyes" aria-hidden="true"></div>
-    <div class="scanlines" aria-hidden="true"></div>
-    <div class="strobe" aria-hidden="true"></div>
-    <div class="edgeV" aria-hidden="true"></div>
+<!-- Safe event overlay -->
+<div id="eventOverlay" aria-hidden="true">
+  <div class="eventCard">
+    <div class="glitchLines" aria-hidden="true"></div>
+    <div class="eventTop">
+      <div class="l">Stream Monitor</div>
+      <div class="r" id="evTime">—</div>
+    </div>
+    <div class="eventBody">
+      <p class="bigErr" id="evTitle">Connection Lost</p>
+      <p class="subErr" id="evSub">Attempting to restore the preview…</p>
+      <div class="bar"><div id="evBar"></div></div>
+    </div>
   </div>
 </div>
 
@@ -417,7 +364,18 @@
 <script>
 /* ========= CONFIG ========= */
 const REPORT_URL = "../../report.html?src=scenario-b";
-const FACE_IMAGE = "faceslam.png"; // in same folder
+
+/* ========= sleep + timer manager (FIXES GAP / BACKGROUND TIMERS) ========= */
+function sleep(ms){ return new Promise(res => setTimeout(res, ms)); }
+const timers = [];
+function later(fn, ms){
+  const id = setTimeout(fn, ms);
+  timers.push(id);
+  return id;
+}
+function clearAllTimers(){
+  while(timers.length) clearTimeout(timers.pop());
+}
 
 /* ========= Fullscreen + audio ========= */
 let armed = false;
@@ -429,13 +387,8 @@ function initAudio(){
   if(audioCtx) return;
   audioCtx = new (window.AudioContext || window.webkitAudioContext)();
   masterGain = audioCtx.createGain();
-  masterGain.gain.value = 0.22;
+  masterGain.gain.value = 0.20;
   masterGain.connect(audioCtx.destination);
-}
-
-
- function sleep(ms){
-  return new Promise(res => setTimeout(res, ms));
 }
 
 function beep(freq=880, dur=0.06, type="square", gain=0.12){
@@ -469,8 +422,8 @@ async function arm(){
   await requestFullscreen();
   initAudio();
   try{ await audioCtx.resume(); }catch(e){}
-  beep(880,0.05,"square",0.12);
-  if(navigator.vibrate) navigator.vibrate([50,30,50]);
+  beep(880,0.05,"square",0.10);
+  if(navigator.vibrate) navigator.vibrate([40,20,40]);
 }
 
 document.addEventListener("pointerdown", arm, {passive:true});
@@ -485,98 +438,8 @@ document.getElementById("muteBtn").addEventListener("click", async ()=>{
   await arm();
   muted = !muted;
   document.getElementById("muteBtn").textContent = muted ? "🔇" : "🔊";
-  if(!muted) beep(660,0.05,"square",0.10);
+  if(!muted) beep(660,0.05,"square",0.08);
 });
-
-/* ========= Face slam sound ========= */
-function playFaceSlamSound(){
-  if(!audioCtx || muted) return;
-
-  const t0 = audioCtx.currentTime;
-
-  const g = audioCtx.createGain();
-  g.gain.value = 0.0001;
-
-  const comp = audioCtx.createDynamicsCompressor();
-  comp.threshold.value = -18;
-  comp.knee.value = 24;
-  comp.ratio.value = 10;
-  comp.attack.value = 0.002;
-  comp.release.value = 0.12;
-
-  const shaper = audioCtx.createWaveShaper();
-  const curve = new Float32Array(44100);
-  for(let i=0;i<curve.length;i++){
-    const x = (i*2/curve.length)-1;
-    curve[i] = Math.tanh(7*x);
-  }
-  shaper.curve = curve;
-
-  const bp = audioCtx.createBiquadFilter();
-  bp.type = "bandpass";
-  bp.frequency.value = 900;
-  bp.Q.value = 8;
-
-  g.connect(bp);
-  bp.connect(shaper);
-  shaper.connect(comp);
-  comp.connect(masterGain);
-
-  // noise
-  const dur = 1.25;
-  const size = Math.floor(audioCtx.sampleRate * dur);
-  const buf = audioCtx.createBuffer(1, size, audioCtx.sampleRate);
-  const data = buf.getChannelData(0);
-  for(let i=0;i<size;i++){
-    const k = 1 - (i/size);
-    data[i] = (Math.random()*2-1) * (0.95 * Math.pow(k, 0.35));
-  }
-  const noise = audioCtx.createBufferSource();
-  noise.buffer = buf;
-
-  // riser + scream
-  const osc = audioCtx.createOscillator();
-  osc.type = "sawtooth";
-  osc.frequency.setValueAtTime(160, t0);
-  osc.frequency.exponentialRampToValueAtTime(2200, t0 + 0.35);
-  osc.frequency.exponentialRampToValueAtTime(900, t0 + dur);
-
-  const scream = audioCtx.createOscillator();
-  scream.type = "square";
-  scream.frequency.setValueAtTime(520, t0 + 0.12);
-  scream.frequency.exponentialRampToValueAtTime(1400, t0 + 0.30);
-  scream.frequency.exponentialRampToValueAtTime(700, t0 + 0.55);
-
-  g.gain.setValueAtTime(0.0001, t0);
-  g.gain.exponentialRampToValueAtTime(0.55, t0 + 0.06);
-  g.gain.exponentialRampToValueAtTime(0.18, t0 + 0.40);
-  g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
-
-  bp.frequency.setValueAtTime(700, t0);
-  bp.frequency.exponentialRampToValueAtTime(2600, t0 + 0.28);
-  bp.frequency.exponentialRampToValueAtTime(900, t0 + 0.60);
-
-  // bass thump
-  const bass = audioCtx.createOscillator();
-  bass.type = "sine";
-  bass.frequency.setValueAtTime(58, t0 + 0.12);
-
-  const bassG = audioCtx.createGain();
-  bassG.gain.setValueAtTime(0.0001, t0);
-  bassG.gain.exponentialRampToValueAtTime(0.42, t0 + 0.14);
-  bassG.gain.exponentialRampToValueAtTime(0.0001, t0 + 0.36);
-  bass.connect(bassG);
-  bassG.connect(masterGain);
-
-  noise.connect(g);
-  osc.connect(g);
-  scream.connect(g);
-
-  noise.start(t0); noise.stop(t0 + dur);
-  osc.start(t0);   osc.stop(t0 + dur);
-  scream.start(t0 + 0.10); scream.stop(t0 + 0.62);
-  bass.start(t0 + 0.12); bass.stop(t0 + 0.40);
-}
 
 /* ========= CCTV feed ========= */
 const frame = document.getElementById("frame");
@@ -734,104 +597,85 @@ function glitchHit(ms=520){
   glitching = true;
   frame.classList.add("shake");
   doFlash();
-  if(navigator.vibrate) navigator.vibrate([60,30,60]);
-  beep(1200,0.05,"square",0.12);
-  beep(240,0.12,"sawtooth",0.10);
+  if(navigator.vibrate) navigator.vibrate([50,20,50]);
+  beep(1200,0.05,"square",0.10);
+  beep(240,0.10,"sawtooth",0.08);
   setTimeout(()=>{
     glitching = false;
     frame.classList.remove("shake");
   }, ms);
 }
 
-/* ========= FACE SLAM (IMAGE) ========= */
-const scare = document.getElementById("scare");
-const slamBox = document.getElementById("slamBox");
+/* ========= SAFE EVENT (HOLD 2.5s, NO GAP) ========= */
+const overlay = document.getElementById("eventOverlay");
+const evTime = document.getElementById("evTime");
+const evTitle = document.getElementById("evTitle");
+const evSub = document.getElementById("evSub");
+const evBar = document.getElementById("evBar");
 
-// Preload image (so there’s no blank flash)
-const preload = new Image();
-preload.src = FACE_IMAGE;
-
-let slamBusy = false;
-
-async function faceSlam(){
-  if(slamBusy) return;
-  slamBusy = true;
-
+async function safeEvent(){
   await arm();
+  glitchHit(260);
 
-  // Build-up
-  msgEl.textContent = "Re-syncing…";
-  modeEl.textContent = "RE-SYNC";
-  frame.style.transform = "scale(1.02)";
-  glitchHit(240);
+  evTime.textContent = nowStamp();
+  evTitle.textContent = "Connection Lost";
+  evSub.textContent = "Attempting to restore the preview…";
+  evBar.style.width = "0%";
 
-  // Apply image BEFORE showing overlay (prevents blank moment)
-  slamBox.style.backgroundImage = "url('" + FACE_IMAGE + "')";
-  slamBox.style.backgroundSize = "cover";
-  slamBox.style.backgroundPosition = "center";
-  slamBox.style.backgroundRepeat = "no-repeat";
+  overlay.style.display = "flex";
+  overlay.classList.add("show");
+  overlay.setAttribute("aria-hidden","false");
 
-  // Show overlay
-  scare.classList.add("show");
-  scare.setAttribute("aria-hidden","false");
+  // gentle alert (not scary)
+  beep(740, 0.05, "square", 0.09);
+  later(()=>beep(660, 0.05, "square", 0.07), 220);
 
-  // Prep then slam
-  slamBox.classList.remove("hit", "prep");
-  void slamBox.offsetWidth;
-  slamBox.classList.add("prep");
-
-  await sleep(170);
-
-  slamBox.classList.add("hit");
-  doFlash();
-  playFaceSlamSound();
-  if(navigator.vibrate) navigator.vibrate([90,30,120,40,160]);
-  frame.style.transform = "";
-
-  // HOLD on screen for 2.5 seconds (REAL wait)
+  // progress animation for 2.5s
   const HOLD_MS = 2500;
-  await sleep(HOLD_MS);
+  const start = performance.now();
+  while(performance.now() - start < HOLD_MS){
+    const p = Math.min(100, ((performance.now()-start)/HOLD_MS)*100);
+    evBar.style.width = p.toFixed(0) + "%";
+    await sleep(80);
+  }
 
-  // Hide overlay
-  scare.classList.remove("show");
-  scare.setAttribute("aria-hidden","true");
-  slamBox.classList.remove("hit", "prep");
-
-  slamBusy = false;
+  overlay.classList.remove("show");
+  overlay.setAttribute("aria-hidden","true");
+  await sleep(220);
+  overlay.style.display = "none";
 }
 
-
-/* ========= Timeline ========= */
+/* ========= Timeline (managed timers) ========= */
 msgEl.textContent = "Loading feed…";
 modeEl.textContent = "STABILISE";
 setMotion(0);
 
-setTimeout(()=>{ msgEl.textContent = "Buffering…"; beep(740,0.04,"square",0.08); }, 900);
-setTimeout(()=>{ msgEl.textContent = "Signal recovered"; modeEl.textContent = "LIVE"; }, 1600);
-setTimeout(()=>{ setMotion(1); beep(980,0.04,"square",0.10); }, 2400);
-setTimeout(()=>{ glitchHit(520); msgEl.textContent = "Motion spike"; }, 2900);
-setTimeout(()=>{ setMotion(2); msgEl.textContent = "Unusual motion detected"; }, 3600);
-setTimeout(()=>{ showDialog("d1", true); }, 4200);
+later(()=>{ msgEl.textContent = "Buffering…"; beep(740,0.04,"square",0.06); }, 900);
+later(()=>{ msgEl.textContent = "Signal recovered"; modeEl.textContent = "LIVE"; }, 1600);
+later(()=>{ setMotion(1); beep(980,0.04,"square",0.08); }, 2400);
+later(()=>{ glitchHit(520); msgEl.textContent = "Motion spike"; }, 2900);
+later(()=>{ setMotion(2); msgEl.textContent = "Unusual motion detected"; }, 3600);
+later(()=>{ showDialog("d1", true); }, 4200);
 
 /* Dialog actions */
 document.getElementById("d1no").addEventListener("click", ()=>{
+  clearAllTimers();
   showDialog("d1", false);
   msgEl.textContent = "Continuing…";
-  glitchHit(420);
-  setTimeout(()=> showDialog("d2", true), 900);
+  glitchHit(360);
+  later(()=> showDialog("d2", true), 650);
 });
 
 document.getElementById("d1ok").addEventListener("click", async ()=>{
+  clearAllTimers();
   showDialog("d1", false);
   msgEl.textContent = "Continuing…";
   modeEl.textContent = "ANALYSE";
 
-  // Slam, then ONLY AFTER 2.5s show the report dialog
-  await faceSlam();
+  await safeEvent();
 
-msgEl.textContent = "Viewer error detected";
-showDialog("d2", true);
-
+  msgEl.textContent = "Viewer error detected";
+  showDialog("d2", true);
 });
 
 document.getElementById("d2ok").addEventListener("click", ()=>{
