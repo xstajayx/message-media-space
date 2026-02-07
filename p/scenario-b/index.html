@@ -341,8 +341,7 @@
 <!-- Face slam overlay -->
 <div id="scare" aria-hidden="true">
   <div class="slam" id="slamBox">
-    <canvas id="scareCanvas"></canvas>
-    <div class="scanlines"></div>
+       <div class="scanlines"></div>
     <div class="strobe"></div>
     <div class="edgeV"></div>
   </div>
@@ -711,46 +710,9 @@ function glitchHit(ms=520){
 /* ========= FACE SLAM VISUAL (better than the old “face”) ========= */
 const scare = document.getElementById("scare");
 const slamBox = document.getElementById("slamBox");
-const scareCanvas = document.getElementById("scareCanvas");
-const sctx = scareCanvas.getContext("2d", {alpha:false});
-let scareRAF = null;
+const scareImg = new Image();
+scareImg.src = "faceslam.png";
 
-function resizeScare(){
-  const r = scareCanvas.getBoundingClientRect();
-  scareCanvas.width = Math.max(1, Math.floor(r.width));
-  scareCanvas.height = Math.max(1, Math.floor(r.height));
-}
-window.addEventListener("resize", resizeScare);
-resizeScare();
-
-function drawFaceFrame(t){
-  const w = scareCanvas.width, h = scareCanvas.height;
-  const tt = t/1000;
-
-  // base
-  sctx.fillStyle = "#000";
-  sctx.fillRect(0,0,w,h);
-
-  // background grain + glow
-  const img = sctx.createImageData(w,h);
-  const d = img.data;
-  const cx = w*0.5 + Math.sin(tt*10)*w*0.01;
-  const cy = h*0.48 + Math.cos(tt*9)*h*0.01;
-
-  for(let i=0;i<d.length;i+=4){
-    const px = (i/4)%w;
-    const py = ((i/4)/w)|0;
-
-    const dx = (px-cx)/(w*0.42);
-    const dy = (py-cy)/(h*0.42);
-    const rr = dx*dx + dy*dy;
-
-    const n = (Math.random()*255)|0;
-    const glow = Math.max(0, 1 - rr) * 150;
-    const v = Math.min(255, (n*0.22) + glow);
-
-    d[i] = v; d[i+1] = v; d[i+2] = v; d[i+3] = 255;
-  }
   sctx.putImageData(img,0,0);
 
   // eyes (too bright = unsettling)
@@ -825,12 +787,19 @@ async function faceSlam(){
 
   // Prep overlay (0.18s)
   scare.classList.add("show");
-  scare.setAttribute("aria-hidden","false");
+scare.setAttribute("aria-hidden","false");
 
-  slamBox.classList.remove("hit");
-  slamBox.classList.remove("prep");
-  void slamBox.offsetWidth;
-  slamBox.classList.add("prep");
+slamBox.classList.remove("hit");
+slamBox.classList.remove("prep");
+void slamBox.offsetWidth;
+slamBox.classList.add("prep");
+
+// Set the slam image as background
+slamBox.style.backgroundImage = "url('faceslam.png')";
+slamBox.style.backgroundSize = "cover";
+slamBox.style.backgroundPosition = "center";
+slamBox.style.backgroundRepeat = "no-repeat";
+
 
   const start = performance.now();
   const run = (now)=>{
@@ -892,7 +861,7 @@ document.getElementById("d1ok").addEventListener("click", async ()=>{
 
   // then show report prompt
   msgEl.textContent = "Viewer error detected";
-  setTimeout(()=>{ showDialog("d2", true); }, 260);
+  setTimeout(()=>{ showDialog("d2", true); }, 960);
 });
 
 document.getElementById("d2ok").addEventListener("click", ()=>{
