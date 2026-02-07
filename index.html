@@ -527,6 +527,192 @@
     margin-top: 14px;
     background:#000;
   }
+
+/* ========== TAP404 END SCREEN ========== */
+#tap404End{
+  position:fixed; inset:0;
+  display:none;
+  z-index: 999999;
+  background: radial-gradient(ellipse at center, rgba(0,255,102,.07), rgba(0,0,0,.96) 60%);
+  padding: 18px;
+  color: #00ff66;
+}
+
+#tap404End.show{ display:flex; align-items:center; justify-content:center; }
+
+.tap404-card{
+  width: min(880px, 96vw);
+  border-radius: 26px;
+  border:1px solid rgba(0,255,102,.22);
+  background: rgba(0,0,0,.78);
+  box-shadow: 0 0 0 1px rgba(0,255,102,.08), 0 30px 110px rgba(0,0,0,.72);
+  padding: 18px 16px 14px;
+  position: relative;
+  overflow:hidden;
+}
+
+.tap404-card::before{
+  content:"";
+  position:absolute; inset:0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0,255,102,.040),
+    rgba(0,255,102,.040) 1px,
+    rgba(0,0,0,0) 3px,
+    rgba(0,0,0,0) 6px
+  );
+  opacity:.55;
+  pointer-events:none;
+  mix-blend-mode: screen;
+}
+
+.tap404-logo{
+  display:flex;
+  align-items:center;
+  gap: 14px;
+  justify-content:center;
+  margin-top: 6px;
+}
+
+.tap404-mark{
+  width: 54px; height: 54px;
+  border-radius: 16px;
+  border: 1px solid rgba(0,255,102,.26);
+  background: rgba(0,255,102,.06);
+  position: relative;
+  overflow:hidden;
+  box-shadow: inset 0 0 0 1px rgba(0,255,102,.08);
+}
+
+.tap404-scan{
+  position:absolute; left:-20%;
+  top: -25%;
+  width: 140%;
+  height: 22%;
+  background: linear-gradient(90deg, rgba(0,255,102,0), rgba(0,255,102,.55), rgba(0,255,102,0));
+  transform: rotate(18deg);
+  animation: tap404Scan 1.15s infinite linear;
+  opacity:.9;
+}
+.tap404-scan2{
+  animation-duration: 1.65s;
+  opacity:.55;
+  top: 58%;
+}
+
+@keyframes tap404Scan{
+  0%{ transform: translateX(-40%) rotate(18deg); }
+  100%{ transform: translateX(40%) rotate(18deg); }
+}
+
+.tap404-title{
+  font-size: clamp(24px, 7vw, 52px);
+  letter-spacing: .16em;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: rgba(0,255,102,.95);
+  text-shadow: 0 0 18px rgba(0,255,102,.18);
+}
+
+.tap404-sub{
+  margin-top: 6px;
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(0,255,102,.68);
+}
+
+.tap404-stamp{
+  margin: 14px auto 10px;
+  width: fit-content;
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,0,51,.38);
+  background: rgba(255,0,51,.08);
+  color: rgba(255,0,51,.95);
+  letter-spacing: .18em;
+  font-weight: 900;
+  text-transform: uppercase;
+  transform: rotate(-2deg) scale(0.92);
+  opacity: 0;
+  filter: blur(1px);
+}
+
+.tap404-stamp.hit{
+  animation: tap404StampIn .55s ease forwards, tap404Glitch 1.4s .6s infinite;
+}
+
+@keyframes tap404StampIn{
+  0%{ opacity:0; transform: translateY(10px) rotate(-6deg) scale(0.82); filter: blur(3px); }
+  60%{ opacity:1; transform: translateY(-2px) rotate(2deg) scale(1.03); filter: blur(0px); }
+  100%{ opacity:1; transform: translateY(0) rotate(-2deg) scale(1); filter: blur(0px); }
+}
+
+@keyframes tap404Glitch{
+  0%, 100%{ text-shadow: 0 0 16px rgba(255,0,51,.20); }
+  50%{ text-shadow: 2px 0 0 rgba(0,255,102,.25), -2px 0 0 rgba(255,0,51,.25); }
+}
+
+.tap404-lines{
+  margin: 12px auto 14px;
+  width: min(760px, 92vw);
+  border-radius: 18px;
+  border:1px solid rgba(0,255,102,.16);
+  background: rgba(0,0,0,.45);
+  padding: 12px;
+  text-align:left;
+  max-height: 26vh;
+  overflow:hidden;
+}
+
+.tap404-line{
+  font-size: 12px;
+  letter-spacing: .10em;
+  text-transform: uppercase;
+  color: rgba(0,255,102,.70);
+  line-height: 1.55;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tap404-line.warn{ color: rgba(255,0,51,.95); font-weight:900; }
+
+.tap404-actions{
+  display:flex;
+  gap: 10px;
+  justify-content:center;
+  margin-top: 8px;
+}
+
+.tap404-btn{
+  padding: 12px 14px;
+  border-radius: 14px;
+  border:1px solid rgba(0,255,102,.28);
+  background: rgba(0,255,102,.10);
+  color: rgba(0,255,102,.95);
+  font-weight: 900;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  cursor:pointer;
+  font-family: inherit;
+}
+
+.tap404-btn-ghost{
+  border-color: rgba(0,255,102,.18);
+  background: rgba(255,255,255,.02);
+  color: rgba(0,255,102,.72);
+}
+
+.tap404-footer{
+  margin-top: 12px;
+  text-align:center;
+  opacity:.55;
+  letter-spacing:.10em;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+  
 </style>
 </head>
 <body>
@@ -620,6 +806,38 @@
   </div>
 </div>
 
+
+  <!-- Tap404 Brand End Screen -->
+<div id="tap404End" aria-hidden="true">
+  <div class="tap404-card">
+    <div class="tap404-logo">
+      <div class="tap404-mark" aria-hidden="true">
+        <span class="tap404-scan"></span>
+        <span class="tap404-scan tap404-scan2"></span>
+      </div>
+      <div class="tap404-word">
+        <div class="tap404-title">TAP404</div>
+        <div class="tap404-sub">PRANK PROTOCOL: COMPLETE</div>
+      </div>
+    </div>
+
+    <div class="tap404-stamp" id="tap404Stamp">
+      YOU’VE BEEN TAPPED
+    </div>
+
+    <div class="tap404-lines" id="tap404Lines"></div>
+
+    <div class="tap404-actions">
+      <button class="tap404-btn" id="tap404Reset">RUN IT AGAIN</button>
+      <button class="tap404-btn tap404-btn-ghost" id="tap404Close">CLOSE</button>
+    </div>
+
+    <div class="tap404-footer">
+      <span class="tap404-small">A Jworldcreations side project</span>
+    </div>
+  </div>
+</div>
+  
 <script>
   const $ = (id)=>document.getElementById(id);
   const logEl = $("log");
@@ -899,7 +1117,77 @@
     updateGpsHud();
     camTimer = requestAnimationFrame(draw);
   }
+function showTap404End(){
+  const end = document.getElementById("tap404End");
+  const stamp = document.getElementById("tap404Stamp");
+  const linesBox = document.getElementById("tap404Lines");
+  if(!end || !stamp || !linesBox) return;
 
+  // Hide other layers if you want the clean reveal
+  try{
+    const lock = document.getElementById("lock");
+    const epic = document.getElementById("epic");
+    const wrap = document.getElementById("wrap");
+    const popLayer = document.getElementById("popLayer");
+    if(lock) lock.style.display = "none";
+    if(epic) epic.style.opacity = "0";
+    if(wrap) wrap.style.display = "none";
+    if(popLayer) popLayer.style.display = "none";
+  }catch(e){}
+
+  end.classList.add("show");
+  end.setAttribute("aria-hidden", "false");
+
+  // Stamp hit
+  stamp.classList.remove("hit");
+  void stamp.offsetWidth;
+  stamp.classList.add("hit");
+
+  // Feed lines (these sell the “wrap-up”)
+  const recap = [
+    ["SESSION CLOSED: TAP404", false],
+    ["OPERATOR TRACE: OBFUSCATED", false],
+    ["MEDIA MIRROR: COMPLETE", true],
+    ["LOCAL PURGE: SIMULATED", false], // keep it clearly prank-ish in recap
+    ["LOCKDOWN: RELEASED", false],
+    ["STATUS: YOU ARE SAFE (IT WAS A PRANK)", false],
+  ];
+
+  linesBox.innerHTML = "";
+  let i = 0;
+  const t = setInterval(()=>{
+    if(i >= recap.length){ clearInterval(t); return; }
+    const row = document.createElement("div");
+    row.className = "tap404-line" + (recap[i][1] ? " warn" : "");
+    row.textContent = recap[i][0];
+    linesBox.appendChild(row);
+    while(linesBox.childNodes.length > 9) linesBox.removeChild(linesBox.firstChild);
+    i++;
+  }, 240);
+
+  // Buttons
+  const resetBtn = document.getElementById("tap404Reset");
+  const closeBtn = document.getElementById("tap404Close");
+
+  if(resetBtn){
+    resetBtn.onclick = () => location.reload();
+  }
+  if(closeBtn){
+    closeBtn.onclick = () => {
+      end.classList.remove("show");
+      end.setAttribute("aria-hidden", "true");
+      // optionally reload to reset the prank environment
+      location.reload();
+    };
+  }
+
+  // Little sting if audio is armed
+  try{
+    if(window.audioCtx){
+      // if you used audioCtx in your file, keep it global or ignore this
+    }
+  }catch(e){}
+}
   // ---------- Main show ----------
   function startImmediate(){
     updateGpsHud();
@@ -1180,7 +1468,7 @@
     const playBtn = $("playBtn");
     const slot = $("vidSlot");
 
-    const videoId = "dQw4w9WgXcQ";
+    const videoId = "QDia3e12czc?si=3U20QfJw34Yr6hql";
     function mountVideo(autoplay){
       slot.innerHTML = `
         <iframe
