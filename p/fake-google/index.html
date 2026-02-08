@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#ffffff" />
+<title>Google</title>
+<meta name="description" content="Search..." />
+<style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  background:#fff;
+  color:#111;
+}
+.wrap{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:10vh 14px 24px;
+}
+.logo{
+  font-size:52px;
+  font-weight:900;
+  letter-spacing:-.02em;
+  line-height:1;
+  margin-bottom:18px;
+}
+.logo span:nth-child(1){color:#4285F4}
+.logo span:nth-child(2){color:#EA4335}
+.logo span:nth-child(3){color:#FBBC05}
+.logo span:nth-child(4){color:#4285F4}
+.logo span:nth-child(5){color:#34A853}
+.logo span:nth-child(6){color:#EA4335}
+
+.bar{
+  width:min(560px,92vw);
+  border:1px solid rgba(0,0,0,.15);
+  border-radius:999px;
+  padding:12px 16px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  box-shadow:0 6px 22px rgba(0,0,0,.08);
+}
+.mag{opacity:.6}
+.input{
+  flex:1;
+  font-size:16px;
+  outline:none;
+  border:none;
+  background:transparent;
+}
+.tip{
+  margin-top:12px;
+  font-size:12px;
+  color:rgba(0,0,0,.55);
+  text-align:center;
+}
+
+.results{
+  width:min(640px, 92vw);
+  margin-top:18px;
+  display:none;
+}
+.results.show{ display:block; }
+
+.resultCard{
+  border-top:1px solid rgba(0,0,0,.08);
+  padding-top:14px;
+}
+.kicker{
+  font-size:12px;
+  color:rgba(0,0,0,.55);
+  margin-bottom:10px;
+}
+.result{
+  padding:14px 14px 12px;
+  border:1px solid rgba(0,0,0,.10);
+  border-radius:14px;
+  box-shadow:0 10px 30px rgba(0,0,0,.06);
+}
+.url{
+  font-size:12px;
+  color:rgba(0,0,0,.55);
+  margin-bottom:6px;
+}
+.h1{
+  margin:0 0 8px;
+  font-size:18px;
+  font-weight:900;
+  color:#1a0dab;
+  line-height:1.15;
+}
+.snip{
+  margin:0;
+  font-size:14px;
+  color:rgba(0,0,0,.78);
+  line-height:1.45;
+}
+
+.btnRow{
+  margin-top:12px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.btn{
+  border:none;
+  border-radius:999px;
+  padding:10px 14px;
+  font-weight:900;
+  cursor:pointer;
+  font-size:14px;
+  transition: transform .08s ease, filter .12s ease;
+}
+.btn:active{ transform: scale(.98); }
+
+.primary{
+  background:linear-gradient(135deg,#3a82f7,#7c3aed);
+  color:#fff;
+  box-shadow: 0 10px 26px rgba(58,130,247,.20);
+}
+.primary:hover{ filter: brightness(1.02); }
+
+.ghost{
+  background:#fff;
+  border:1px solid rgba(0,0,0,.14);
+  color:#111;
+}
+
+.fadeIn{ animation: fadeIn .18s ease-out both; }
+@keyframes fadeIn{
+  from{ opacity:0; transform:translateY(6px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="logo" aria-label="Google">
+    <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+  </div>
+
+  <div class="bar" role="search">
+    <div class="mag">🔍</div>
+    <input class="input" id="q" autocomplete="off" placeholder="Search Google or type a URL" />
+  </div>
+
+  <div class="tip" id="tip">Tap anywhere to “search”</div>
+
+  <div class="results" id="results">
+    <div class="resultCard fadeIn">
+      <div class="kicker">Top result</div>
+
+      <div class="result">
+        <div class="url" id="fakeUrl">www.google.com › helpful › answer</div>
+        <h2 class="h1" id="title">How to fix this</h2>
+        <p class="snip" id="line">…</p>
+
+        <div class="btnRow">
+          <button class="btn primary" id="again">Search again</button>
+          <button class="btn ghost" id="menu">Back to menu</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const MAIN_PAGE_URL="https://xstajayx.github.io/message-media-space/";
+
+const q=document.getElementById("q");
+const tip=document.getElementById("tip");
+const results=document.getElementById("results");
+const line=document.getElementById("line");
+const title=document.getElementById("title");
+const fakeUrl=document.getElementById("fakeUrl");
+
+function rand(arr){ return arr[(Math.random()*arr.length)|0]; }
+
+const prompts = [
+  "how do I beat my mate's score",
+  "how to stop laughing at my own jokes",
+  "what is message media space",
+  "what's the best way to lose weight",
+  "how to become more confident",
+  "how do I stop procrastinating",
+  "how to remember names",
+  "how to be more productive",
+  "how to make money fast",
+  "how to stop overthinking",
+  "how do I get better sleep",
+  "how to stop being late",
+  "how to win an argument",
+  "how to stop dropping my phone",
+  "how to get rid of hiccups",
+  "how to cook pasta properly",
+  "how to make tea taste better",
+  "how to stay calm",
+  "how to fix my Wi-Fi",
+  "how to stop snoring",
+  "how to tell a good joke",
+  "how do I stop eating snacks",
+  "how to keep a secret",
+  "how to stop my alarm",
+  "how to clean my room fast",
+  "how to stop losing my keys",
+  "how to stop being awkward",
+  "how to make friends",
+  "how to cheer myself up",
+  "how to save money"
+];
+
+/* ✅ Every prompt has matching answers */
+const answers = {
+  "how do i beat my mate's score": [
+    "Ask them politely not to play anymore. Instant champion.",
+    "Challenge them to a rematch… then ‘forget’ the batteries.",
+    "Practise. Or… distract them with snacks. Both are strategies."
+  ],
+  "how to stop laughing at my own jokes": [
+    "Stop telling them. Problem solved.",
+    "Tell them in your head only. Less laughing, more mystery.",
+    "Replace jokes with silence. It’s oddly powerful."
+  ],
+  "what is message media space": [
+    "A tiny corner of the internet built for laughs, links, and ‘one more try’.",
+    "A mini-arcade you can send to mates… with competitive consequences.",
+    "A place where confidence goes to get tested."
+  ],
+  "what's the best way to lose weight": [
+    "Wear lighter clothes. Instant results.",
+    "Empty your pockets. Coins are heavy. Science-ish.",
+    "Stand on one foot. Less foot = less weight. (Probably.)"
+  ],
+  "how to become more confident": [
+    "Stand like a superhero for 10 seconds. If nothing else, you look important.",
+    "Make eye contact with your reflection. Assert dominance over the mirror.",
+    "Act confident until it becomes true… or until someone asks a question."
+  ],
+  "how do i stop procrastinating": [
+    "Do it now. Future-you is tired of your nonsense.",
+    "Break it into tiny steps. Then delay only the tiny steps.",
+    "Set a timer for 5 minutes. If you hate it, stop. If you don’t, keep going. Sneaky."
+  ],
+  "how to remember names": [
+    "Repeat the name immediately… like a friendly parrot.",
+    "Associate it with something obvious: ‘Dan with the hat’. ‘Sarah with the laugh’.",
+    "Admit defeat and call everyone ‘mate’. Timeless."
+  ],
+  "how to be more productive": [
+    "Write a list. Tick one thing. Celebrate like you won the Olympics.",
+    "Do the hardest thing first. Then everything else feels easy-ish.",
+    "Put your phone in another room. If you hear it cry, ignore it."
+  ],
+  "how to make money fast": [
+    "Sell old stuff. It’s basically money you forgot you had.",
+    "Start a ‘get rich quick’ course. (That’s the real trick.)",
+    "Stop buying snacks. You won’t be rich, but you’ll be shocked."
+  ],
+  "how to stop overthinking": [
+    "If it won’t matter in 5 years, don’t give it 5 hours.",
+    "Write it down. Thoughts love paper. Then stop feeding them.",
+    "Treat your brain like a browser: close the extra tabs."
+  ],
+  "how do i get better sleep": [
+    "Stop scrolling. Your pillow misses you.",
+    "Make the room cool and dark. Like a cave, but with blankets.",
+    "No caffeine late. Your 2am thoughts are already loud enough."
+  ],
+  "how to stop being late": [
+    "Leave earlier. Wild concept, I know.",
+    "Set your clocks 10 minutes fast… then forget and still be late. Classic.",
+    "Tell yourself the event starts sooner. Lie to yourself for success."
+  ],
+  "how to win an argument": [
+    "Bring facts. Or snacks. One of them usually works.",
+    "If you’re wrong, apologise. It’s the ultimate plot twist.",
+    "Ask a question instead of shouting. Confuses everyone into peace."
+  ],
+  "how to stop dropping my phone": [
+    "Two hands. It’s a revolutionary grip upgrade.",
+    "Get a case. Your phone deserves armour.",
+    "Stop juggling it while doing 12 other things. Your phone isn’t a circus act."
+  ],
+  "how to get rid of hiccups": [
+    "Hold your breath. Your hiccups hate being ignored.",
+    "Sip water slowly. Like you’re defusing a bomb.",
+    "Get startled… or just watch your bank balance."
+  ],
+  "how to cook pasta properly": [
+    "Boil water first. Pasta isn’t a patient creature.",
+    "Salt the water like the sea. Not like a polite puddle.",
+    "Taste it. If it fights back, cook it longer."
+  ],
+  "how to make tea taste better": [
+    "Brew it longer. Tea needs commitment.",
+    "Use fresh water. Kettle soup is not the vibe.",
+    "Milk after. Unless you enjoy living dangerously."
+  ],
+  "how to stay calm": [
+    "Breathe in 4, out 6. Your brain likes maths when it panics.",
+    "Relax your shoulders. You’ve been wearing them as earrings.",
+    "Name 5 things you can see. It drags you back to Earth."
+  ],
+  "how to fix my wi-fi": [
+    "Turn the router off and on. The ancient ritual.",
+    "Move closer. Wi-Fi is shy.",
+    "Check if it’s plugged in. The number one betrayal."
+  ],
+  "how to stop snoring": [
+    "Sleep on your side. Your snores lose their stage.",
+    "Try nasal strips. Give your nose some scaffolding.",
+    "If all else fails: apologise to everyone you love."
+  ],
+  "how to tell a good joke": [
+    "Keep it short. Long jokes are just speeches with a surprise.",
+    "Timing matters. Pause before the punchline like you mean it.",
+    "If nobody laughs, say ‘tough crowd’ and walk away like a legend."
+  ],
+  "how do i stop eating snacks": [
+    "Don’t buy them. You can’t eat what you don’t own.",
+    "Drink water first. Sometimes you’re thirsty, not snacky.",
+    "Put snacks in a hard-to-reach place. Like the top shelf of adulthood."
+  ],
+  "how to keep a secret": [
+    "Don’t tell anyone. Especially your best mate. Especially ‘just one person’.",
+    "If you must tell someone, tell a dog. They’re solid.",
+    "Write it down and hide it… then forget where you hid it. Perfect."
+  ],
+  "how to stop my alarm": [
+    "Set it later. That’s the peaceful option.",
+    "Put the alarm across the room. You can’t snooze what you can’t reach.",
+    "Go to bed earlier. Yes, I hate that answer too."
+  ],
+  "how to clean my room fast": [
+    "Start with the floor. Floors are dramatic and change everything.",
+    "Use the ‘basket method’: throw clutter in a basket, deal with it later.",
+    "Put music on. Cleaning without music is just chores in HD."
+  ],
+  "how to stop losing my keys": [
+    "Give them one home. Keys love routine.",
+    "Add a loud keyring. Jingle = locate.",
+    "Hook by the door. If the keys move, they owe rent."
+  ],
+  "how to stop being awkward": [
+    "Smile and ask questions. People love talking about themselves.",
+    "If you say something weird, own it. Confidence is a magic eraser.",
+    "Remember: everyone is awkward. Some just hide it better."
+  ],
+  "how to make friends": [
+    "Show up regularly. Familiarity is friendship’s cheat code.",
+    "Ask someone to do something simple. Coffee, a walk, a game.",
+    "Be kind. It’s weirdly effective and annoyingly simple."
+  ],
+  "how to cheer myself up": [
+    "Move your body for 5 minutes. Your mood hates exercise, so it changes.",
+    "Do one tiny win. Make your bed. Then admire your empire.",
+    "Call someone who makes you laugh. Or watch something that always works."
+  ],
+  "how to save money": [
+    "Wait 24 hours before buying. Your impulse will get bored and leave.",
+    "Make a budget. Then follow it… loosely… with passion.",
+    "Cancel one subscription. You probably pay for ‘something+’ twice."
+  ]
+};
+
+/* fallback (in case you add prompts later) */
+const fallback = [
+  "Try turning it off and on again. Works for some people too.",
+  "Have you tried asking nicely? It’s underrated.",
+  "If at first you don’t succeed… lower your expectations.",
+  "Make a plan. Then follow it dramatically.",
+  "Write it down. Then lose the paper. That’s tradition."
+];
+
+const addOns = [
+  " (Results may vary.)",
+  " (No refunds. It was free.)",
+  " (Professionals hate this one trick.)"
+];
+
+let typed=false;
+let currentQuery="";
+
+function typeText(text){
+  currentQuery=text;
+  q.value="";
+  results.classList.remove("show");
+  tip.textContent="Searching…";
+  typed=false;
+
+  let i=0;
+  const t=setInterval(()=>{
+    q.value += text[i++] || "";
+    if(i>text.length){
+      clearInterval(t);
+      typed=true;
+      setTimeout(showResults, 650);
+    }
+  }, 38);
+}
+
+function showResults(){
+  const key=currentQuery.toLowerCase().trim();
+  title.textContent="How to fix this";
+  fakeUrl.textContent="www.google.com › helpful › answer";
+
+  const pool = answers[key] || [rand(fallback) + rand(addOns)];
+  line.textContent = rand(pool);
+
+  results.classList.add("show");
+  tip.textContent="Tap Search again or go back to menu";
+}
+
+function newSearch(){
+  typeText(rand(prompts));
+}
+
+document.addEventListener("pointerdown", (e)=>{
+  const tag = (e.target && e.target.tagName) ? e.target.tagName.toLowerCase() : "";
+  if(tag === "button") return;
+
+  if(!typed){
+    newSearch();
+  }else{
+    showResults();
+  }
+},{passive:true});
+
+document.getElementById("again").addEventListener("click", newSearch);
+document.getElementById("menu").addEventListener("click", ()=> location.href=MAIN_PAGE_URL);
+
+setTimeout(newSearch, 650);
+</script>
+</body>
+</html>
