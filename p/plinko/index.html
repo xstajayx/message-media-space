@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0f0f10" />
+<title>Plinko Drop</title>
+<meta name="description" content="Plinko Drop — beat my score!" />
+
+<style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  background:
+    radial-gradient(900px 600px at 60% -10%, rgba(58,130,247,.16), transparent 55%),
+    radial-gradient(900px 650px at 10% 110%, rgba(124,58,237,.12), transparent 55%),
+    #0f0f10;
+  color:#fff;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  padding:10px 10px calc(10px + env(safe-area-inset-bottom));
+}
+
+.card{
+  width:min(520px,95vw);
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:20px;
+  padding:12px;
+  box-shadow:0 18px 70px rgba(0,0,0,.55);
+}
+
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.title{font-weight:950;font-size:18px;margin:0;line-height:1.05}
+.sub{margin:4px 0 0;color:rgba(255,255,255,.72);font-size:12px;line-height:1.25}
+.pill{
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.06);
+  padding:6px 9px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:900;
+  white-space:nowrap;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  margin:10px 0 8px;
+}
+.stat{
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(0,0,0,.25);
+  border-radius:14px;
+  padding:8px 8px;
+  text-align:center;
+}
+.k{font-size:11px;color:rgba(255,255,255,.6);line-height:1}
+.v{font-size:18px;font-weight:950;line-height:1.1}
+
+.canvasWrap{
+  margin-top:8px;
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.10);
+  background:#000;
+  box-shadow:0 18px 60px rgba(0,0,0,.55);
+}
+
+/* Keep the game in the sweet spot */
+canvas{
+  width:100%;
+  height:auto;
+  display:block;
+  touch-action:none;
+}
+
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.btn{
+  flex:1;
+  min-width:140px;
+  border:none;
+  border-radius:12px;
+  padding:11px 10px;
+  font-weight:950;
+  cursor:pointer;
+  font-size:14px;
+}
+.primary{background:linear-gradient(135deg,#3a82f7,#7c3aed);color:#fff}
+.ghost{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.10)}
+.btn:disabled{opacity:.55;cursor:not-allowed}
+
+.toast{
+  position:fixed;
+  left:50%;
+  transform:translateX(-50%);
+  bottom: calc(10px + env(safe-area-inset-bottom));
+  background: rgba(0,0,0,.78);
+  border: 1px solid rgba(255,255,255,.12);
+  color:#fff;
+  padding:8px 10px;
+  border-radius: 12px;
+  font-size:12px;
+  opacity:0;
+  pointer-events:none;
+  transition: opacity .18s ease;
+  max-width: min(520px, 92vw);
+  text-align:center;
+  z-index:50;
+}
+.toast.show{opacity:1}
+</style>
+</head>
+
+<body>
+<div class="card">
+  <div class="top">
+    <div>
+      <h1 class="title">Plinko Drop</h1>
+      <div class="sub">Drop 10 balls. Hit the big slots. Share your score.</div>
+    </div>
+    <div class="pill" id="statusPill">Ready</div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="k">Score</div><div class="v" id="scoreV">0</div></div>
+    <div class="stat"><div class="k">Balls</div><div class="v" id="ballsV">10</div></div>
+    <div class="stat"><div class="k">Best</div><div class="v" id="bestV">0</div></div>
+  </div>
+
+  <div class="canvasWrap">
+    <!-- Reduced height so the whole page fits nicer on mobile -->
+    <canvas id="c" width="420" height="560" aria-label="Plinko board"></canvas>
+  </div>
+
+  <div class="row">
+    <button class="btn primary" id="startBtn">Start</button>
+    <button class="btn ghost" id="dropBtn" disabled>Drop</button>
+  </div>
+
+  <div class="row">
+    <button class="btn ghost" id="shareBtn" disabled>Share score</button>
+    <button class="btn ghost" id="menuBtn">Back to menu</button>
+  </div>
+
+  <div class="row">
+    <button class="btn ghost" id="resetBestBtn">Reset best</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* =============================
+   Funnel / sharing
+============================= */
+const MAIN_PAGE_URL = "https://xstajayx.github.io/message-media-space/";
+const GAME_KEY = "plinko";
+
+/* =============================
+   DOM
+============================= */
+const canvas = document.getElementById("c");
+const ctx = canvas.getContext("2d", { alpha:false });
+
+const scoreV = document.getElementById("scoreV");
+const ballsV = document.getElementById("ballsV");
+const bestV  = document.getElementById("bestV");
+const statusPill = document.getElementById("statusPill");
+
+const startBtn = document.getElementById("startBtn");
+const dropBtn  = document.getElementById("dropBtn");
+const shareBtn = document.getElementById("shareBtn");
+const menuBtn  = document.getElementById("menuBtn");
+const resetBestBtn = document.getElementById("resetBestBtn");
+
+const toast = document.getElementById("toast");
+function showToast(msg, ms=1200){
+  toast.textContent = msg;
+  toast.classList.add("show");
+  clearTimeout(showToast._t);
+  showToast._t = setTimeout(()=>toast.classList.remove("show"), ms);
+}
+
+/* =============================
+   Storage
+============================= */
+let best = Number(localStorage.getItem("best_"+GAME_KEY) || 0);
+bestV.textContent = best;
+
+/* =============================
+   Game config
+============================= */
+const W = canvas.width, H = canvas.height;
+const GRAV = 980;
+const BOUNCE = 0.42;
+const AIR = 0.995;
+
+const PEG_R = 6;
+const BALL_R = 8;
+
+const BALLS_PER_ROUND = 10;
+
+const SLOT_COUNT = 7;
+const slotValues = [10, 25, 50, 100, 50, 25, 10];
+const slotW = W / SLOT_COUNT;
+
+/* Adjusted because canvas height is smaller now */
+const floorY = H - 58;
+
+/* Peg layout */
+const pegs = [];
+(function buildPegs(){
+  pegs.length = 0;
+  const top = 95;
+  const rows = 8;
+  const xSpacing = 52;
+  const ySpacing = 44;
+
+  for(let r=0;r<rows;r++){
+    const y = top + r*ySpacing;
+    const cols = Math.floor((W - 40) / xSpacing);
+    const offset = (r % 2 === 0) ? xSpacing/2 : 0;
+    for(let c=0;c<cols;c++){
+      const x = 20 + offset + c*xSpacing;
+      if(x < 18 || x > W-18) continue;
+      pegs.push({x, y});
+    }
+  }
+})();
+
+/* ✅ Rails now flare OUT at the bottom so end slots are reachable */
+const rails = [
+  // left rail (narrow near top, wider near bottom)
+  { x1: 70, y1: 78, x2: 28, y2: floorY-6 },
+  // right rail (narrow near top, wider near bottom)
+  { x1: W-70, y1: 78, x2: W-28, y2: floorY-6 }
+];
+
+/* =============================
+   State
+============================= */
+let running = false;
+let finished = false;
+let score = 0;
+let ballsLeft = BALLS_PER_ROUND;
+let balls = [];
+let lastT = performance.now();
+let raf = 0;
+
+/* =============================
+   Physics helpers
+============================= */
+function clamp(v,min,max){ return Math.max(min, Math.min(max, v)); }
+
+function reflect(ball, nx, ny){
+  const dot = ball.vx*nx + ball.vy*ny;
+  ball.vx = ball.vx - 2*dot*nx;
+  ball.vy = ball.vy - 2*dot*ny;
+}
+
+function collideCircle(ball, cx, cy, r){
+  const dx = ball.x - cx;
+  const dy = ball.y - cy;
+  const dist = Math.hypot(dx, dy);
+  const minDist = ball.r + r;
+  if(dist >= minDist) return false;
+
+  const nx = dx / (dist || 1);
+  const ny = dy / (dist || 1);
+  const push = (minDist - dist) + 0.5;
+  ball.x += nx * push;
+  ball.y += ny * push;
+
+  reflect(ball, nx, ny);
+  ball.vx *= (1 - (1-BOUNCE)*0.2);
+  ball.vy *= BOUNCE;
+  return true;
+}
+
+function collideLine(ball, x1,y1,x2,y2){
+  const vx = x2-x1, vy = y2-y1;
+  const wx = ball.x-x1, wy = ball.y-y1;
+  const len2 = vx*vx + vy*vy;
+  let t = len2 ? (wx*vx + wy*vy)/len2 : 0;
+  t = clamp(t, 0, 1);
+  const px = x1 + t*vx, py = y1 + t*vy;
+
+  const dx = ball.x - px;
+  const dy = ball.y - py;
+  const dist = Math.hypot(dx, dy);
+  if(dist >= ball.r+2) return false;
+
+  const nx = dx / (dist || 1);
+  const ny = dy / (dist || 1);
+  ball.x += nx * ((ball.r+2) - dist);
+  ball.y += ny * ((ball.r+2) - dist);
+  reflect(ball, nx, ny);
+  ball.vx *= 0.7;
+  ball.vy *= 0.85;
+  return true;
+}
+
+/* =============================
+   Draw
+============================= */
+function draw(){
+  const g = ctx.createLinearGradient(0,0,0,H);
+  g.addColorStop(0, "#070812");
+  g.addColorStop(1, "#020205");
+  ctx.fillStyle = g;
+  ctx.fillRect(0,0,W,H);
+
+  // rails
+  ctx.save();
+  ctx.lineWidth = 6;
+  ctx.strokeStyle = "rgba(124,58,237,0.35)";
+  ctx.shadowColor = "rgba(124,58,237,0.45)";
+  ctx.shadowBlur = 18;
+  for(const r of rails){
+    ctx.beginPath();
+    ctx.moveTo(r.x1,r.y1);
+    ctx.lineTo(r.x2,r.y2);
+    ctx.stroke();
+  }
+  ctx.restore();
+
+  // pegs
+  ctx.save();
+  ctx.fillStyle = "rgba(255,255,255,0.25)";
+  for(const p of pegs){
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, PEG_R, 0, Math.PI*2);
+    ctx.fill();
+  }
+  ctx.restore();
+
+  // slots background
+  ctx.save();
+  ctx.fillStyle = "rgba(0,0,0,0.55)";
+  ctx.fillRect(0, floorY, W, H-floorY);
+
+  // slot dividers
+  ctx.strokeStyle = "rgba(255,255,255,0.10)";
+  ctx.lineWidth = 2;
+  for(let i=1;i<SLOT_COUNT;i++){
+    ctx.beginPath();
+    ctx.moveTo(i*slotW, floorY);
+    ctx.lineTo(i*slotW, H);
+    ctx.stroke();
+  }
+
+  // values
+  ctx.font = "13px ui-monospace, Menlo, Monaco, Consolas, 'Courier New', monospace";
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  for(let i=0;i<SLOT_COUNT;i++){
+    const v = slotValues[i];
+    const cx = i*slotW + slotW/2;
+    ctx.fillStyle = (v === 100) ? "rgba(52,199,89,0.85)" : "rgba(255,255,255,0.75)";
+    ctx.fillText(String(v), cx, floorY + 28);
+  }
+  ctx.restore();
+
+  // balls
+  for(const b of balls){
+    ctx.save();
+    ctx.shadowColor = "rgba(58,130,247,0.85)";
+    ctx.shadowBlur = 18;
+    ctx.fillStyle = "#fff";
+    ctx.beginPath();
+    ctx.arc(b.x, b.y, b.r, 0, Math.PI*2);
+    ctx.fill();
+    ctx.restore();
+  }
+
+  // drop hint
+  ctx.save();
+  ctx.fillStyle = "rgba(255,255,255,0.12)";
+  ctx.beginPath();
+  ctx.arc(W/2, 70, 16, 0, Math.PI*2);
+  ctx.fill();
+  ctx.fillStyle = "rgba(255,255,255,0.65)";
+  ctx.font = "11px ui-monospace, Menlo, Monaco, Consolas, 'Courier New', monospace";
+  ctx.textAlign = "center";
+  ctx.fillText("DROP", W/2, 70);
+  ctx.restore();
+}
+
+/* =============================
+   Loop
+============================= */
+function step(t){
+  if(!running) return;
+  const dt = Math.min(0.02, (t - lastT) / 1000);
+  lastT = t;
+
+  for(const b of balls){
+    b.vy += GRAV * dt;
+    b.x  += b.vx * dt;
+    b.y  += b.vy * dt;
+
+    b.vx *= AIR;
+    b.vy *= AIR;
+
+    // bounds
+    if(b.x < BALL_R+6){ b.x = BALL_R+6; b.vx *= -0.6; }
+    if(b.x > W-(BALL_R+6)){ b.x = W-(BALL_R+6); b.vx *= -0.6; }
+
+    for(const r of rails) collideLine(b, r.x1,r.y1,r.x2,r.y2);
+
+    for(const p of pegs){
+      const dx = b.x - p.x, dy = b.y - p.y;
+      if(dx*dx + dy*dy < (BALL_R + PEG_R + 6) ** 2){
+        collideCircle(b, p.x, p.y, PEG_R);
+      }
+    }
+
+    if(b.y >= floorY + 6){
+      b.done = true;
+      const idx = clamp(Math.floor(b.x / slotW), 0, SLOT_COUNT-1);
+      b.points = slotValues[idx];
+    }
+  }
+
+  const finishedBalls = balls.filter(b => b.done);
+  if(finishedBalls.length){
+    for(const b of finishedBalls){
+      score += b.points;
+      scoreV.textContent = String(score);
+      showToast("+" + b.points);
+    }
+    balls = balls.filter(b => !b.done);
+  }
+
+  if(balls.length === 0 && ballsLeft === 0){
+    endRound();
+    return;
+  }
+
+  draw();
+  raf = requestAnimationFrame(step);
+}
+
+/* =============================
+   Controls
+============================= */
+function setReady(){
+  running = false;
+  finished = false;
+  score = 0;
+  ballsLeft = BALLS_PER_ROUND;
+  balls = [];
+  scoreV.textContent = "0";
+  ballsV.textContent = String(ballsLeft);
+  statusPill.textContent = "Ready";
+  dropBtn.disabled = true;
+  shareBtn.disabled = true;
+  cancelAnimationFrame(raf);
+  draw();
+}
+
+function startRound(){
+  if(running) return;
+  running = true;
+  finished = false;
+  score = 0;
+  ballsLeft = BALLS_PER_ROUND;
+  balls = [];
+  scoreV.textContent = "0";
+  ballsV.textContent = String(ballsLeft);
+  statusPill.textContent = "GO!";
+  dropBtn.disabled = false;
+  shareBtn.disabled = true;
+  lastT = performance.now();
+  draw();
+  raf = requestAnimationFrame(step);
+}
+
+function dropBall(){
+  if(!running) return;
+  if(ballsLeft <= 0) return;
+
+  ballsLeft--;
+  ballsV.textContent = String(ballsLeft);
+
+  balls.push({
+    x: W/2 + (Math.random()*10 - 5),
+    y: 88,
+    vx: (Math.random()*140 - 70),
+    vy: 0,
+    r: BALL_R,
+    done:false
+  });
+}
+
+function endRound(){
+  running = false;
+  finished = true;
+  statusPill.textContent = "Done";
+  dropBtn.disabled = true;
+  shareBtn.disabled = false;
+  cancelAnimationFrame(raf);
+
+  if(score > best){
+    best = score;
+    localStorage.setItem("best_"+GAME_KEY, String(best));
+    bestV.textContent = String(best);
+    showToast("New best! 🔥 " + best);
+  }else{
+    showToast("Score: " + score);
+  }
+  draw();
+}
+
+async function shareScore(){
+  const u = new URL(MAIN_PAGE_URL);
+  u.searchParams.set("game", GAME_KEY);
+  u.searchParams.set("score", String(score));
+
+  const text = `Try this! My score is ${score} 🎯`;
+  const data = { title:"Plinko Drop", text, url:u.toString() };
+
+  if(navigator.share){
+    try{ await navigator.share(data); return; }catch(e){}
+  }
+  try{
+    await navigator.clipboard.writeText(`${text} ${u.toString()}`);
+    showToast("Copied share text + link ✅");
+  }catch(e){
+    prompt("Copy this:", `${text} ${u.toString()}`);
+  }
+}
+
+/* Buttons */
+startBtn.addEventListener("click", startRound);
+dropBtn.addEventListener("click", dropBall);
+shareBtn.addEventListener("click", shareScore);
+menuBtn.addEventListener("click", ()=> location.href = MAIN_PAGE_URL);
+
+resetBestBtn.addEventListener("click", ()=>{
+  localStorage.removeItem("best_"+GAME_KEY);
+  best = 0;
+  bestV.textContent = "0";
+  showToast("Best reset");
+});
+
+/* Tap board to drop (never restarts) */
+canvas.addEventListener("pointerdown", ()=>{
+  if(running) dropBall();
+},{passive:true});
+
+/* init */
+setReady();
+</script>
+</body>
+</html>
