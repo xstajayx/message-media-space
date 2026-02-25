@@ -181,7 +181,10 @@
       </h3>
 
       <div class="trend" id="trendBox" style="display:none;">
-        <div style="font-size:12px; color:rgba(255,255,255,.6); text-transform:uppercase; margin:0 0 6px;">Trending scores</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin:0 0 6px;">
+          <div style="font-size:12px; color:rgba(255,255,255,.6); text-transform:uppercase;">Trending scores</div>
+          <button class="btn2" id="clearTrendBtn" style="padding:6px 9px;font-size:11px;">Clear</button>
+        </div>
         <div id="trendList"></div>
       </div>
     </div>
@@ -276,6 +279,35 @@
       <div>
         <button class="btn2" onclick="location.href='https://xstajayx.github.io/message-media-space/p/frozen-screen/'">Open</button>
         <button class="btn" onclick="shareLink('https://xstajayx.github.io/message-media-space/p/frozen-screen/','Prank')">Share</button>
+      </div>
+    </div>
+
+
+    <div class="item">
+      <div class="left">
+        <div class="ico">🔋</div>
+        <div class="label">
+          <b>Fake Battery Drain</b>
+          <span>Battery falls fast… then gotcha 😈</span>
+        </div>
+      </div>
+      <div>
+        <button class="btn2" onclick="location.href='https://xstajayx.github.io/message-media-space/p/fake-battery-drain/'">Open</button>
+        <button class="btn" onclick="shareLink('https://xstajayx.github.io/message-media-space/p/fake-battery-drain/','Prank')">Share</button>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="left">
+        <div class="ico">🛠️</div>
+        <div class="label">
+          <b>System Update Required</b>
+          <span>Downloading… installing… just kidding</span>
+        </div>
+      </div>
+      <div>
+        <button class="btn2" onclick="location.href='https://xstajayx.github.io/message-media-space/p/system-update-required/'">Open</button>
+        <button class="btn" onclick="shareLink('https://xstajayx.github.io/message-media-space/p/system-update-required/','Prank')">Share</button>
       </div>
     </div>
   </div>
@@ -417,6 +449,49 @@
       </div>
     </div>
 
+
+    <div class="item">
+      <div class="left">
+        <div class="ico">🎛️</div>
+        <div class="label">
+          <b>Hold Steady</b>
+          <span>Stop the timer as close to the target as you can.</span>
+        </div>
+      </div>
+      <div>
+        <button class="btn2" onclick="location.href='https://xstajayx.github.io/message-media-space/p/hold-steady/'">Open</button>
+        <button class="btn" onclick="shareLink('https://xstajayx.github.io/message-media-space/p/hold-steady/','Game')">Share</button>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="left">
+        <div class="ico">↔️</div>
+        <div class="label">
+          <b>Swipe Dodge</b>
+          <span>React fast: swipe the right direction to keep your streak.</span>
+        </div>
+      </div>
+      <div>
+        <button class="btn2" onclick="location.href='https://xstajayx.github.io/message-media-space/p/swipe-dodge/'">Open</button>
+        <button class="btn" onclick="shareLink('https://xstajayx.github.io/message-media-space/p/swipe-dodge/','Game')">Share</button>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="left">
+        <div class="ico">🎱</div>
+        <div class="label">
+          <b>English Pool</b>
+          <span>Pot balls, avoid scratches, chase a high score.</span>
+        </div>
+      </div>
+      <div>
+        <button class="btn2" onclick="location.href='https://xstajayx.github.io/message-media-space/p/english-pool/'">Open</button>
+        <button class="btn" onclick="shareLink('https://xstajayx.github.io/message-media-space/p/english-pool/','Game')">Share</button>
+      </div>
+    </div>
+
   </div>
 
   <div class="tiny">
@@ -432,20 +507,31 @@
 <script>
 const MAIN_PAGE_URL = "https://xstajayx.github.io/message-media-space/";
 
+function cleanUrl(url){
+  try{
+    const u = new URL(url, location.origin);
+    u.hash = "";
+    return u.toString();
+  }catch(e){
+    return url;
+  }
+}
+
 async function shareLink(url, kind){
+  const safeUrl = cleanUrl(url);
   const data = {
     title: "Message Media Space",
     text: `${kind} 😈`,
-    url
+    url: safeUrl
   };
   if(navigator.share){
     try{ await navigator.share(data); return; }catch(e){}
   }
   try{
-    await navigator.clipboard.writeText(url);
+    await navigator.clipboard.writeText(safeUrl);
     alert("Link copied ✅");
   }catch(e){
-    prompt("Copy link:", url);
+    prompt("Copy link:", safeUrl);
   }
 }
 
@@ -490,11 +576,14 @@ function renderTrending(){
     "reaction-snap":"Reaction Snap",
     "memory-flash":"Memory Flash",
     "whack-rush":"Whack Rush",
-    "plinko":"Plinko"
+    "plinko":"Plinko",
+    "hold-steady":"Hold Steady",
+    "swipe-dodge":"Swipe Dodge",
+    "english-pool":"English Pool"
   };
 
   list.innerHTML = "";
-  for(const e of entries.slice(0,4)){
+  for(const e of entries.slice(0,5)){
     const row = document.createElement("div");
     row.className = "trendItem";
     row.innerHTML = `
@@ -525,6 +614,11 @@ function setFilter(mode){
 document.getElementById("fAll").addEventListener("click", ()=>setFilter("all"));
 document.getElementById("fPranks").addEventListener("click", ()=>setFilter("pranks"));
 document.getElementById("fGames").addEventListener("click", ()=>setFilter("games"));
+
+document.getElementById("clearTrendBtn").addEventListener("click", ()=>{
+  localStorage.removeItem("mms_scores");
+  renderTrending();
+});
 
 saveScoreFromParams();
 renderTrending();
