@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0f0f10" />
+<title>System Update Required</title>
+<style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}body{margin:0;background:#0f0f10;color:#fff;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;display:flex;justify-content:center;padding:12px}.card{width:min(520px,95vw);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:14px}.step{padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);margin-top:8px}.active{border-color:rgba(58,130,247,.6)}.done{opacity:.65}.reveal{display:none;margin-top:10px;font-weight:900}.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.btn{flex:1;min-width:140px;border:none;border-radius:12px;padding:11px 10px;font-weight:900}.primary{background:linear-gradient(135deg,#3a82f7,#7c3aed);color:#fff}.ghost{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.1)}
+</style>
+</head>
+<body>
+<div class="card">
+  <h1 style="margin:0;font-size:20px;">System Update Required</h1>
+  <p style="margin:7px 0 0;color:rgba(255,255,255,.72)">For fun only — this is a fake update simulation, and nothing is installed.</p>
+  <div id="steps"></div>
+  <div id="reveal" class="reveal">😈 Update complete... just kidding. You got pranked.</div>
+  <div id="custom" style="margin-top:6px;color:rgba(255,255,255,.75)"></div>
+  <div class="row">
+    <button class="btn ghost" id="shareBtn">Share</button>
+    <button class="btn primary" id="homeBtn">Back to menu</button>
+  </div>
+</div>
+<script>
+const MAIN_PAGE_URL = "https://xstajayx.github.io/message-media-space/";
+const PAGE_URL = "https://xstajayx.github.io/message-media-space/p/system-update-required/";
+const params = new URL(location.href).searchParams; const msg = params.get("msg");
+const labels = ["Downloading update package...","Installing security patches...","Optimizing apps...","Restarting services..."];
+const box = document.getElementById("steps");
+labels.forEach(t=>{const d=document.createElement("div");d.className="step";d.textContent=t;box.appendChild(d);});
+const nodes=[...document.querySelectorAll('.step')]; let i=0;
+(function run(){ if(i>0){nodes[i-1].classList.remove('active');nodes[i-1].classList.add('done');} if(i<nodes.length){nodes[i].classList.add('active');i++;return setTimeout(run,1100);} document.getElementById('reveal').style.display='block'; if(msg) document.getElementById('custom').textContent=msg; })();
+async function doShare(){const shareUrl = msg ? PAGE_URL + "?msg=" + encodeURIComponent(msg) : PAGE_URL; const data={title:"System Update Required",text:"Fake update prank 😈",url:shareUrl}; if(navigator.share){try{await navigator.share(data);return;}catch(e){}} try{await navigator.clipboard.writeText(shareUrl);alert("Link copied ✅");}catch(e){prompt("Copy link:",shareUrl);}}
+document.getElementById("shareBtn").addEventListener("click",doShare);
+document.getElementById("homeBtn").addEventListener("click",()=>location.href=MAIN_PAGE_URL);
+</script>
+</body>
+</html>
