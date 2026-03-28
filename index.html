@@ -335,6 +335,20 @@
   <div class="section" id="secGames">
     <h3>Mini games</h3>
 
+
+    <div class="item">
+      <div class="left">
+        <div class="ico">🐣</div>
+        <div class="label">
+          <b>Easter Heist</b>
+          <span>Outdoor detective trail with riddles, GPS check-ins, and proof photos</span>
+        </div>
+      </div>
+      <div>
+        <button class="btn2" onclick="location.href='./easter-heist/'">Open</button>
+        <button class="btn" onclick="shareLink(resolveShareUrl('./easter-heist/'),'Mini Game')">Share</button>
+      </div>
+    </div>
     <div class="item">
       <div class="left">
         <div class="ico">👆</div>
@@ -506,6 +520,14 @@
 
 <script>
 const MAIN_PAGE_URL = "https://xstajayx.github.io/message-media-space/";
+
+function resolveShareUrl(path){
+  try{
+    return new URL(path, location.href).toString();
+  }catch(e){
+    return path;
+  }
+}
 
 function cleanUrl(url){
   try{
