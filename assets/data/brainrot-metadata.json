@@ -1,10 +1,10 @@
 {
   "dataset": "Steal a Brainrot character list",
   "lastUpdated": "2026-04-01",
-  "sourceNotes": "Primary list pulled from community index. Treat rarity/spawn details as potentially unstable with game updates.",
+  "sourceNotes": "Community-sourced data from public fan references. Game updates are frequent; unresolved fields are intentionally left Unknown/null until verified.",
   "primarySources": [
     "https://stealabrainrot.codes/brainrots",
-    "https://stealabrainrot.fandom.com/wiki/Brainrots_by_rarity"
+    "https://stealabrainrot.fandom.com/wiki/Brainrots"
   ],
-  "maintainerNotes": "Update assets/data/brainrots.json entries directly. Leave unknown/uncertain fields as null, Unknown, or Needs verification instead of guessing."
+  "maintainerNotes": "Update assets/data/brainrots.json entries directly. Leave uncertain fields as null/Unknown/Needs verification instead of guessing official values. RoadWeight is a relative weight value, not a guaranteed percentage spawn chance."
 }

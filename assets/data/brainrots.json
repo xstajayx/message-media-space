@@ -5,16 +5,18 @@
     "aliases": [],
     "rarity": "Unknown",
     "summary": "",
-    "spawnMethod": "Unknown",
+    "spawnMethod": "Admin",
     "roadWeight": null,
-    "notes": "Listed as Admin class in source; stored as Unknown primary rarity with admin tag.",
+    "notes": "Listed as Admin class in source; stored as Unknown primary rarity with admin tag. Spawn method inferred from character name; confirm on latest game update.",
     "sourceTags": [
       "Community List",
       "Manual Verification",
-      "Admin"
+      "Admin",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -29,10 +31,12 @@
     "notes": "Listed as Secret in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -47,10 +51,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -65,10 +71,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -83,10 +91,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -101,10 +111,12 @@
     "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -119,10 +131,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -137,10 +151,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -155,10 +171,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -174,10 +192,12 @@
     "sourceTags": [
       "Community List",
       "Manual Verification",
-      "Exclusive"
+      "Exclusive",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -192,10 +212,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -211,10 +233,12 @@
     "sourceTags": [
       "Community List",
       "Manual Verification",
-      "Exclusive"
+      "Exclusive",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -229,10 +253,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -247,10 +273,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -265,10 +293,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -278,15 +308,17 @@
     "aliases": [],
     "rarity": "Brainrot God",
     "summary": "",
-    "spawnMethod": "Unknown",
+    "spawnMethod": "Lucky Block",
     "roadWeight": null,
-    "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
+    "notes": "Listed as Brainrot God in community source; verify against in-game updates. Spawn method inferred from character name; confirm on latest game update.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -301,10 +333,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -319,10 +353,12 @@
     "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -337,10 +373,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -355,10 +393,12 @@
     "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -373,10 +413,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -391,10 +433,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -409,10 +453,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -427,10 +473,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -445,10 +493,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -463,10 +513,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -481,10 +533,12 @@
     "notes": "Listed as Secret in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -499,10 +553,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -517,10 +573,12 @@
     "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -535,10 +593,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -553,10 +613,12 @@
     "notes": "Listed as Secret in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -572,10 +634,12 @@
     "sourceTags": [
       "Community List",
       "Manual Verification",
-      "Exclusive"
+      "Exclusive",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -590,10 +654,12 @@
     "notes": "Listed as Secret in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -609,10 +675,12 @@
     "sourceTags": [
       "Community List",
       "Manual Verification",
-      "Exclusive"
+      "Exclusive",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -627,10 +695,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -645,10 +715,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -663,10 +735,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -681,10 +755,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -699,10 +775,12 @@
     "notes": "Listed as Secret in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -718,10 +796,12 @@
     "sourceTags": [
       "Community List",
       "Manual Verification",
-      "Exclusive"
+      "Exclusive",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -736,10 +816,12 @@
     "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -754,10 +836,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -772,10 +856,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -790,10 +876,12 @@
     "notes": "Listed as Secret in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -808,10 +896,12 @@
     "notes": "Listed as Secret in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -827,10 +917,12 @@
     "sourceTags": [
       "Community List",
       "Manual Verification",
-      "Exclusive"
+      "Exclusive",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -845,10 +937,12 @@
     "notes": "Listed as Secret in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -863,10 +957,12 @@
     "notes": "Listed as Secret in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -881,10 +977,12 @@
     "notes": "Listed as Secret in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -899,10 +997,12 @@
     "notes": "Listed as Secret in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -917,10 +1017,12 @@
     "notes": "Listed as Secret in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -935,10 +1037,12 @@
     "notes": "Listed as Secret in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -953,10 +1057,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -971,10 +1077,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -989,10 +1097,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1007,10 +1117,12 @@
     "notes": "Listed as Secret in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1025,10 +1137,12 @@
     "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1043,10 +1157,12 @@
     "notes": "Listed as Secret in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1061,10 +1177,12 @@
     "notes": "Listed as Secret in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1079,10 +1197,12 @@
     "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1097,10 +1217,12 @@
     "notes": "Listed as Secret in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1115,10 +1237,12 @@
     "notes": "Listed as Secret in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1133,10 +1257,12 @@
     "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1152,10 +1278,12 @@
     "sourceTags": [
       "Community List",
       "Manual Verification",
-      "Exclusive"
+      "Exclusive",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1165,15 +1293,17 @@
     "aliases": [],
     "rarity": "Mythic",
     "summary": "",
-    "spawnMethod": "Unknown",
+    "spawnMethod": "Lucky Block",
     "roadWeight": null,
-    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier. Spawn method inferred from character name; confirm on latest game update.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1188,10 +1318,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1207,10 +1339,12 @@
     "sourceTags": [
       "Community List",
       "Manual Verification",
-      "Exclusive"
+      "Exclusive",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1225,10 +1359,12 @@
     "notes": "Listed as Secret in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1243,10 +1379,12 @@
     "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1261,10 +1399,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1279,10 +1419,12 @@
     "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1297,10 +1439,12 @@
     "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1315,10 +1459,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1333,10 +1479,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1351,10 +1499,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1369,10 +1519,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1387,10 +1539,12 @@
     "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1405,10 +1559,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1423,10 +1579,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1441,10 +1599,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1459,10 +1619,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1477,10 +1639,12 @@
     "notes": "Listed as Secret in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1495,10 +1659,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1513,10 +1679,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1531,10 +1699,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1550,10 +1720,12 @@
     "sourceTags": [
       "Community List",
       "Manual Verification",
-      "Exclusive"
+      "Exclusive",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1563,15 +1735,17 @@
     "aliases": [],
     "rarity": "Secret",
     "summary": "",
-    "spawnMethod": "Unknown",
+    "spawnMethod": "Lucky Block",
     "roadWeight": null,
-    "notes": "Listed as Secret in community source; verify against in-game updates.",
+    "notes": "Listed as Secret in community source; verify against in-game updates. Spawn method inferred from character name; confirm on latest game update.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1586,10 +1760,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1604,10 +1780,12 @@
     "notes": "Listed as Secret in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1622,10 +1800,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1640,10 +1820,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1658,10 +1840,12 @@
     "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1676,10 +1860,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1694,10 +1880,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1712,10 +1900,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1730,10 +1920,12 @@
     "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1748,10 +1940,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1766,10 +1960,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1784,10 +1980,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1802,10 +2000,12 @@
     "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1820,10 +2020,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1839,10 +2041,12 @@
     "sourceTags": [
       "Community List",
       "Manual Verification",
-      "Exclusive"
+      "Exclusive",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1857,10 +2061,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1875,10 +2081,12 @@
     "notes": "Listed as Secret in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1893,10 +2101,12 @@
     "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1911,10 +2121,12 @@
     "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1929,10 +2141,12 @@
     "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1947,10 +2161,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1965,10 +2181,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -1983,10 +2201,12 @@
     "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -2001,10 +2221,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -2019,10 +2241,12 @@
     "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -2037,10 +2261,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -2056,10 +2282,12 @@
     "sourceTags": [
       "Community List",
       "Manual Verification",
-      "Exclusive"
+      "Exclusive",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -2075,10 +2303,12 @@
     "sourceTags": [
       "Community List",
       "Manual Verification",
-      "Exclusive"
+      "Exclusive",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   },
@@ -2093,10 +2323,12 @@
     "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
     "sourceTags": [
       "Community List",
-      "Manual Verification"
+      "Manual Verification",
+      "Wiki"
     ],
     "sourceUrls": [
-      "https://stealabrainrot.codes/brainrots"
+      "https://stealabrainrot.codes/brainrots",
+      "https://stealabrainrot.fandom.com/wiki/Brainrots"
     ],
     "lastUpdated": "2026-04-01"
   }
