@@ -1,649 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<meta name="theme-color" content="#0f0f10" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Steal a Brainrot Database</title>
+    <meta
+      name="description"
+      content="Unofficial fan-made browser database for Roblox Steal a Brainrot characters, with search, filters, and shareable links."
+    />
+    <meta property="og:title" content="Steal a Brainrot Database" />
+    <meta
+      property="og:description"
+      content="Search and browse Brainrots by rarity, spawn method, and stats in this unofficial fan-made database."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="./" />
+    <meta property="og:image" content="./favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
 
-<title>Message Media Space</title>
-<meta name="description" content="Pranks • Fun • Mini games — quick share." />
-
-<!-- 🔹 AdSense Loader (GOES IN HEAD ONCE) -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8837377060291347"
-     crossorigin="anonymous"></script>
-
-<style>
-  :root{
-    --bg:#0f0f10;
-    --line: rgba(255,255,255,.10);
-    --txt:#fff;
-    --muted: rgba(255,255,255,.72);
-    --accent:#3a82f7;
-    --accent2:#7c3aed;
-  }
-  *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
-  body{
-    margin:0;
-    background:
-      radial-gradient(900px 600px at 60% -10%, rgba(58,130,247,.16), transparent 55%),
-      radial-gradient(900px 650px at 10% 110%, rgba(124,58,237,.12), transparent 55%),
-      var(--bg);
-    color:var(--txt);
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  }
-  .wrap{
-    max-width:500px;
-    margin:0 auto;
-    padding:16px 12px calc(18px + env(safe-area-inset-bottom));
-  }
-  .card{
-    background: rgba(255,255,255,.05);
-    border:1px solid var(--line);
-    border-radius:22px;
-    padding:14px;
-    box-shadow:0 20px 70px rgba(0,0,0,.45);
-  }
-  .title{ font-size:20px; font-weight:900; margin-bottom:6px; }
-  .sub{ font-size:14px; color:var(--muted); line-height:1.35; }
-
-  .section{ margin-top:14px; }
-  .section h3{
-    font-size:12px;
-    text-transform:uppercase;
-    color:rgba(255,255,255,.6);
-    margin-bottom:10px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:10px;
-  }
-
-.adLabel{
-  text-align:center;
-  font-size:11px;
-  color:rgba(255,255,255,.45);
-  margin-bottom:6px;
-  letter-spacing:.5px;
-  text-transform:uppercase;
-}
-     
-  .item{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:10px;
-    padding:12px;
-    border-radius:18px;
-    border:1px solid var(--line);
-    background:rgba(255,255,255,.04);
-    margin-bottom:10px;
-  }
-  .left{ display:flex; align-items:center; gap:10px; min-width:0; }
-  .ico{ font-size:20px; }
-  .label{
-    display:flex; flex-direction:column; min-width:0;
-  }
-  .label b{
-    font-size:14px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
-  }
-  .label span{
-    font-size:12px; color:rgba(255,255,255,.65);
-    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
-  }
-
-  .btn, .btn2{
-    border-radius:14px;
-    padding:10px 12px;
-    font-weight:900;
-    cursor:pointer;
-    border:none;
-  }
-  .btn{
-    background:linear-gradient(135deg,#3a82f7,#7c3aed);
-    color:#fff;
-  }
-  .btn2{
-    background:rgba(255,255,255,.06);
-    border:1px solid var(--line);
-    color:#fff;
-  }
-
-  .adSlot{
-    margin-top:12px;
-    padding:10px;
-    border-radius:18px;
-    border:1px dashed rgba(255,255,255,.15);
-    background:rgba(0,0,0,.25);
-    overflow:hidden;
-  }
-
-  .tiny{
-    margin-top:14px;
-    text-align:center;
-    color:rgba(255,255,255,.5);
-    font-size:12px;
-  }
-
-  /* Filter + trending */
-  .pillRow{ display:flex; gap:8px; flex-wrap:wrap; }
-  .pill{
-    border:1px solid rgba(255,255,255,.12);
-    background:rgba(255,255,255,.06);
-    border-radius:999px;
-    padding:8px 10px;
-    font-size:12px;
-    font-weight:900;
-    cursor:pointer;
-    user-select:none;
-  }
-  .pill.active{
-    background:rgba(58,130,247,.18);
-    border-color:rgba(58,130,247,.28);
-  }
-  .trend{
-    margin-top:10px;
-    border:1px solid var(--line);
-    border-radius:18px;
-    background:rgba(255,255,255,.04);
-    padding:10px;
-  }
-  .trendItem{
-    display:flex; justify-content:space-between; align-items:center;
-    padding:8px 8px;
-    border-radius:14px;
-  }
-  .trendItem + .trendItem{ border-top:1px solid rgba(255,255,255,.08); }
-  .trendLeft{ display:flex; flex-direction:column; min-width:0; }
-  .trendLeft b{ font-size:13px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
-  .trendLeft span{ font-size:12px; color:rgba(255,255,255,.65); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
-  .mono{ font-family: ui-monospace, Menlo, Monaco, Consolas, "Courier New", monospace; font-variant-numeric: tabular-nums;}
-</style>
-</head>
-
-<body>
-<div class="wrap">
-
-  <div class="card">
-    <div class="title">Quick share</div>
-    <div class="sub">
-      This was just a web prank + mini games. Nothing on the phone was accessed.<br/>
-      Pick one below and send it to a friend 😈
-    </div>
-
-    <div class="section" style="margin-top:12px;">
-      <h3>
-        Filter
-        <span class="pillRow">
-          <span class="pill active" id="fAll">All</span>
-          <span class="pill" id="fPranks">Pranks</span>
-          <span class="pill" id="fGames">Games</span>
-        </span>
-      </h3>
-
-      <div class="trend" id="trendBox" style="display:none;">
-        <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin:0 0 6px;">
-          <div style="font-size:12px; color:rgba(255,255,255,.6); text-transform:uppercase;">Trending scores</div>
-          <button class="btn2" id="clearTrendBtn" style="padding:6px 9px;font-size:11px;">Clear</button>
-        </div>
-        <div id="trendList"></div>
+    <header class="hero">
+      <div class="hero__inner">
+        <p class="eyebrow">Community Project</p>
+        <h1 id="site-title">Steal a Brainrot Database</h1>
+        <p id="site-description">
+          Searchable fan database for tracking Brainrots, rarity tiers, spawn methods,
+          and community-verified notes.
+        </p>
       </div>
-    </div>
-  </div>
+    </header>
 
+    <section class="controls" aria-label="Search and filters">
+      <div class="controls__inner">
+        <label class="field">
+          <span>Search by name</span>
+          <input
+            id="search-input"
+            name="search"
+            type="search"
+            placeholder="Search Brainrots..."
+            autocomplete="off"
+          />
+        </label>
 
-<!-- Prank -->
-<div class="adSlot" aria-label="Advertisement">
-  <div style="text-align:center; font-size:11px; color:rgba(255,255,255,.45); margin-bottom:6px;">
-    Advertisement
-  </div>
+        <label class="field">
+          <span>Rarity</span>
+          <select id="rarity-filter" name="rarity">
+            <option value="">All rarities</option>
+          </select>
+        </label>
 
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-8837377060291347"
-       data-ad-slot="7197863818"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-</div>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+        <label class="field">
+          <span>Spawn method</span>
+          <select id="spawn-filter" name="spawnMethod">
+            <option value="">All spawn methods</option>
+          </select>
+        </label>
 
-  <!-- PRANKS -->
-  <div class="section" id="secPranks">
-    <h3>Pranks</h3>
+        <label class="field">
+          <span>Sort</span>
+          <select id="sort-select" name="sort">
+            <option value="name-asc">Name A-Z</option>
+            <option value="name-desc">Name Z-A</option>
+            <option value="rarity">Rarity</option>
+            <option value="cost-asc">Cost low-high</option>
+            <option value="cost-desc">Cost high-low</option>
+            <option value="income-asc">Income low-high</option>
+            <option value="income-desc">Income high-low</option>
+          </select>
+        </label>
 
-    <div class="item">
-      <div class="left">
-        <div class="ico">💬</div>
-        <div class="label">
-          <b>Message loading</b>
-          <span>Fake message buffer prank</span>
-        </div>
+        <button id="clear-filters" class="button button--ghost" type="button">
+          Clear filters
+        </button>
       </div>
-      <div>
-        <button class="btn2" onclick="location.href='https://xstajayx.github.io/message-media-space/p/message/'">Open</button>
-        <button class="btn" onclick="shareLink('https://xstajayx.github.io/message-media-space/p/message/','Prank')">Share</button>
-      </div>
-    </div>
+    </section>
 
-    <div class="item">
-      <div class="left">
-        <div class="ico">📹</div>
-        <div class="label">
-          <b>CCTV viewer</b>
-          <span>Viewer + face slam</span>
-        </div>
-      </div>
-      <div>
-        <button class="btn2" onclick="location.href='https://xstajayx.github.io/message-media-space/p/scenario-b/'">Open</button>
-        <button class="btn" onclick="shareLink('https://xstajayx.github.io/message-media-space/p/scenario-b/','Prank')">Share</button>
-      </div>
-    </div>
+    <main id="main" class="content" aria-live="polite">
+      <section class="results-header" aria-label="Results summary">
+        <p id="result-count">Loading…</p>
+      </section>
 
-    <div class="item">
-      <div class="left">
-        <div class="ico">🔎</div>
-        <div class="label">
-          <b>Fake Google</b>
-          <span>Search bar that “auto types”</span>
-        </div>
-      </div>
-      <div>
-        <button class="btn2" onclick="location.href='https://xstajayx.github.io/message-media-space/p/fake-google/'">Open</button>
-        <button class="btn" onclick="shareLink('https://xstajayx.github.io/message-media-space/p/fake-google/','Prank')">Share</button>
-      </div>
-    </div>
+      <section id="status" class="status" hidden></section>
 
-    <div class="item">
-      <div class="left">
-        <div class="ico">🔊</div>
-        <div class="label">
-          <b>Volume Won’t Work</b>
-          <span>Slider fights back 😂</span>
-        </div>
-      </div>
-      <div>
-        <button class="btn2" onclick="location.href='https://xstajayx.github.io/message-media-space/p/volume-prank/'">Open</button>
-        <button class="btn" onclick="shareLink('https://xstajayx.github.io/message-media-space/p/volume-prank/','Prank')">Share</button>
-      </div>
-    </div>
+      <section id="card-grid" class="card-grid" aria-label="Brainrot results"></section>
+    </main>
 
-    <div class="item">
-      <div class="left">
-        <div class="ico">🧊</div>
-        <div class="label">
-          <b>Frozen Screen</b>
-          <span>Looks stuck… until it isn’t</span>
-        </div>
-      </div>
-      <div>
-        <button class="btn2" onclick="location.href='https://xstajayx.github.io/message-media-space/p/frozen-screen/'">Open</button>
-        <button class="btn" onclick="shareLink('https://xstajayx.github.io/message-media-space/p/frozen-screen/','Prank')">Share</button>
-      </div>
-    </div>
+    <dialog id="detail-modal" aria-labelledby="detail-title">
+      <article class="modal-card">
+        <button id="close-modal" class="button button--ghost modal-close" aria-label="Close detail view">
+          ✕
+        </button>
+        <header class="modal-header">
+          <div class="avatar" aria-hidden="true"></div>
+          <div>
+            <h2 id="detail-title">Brainrot Detail</h2>
+            <p id="detail-rarity"></p>
+          </div>
+        </header>
 
+        <section class="detail-grid" id="detail-grid"></section>
 
-    <div class="item">
-      <div class="left">
-        <div class="ico">🔋</div>
-        <div class="label">
-          <b>Fake Battery Drain</b>
-          <span>Battery falls fast… then gotcha 😈</span>
-        </div>
-      </div>
-      <div>
-        <button class="btn2" onclick="location.href='https://xstajayx.github.io/message-media-space/p/fake-battery-drain/'">Open</button>
-        <button class="btn" onclick="shareLink('https://xstajayx.github.io/message-media-space/p/fake-battery-drain/','Prank')">Share</button>
-      </div>
-    </div>
+        <footer class="modal-footer">
+          <button id="copy-link" class="button" type="button">Copy share link</button>
+        </footer>
+      </article>
+    </dialog>
 
-    <div class="item">
-      <div class="left">
-        <div class="ico">🛠️</div>
-        <div class="label">
-          <b>System Update Required</b>
-          <span>Downloading… installing… just kidding</span>
-        </div>
-      </div>
-      <div>
-        <button class="btn2" onclick="location.href='https://xstajayx.github.io/message-media-space/p/system-update-required/'">Open</button>
-        <button class="btn" onclick="shareLink('https://xstajayx.github.io/message-media-space/p/system-update-required/','Prank')">Share</button>
-      </div>
-    </div>
-  </div>
+    <footer class="site-footer">
+      <p id="footer-disclaimer">
+        Unofficial fan-made database. Not affiliated with Roblox or the game developers.
+      </p>
+      <p><a href="./about.html">About this project</a></p>
+    </footer>
 
-
-<!-- Games -->
-<div class="adSlot" aria-label="Advertisement">
-  <div style="text-align:center; font-size:11px; color:rgba(255,255,255,.45); margin-bottom:6px;">
-    Advertisement
-  </div>
-
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-8837377060291347"
-       data-ad-slot="9009746733"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-</div>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-
-  <!-- GAMES -->
-  <div class="section" id="secGames">
-    <h3>Mini games</h3>
-
-
-    <div class="item">
-      <div class="left">
-        <div class="ico">🐣</div>
-        <div class="label">
-          <b>Easter Heist</b>
-          <span>Outdoor detective trail with riddles, GPS check-ins, and proof photos</span>
-        </div>
-      </div>
-      <div>
-        <button class="btn2" onclick="location.href='./easter-heist/'">Open</button>
-        <button class="btn" onclick="shareLink(resolveShareUrl('./easter-heist/'),'Mini Game')">Share</button>
-      </div>
-    </div>
-    <div class="item">
-      <div class="left">
-        <div class="ico">👆</div>
-        <div class="label">
-          <b>Tap Score</b>
-          <span>Tap fast before time runs out</span>
-        </div>
-      </div>
-      <div>
-        <button class="btn2" onclick="location.href='https://xstajayx.github.io/message-media-space/p/tap-score/'">Open</button>
-        <button class="btn" onclick="shareLink('https://xstajayx.github.io/message-media-space/p/tap-score/','Game')">Share</button>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="left">
-        <div class="ico">⏱️</div>
-        <div class="label">
-          <b>Stop The Clock</b>
-          <span>Stop on the target time</span>
-        </div>
-      </div>
-      <div>
-        <button class="btn2" onclick="location.href='https://xstajayx.github.io/message-media-space/p/stop-the-clock/'">Open</button>
-        <button class="btn" onclick="shareLink('https://xstajayx.github.io/message-media-space/p/stop-the-clock/','Game')">Share</button>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="left">
-        <div class="ico">🦆</div>
-        <div class="label">
-          <b>Quick Hunt</b>
-          <span>Ducks + ammo + wrong targets</span>
-        </div>
-      </div>
-      <div>
-        <button class="btn2" onclick="location.href='https://xstajayx.github.io/message-media-space/p/quick-hunt/'">Open</button>
-        <button class="btn" onclick="shareLink('https://xstajayx.github.io/message-media-space/p/quick-hunt/','Game')">Share</button>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="left">
-        <div class="ico">🎯</div>
-        <div class="label">
-          <b>One Tap Aim</b>
-          <span>Tap at the perfect moment</span>
-        </div>
-      </div>
-      <div>
-        <button class="btn2" onclick="location.href='https://xstajayx.github.io/message-media-space/p/one-tap-aim/'">Open</button>
-        <button class="btn" onclick="shareLink('https://xstajayx.github.io/message-media-space/p/one-tap-aim/','Game')">Share</button>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="left">
-        <div class="ico">⚡</div>
-        <div class="label">
-          <b>Reaction Snap</b>
-          <span>Wait… then TAP instantly</span>
-        </div>
-      </div>
-      <div>
-        <button class="btn2" onclick="location.href='https://xstajayx.github.io/message-media-space/p/reaction-snap/'">Open</button>
-        <button class="btn" onclick="shareLink('https://xstajayx.github.io/message-media-space/p/reaction-snap/','Game')">Share</button>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="left">
-        <div class="ico">🧠</div>
-        <div class="label">
-          <b>Memory Flash</b>
-          <span>Remember the 5-tile pattern</span>
-        </div>
-      </div>
-      <div>
-        <button class="btn2" onclick="location.href='https://xstajayx.github.io/message-media-space/p/memory-flash/'">Open</button>
-        <button class="btn" onclick="shareLink('https://xstajayx.github.io/message-media-space/p/memory-flash/','Game')">Share</button>
-      </div>
-    </div>
-
-    <!-- ✅ ADDED: WHACK RUSH -->
-    <div class="item">
-      <div class="left">
-        <div class="ico">🔨</div>
-        <div class="label">
-          <b>Whack Rush</b>
-          <span>Whack fast as you can</span>
-        </div>
-      </div>
-      <div>
-        <button class="btn2" onclick="location.href='https://xstajayx.github.io/message-media-space/p/whack-rush/'">Open</button>
-        <button class="btn" onclick="shareLink('https://xstajayx.github.io/message-media-space/p/whack-rush/','Game')">Share</button>
-      </div>
-    </div>
-
-    <!-- ✅ ADDED: PLINKO -->
-    <div class="item">
-      <div class="left">
-        <div class="ico">🎲</div>
-        <div class="label">
-          <b>Plinko</b>
-          <span>Drop + bounce to score</span>
-        </div>
-      </div>
-      <div>
-        <button class="btn2" onclick="location.href='https://xstajayx.github.io/message-media-space/p/plinko/'">Open</button>
-        <button class="btn" onclick="shareLink('https://xstajayx.github.io/message-media-space/p/plinko/','Game')">Share</button>
-      </div>
-    </div>
-
-
-    <div class="item">
-      <div class="left">
-        <div class="ico">🎛️</div>
-        <div class="label">
-          <b>Hold Steady</b>
-          <span>Stop the timer as close to the target as you can.</span>
-        </div>
-      </div>
-      <div>
-        <button class="btn2" onclick="location.href='https://xstajayx.github.io/message-media-space/p/hold-steady/'">Open</button>
-        <button class="btn" onclick="shareLink('https://xstajayx.github.io/message-media-space/p/hold-steady/','Game')">Share</button>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="left">
-        <div class="ico">↔️</div>
-        <div class="label">
-          <b>Swipe Dodge</b>
-          <span>React fast: swipe the right direction to keep your streak.</span>
-        </div>
-      </div>
-      <div>
-        <button class="btn2" onclick="location.href='https://xstajayx.github.io/message-media-space/p/swipe-dodge/'">Open</button>
-        <button class="btn" onclick="shareLink('https://xstajayx.github.io/message-media-space/p/swipe-dodge/','Game')">Share</button>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="left">
-        <div class="ico">🎱</div>
-        <div class="label">
-          <b>English Pool</b>
-          <span>Pot balls, avoid scratches, chase a high score.</span>
-        </div>
-      </div>
-      <div>
-        <button class="btn2" onclick="location.href='https://xstajayx.github.io/message-media-space/p/english-pool/'">Open</button>
-        <button class="btn" onclick="shareLink('https://xstajayx.github.io/message-media-space/p/english-pool/','Game')">Share</button>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="tiny">
-  Built by JWorld Creations<br>
-  <a href="https://xstajayx.github.io/" style="color:#aaa;">Main Site</a> ·
-  <a href="https://xstajayx.github.io/about.html" style="color:#aaa;">About</a> ·
-  <a href="https://xstajayx.github.io/privacy.html" style="color:#aaa;">Privacy</a> ·
-  <a href="mailto:jworldcreations@hotmail.com" style="color:#aaa;">Contact</a>
-</div>
-
-</div>
-
-<script>
-const MAIN_PAGE_URL = "https://xstajayx.github.io/message-media-space/";
-
-function resolveShareUrl(path){
-  try{
-    return new URL(path, location.href).toString();
-  }catch(e){
-    return path;
-  }
-}
-
-function cleanUrl(url){
-  try{
-    const u = new URL(url, location.origin);
-    u.hash = "";
-    return u.toString();
-  }catch(e){
-    return url;
-  }
-}
-
-async function shareLink(url, kind){
-  const safeUrl = cleanUrl(url);
-  const data = {
-    title: "Message Media Space",
-    text: `${kind} 😈`,
-    url: safeUrl
-  };
-  if(navigator.share){
-    try{ await navigator.share(data); return; }catch(e){}
-  }
-  try{
-    await navigator.clipboard.writeText(safeUrl);
-    alert("Link copied ✅");
-  }catch(e){
-    prompt("Copy link:", safeUrl);
-  }
-}
-
-/* ===== Trending score capture =====
-Games should send users back to:
-MAIN_PAGE_URL?game=quick-hunt&score=123
-*/
-function saveScoreFromParams(){
-  const u = new URL(location.href);
-  const game = u.searchParams.get("game");
-  const scoreStr = u.searchParams.get("score");
-  if(!game || !scoreStr) return;
-
-  const score = Number(scoreStr);
-  if(!Number.isFinite(score)) return;
-
-  const key = "mms_scores";
-  const store = JSON.parse(localStorage.getItem(key) || "{}");
-  const prev = Number(store[game] || 0);
-  if(score > prev) store[game] = score;
-  localStorage.setItem(key, JSON.stringify(store));
-
-  // clean URL (optional)
-  u.searchParams.delete("game");
-  u.searchParams.delete("score");
-  history.replaceState({}, "", u.toString());
-}
-
-function renderTrending(){
-  const box = document.getElementById("trendBox");
-  const list = document.getElementById("trendList");
-  const store = JSON.parse(localStorage.getItem("mms_scores") || "{}");
-  const entries = Object.entries(store).map(([g,s])=>({g, s:Number(s)})).filter(x=>Number.isFinite(x.s));
-  entries.sort((a,b)=>b.s-a.s);
-  if(entries.length === 0){ box.style.display="none"; return; }
-
-  const names = {
-    "tap-score":"Tap Score",
-    "stop-the-clock":"Stop The Clock",
-    "quick-hunt":"Quick Hunt",
-    "one-tap-aim":"One Tap Aim",
-    "reaction-snap":"Reaction Snap",
-    "memory-flash":"Memory Flash",
-    "whack-rush":"Whack Rush",
-    "plinko":"Plinko",
-    "hold-steady":"Hold Steady",
-    "swipe-dodge":"Swipe Dodge",
-    "english-pool":"English Pool"
-  };
-
-  list.innerHTML = "";
-  for(const e of entries.slice(0,5)){
-    const row = document.createElement("div");
-    row.className = "trendItem";
-    row.innerHTML = `
-      <div class="trendLeft">
-        <b>${names[e.g] || e.g}</b>
-        <span>Best score saved</span>
-      </div>
-      <div class="mono" style="font-weight:950;">${e.s}</div>
-    `;
-    list.appendChild(row);
-  }
-  box.style.display = "block";
-}
-
-/* ===== Filter toggles ===== */
-function setFilter(mode){
-  const secP = document.getElementById("secPranks");
-  const secG = document.getElementById("secGames");
-  document.getElementById("fAll").classList.toggle("active", mode==="all");
-  document.getElementById("fPranks").classList.toggle("active", mode==="pranks");
-  document.getElementById("fGames").classList.toggle("active", mode==="games");
-
-  if(mode==="all"){ secP.style.display="block"; secG.style.display="block"; }
-  if(mode==="pranks"){ secP.style.display="block"; secG.style.display="none"; }
-  if(mode==="games"){ secP.style.display="none"; secG.style.display="block"; }
-}
-
-document.getElementById("fAll").addEventListener("click", ()=>setFilter("all"));
-document.getElementById("fPranks").addEventListener("click", ()=>setFilter("pranks"));
-document.getElementById("fGames").addEventListener("click", ()=>setFilter("games"));
-
-document.getElementById("clearTrendBtn").addEventListener("click", ()=>{
-  localStorage.removeItem("mms_scores");
-  renderTrending();
-});
-
-saveScoreFromParams();
-renderTrending();
-</script>
-</body>
+    <script src="./app.js" defer></script>
+  </body>
 </html>

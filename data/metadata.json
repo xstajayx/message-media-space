@@ -1,0 +1,24 @@
+{
+  "siteTitle": "Steal a Brainrot Database",
+  "description": "Unofficial fan database for Roblox Steal a Brainrot characters, with searchable rarity and spawn tracking.",
+  "totalCount": 32,
+  "supportedRarities": [
+    "Common",
+    "Rare",
+    "Epic",
+    "Legendary",
+    "Mythic",
+    "Brainrot God",
+    "Secret",
+    "OG"
+  ],
+  "supportedSpawnMethods": [
+    "Red Carpet",
+    "Lucky Block",
+    "Event",
+    "Ritual",
+    "Special",
+    "Unknown"
+  ],
+  "disclaimer": "Unofficial fan-made database. Not affiliated with Roblox or the game developers."
+}
