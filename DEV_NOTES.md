@@ -10,6 +10,11 @@
 - `p/<slug>/index.html`
   - Individual prank and game pages.
   - Games generally use local page logic and can send results back to hub using `MAIN_PAGE_URL?game=...&score=...`.
+- `brainrot-database.html`
+  - Standalone static fan database page for Steal a Brainrot.
+  - Loads data from `assets/data/brainrots.json` and metadata from `assets/data/brainrot-metadata.json`.
+  - Uses `assets/css/brainrot-database.css` and `assets/js/brainrot-database.js`.
+  - Supports search, filter, sort, URL state, localStorage state, and deep-link modal.
 
 ## How cards/categories are wired
 - Cards are currently **hardcoded HTML blocks** in `index.html` (no JSON/array source).
@@ -29,7 +34,14 @@
    - `shareLink('https://xstajayx.github.io/message-media-space/p/<slug>/', 'Prank' or 'Game')`
 5. For games that should surface in Trending:
    - Send users to hub with params (share or back): `?game=<slug>&score=<number>`
-   - Add a friendly display name in the `names` map inside `renderTrending()`.
+  - Add a friendly display name in the `names` map inside `renderTrending()`.
+
+## Brainrot database data updates
+- Edit `assets/data/brainrots.json` directly to add/update entries.
+- Keep schema keys consistent (`id`, `name`, `rarity`, `spawnMethod`, `roadWeight`, etc.).
+- If a value is unverified, use `null`, `Unknown`, or `Needs verification` in `notes` rather than guessing.
+- The hub card link for this page is in `index.html` under the mini games section:
+  - `./brainrot-database.html`
 
 ## Trending scores behavior
 - Source: `localStorage['mms_scores']` as JSON object: `{ "game-slug": bestScore }`.
@@ -39,4 +51,3 @@
   - `renderTrending()` sorts scores descending and renders top 5 rows.
 - Clear control:
   - Hub `Clear` button deletes `mms_scores` and rerenders the trending box.
-

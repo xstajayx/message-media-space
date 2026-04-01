@@ -1,0 +1,10 @@
+{
+  "dataset": "Steal a Brainrot character list",
+  "lastUpdated": "2026-04-01",
+  "sourceNotes": "Primary list pulled from community index. Treat rarity/spawn details as potentially unstable with game updates.",
+  "primarySources": [
+    "https://stealabrainrot.codes/brainrots",
+    "https://stealabrainrot.fandom.com/wiki/Brainrots_by_rarity"
+  ],
+  "maintainerNotes": "Update assets/data/brainrots.json entries directly. Leave unknown/uncertain fields as null, Unknown, or Needs verification instead of guessing."
+}
