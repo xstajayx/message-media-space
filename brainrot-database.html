@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0f0f10" />
+<title>Steal a Brainrot Database | Message Media Space</title>
+<meta name="description" content="Unofficial fan-made searchable Steal a Brainrot character database with rarity, spawn method, and verification notes." />
+<meta property="og:title" content="Steal a Brainrot Database | Message Media Space" />
+<meta property="og:description" content="Search and filter Steal a Brainrot characters by rarity and spawn method. Community-sourced and update-friendly." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://xstajayx.github.io/message-media-space/brainrot-database.html" />
+<link rel="stylesheet" href="./assets/css/brainrot-database.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="card">
+      <div class="topRow">
+        <a class="btn2" href="./index.html" aria-label="Go back to main page">← Back</a>
+        <button class="btn2" id="copyViewBtn">Copy current view</button>
+      </div>
+      <h1 class="title">Steal a Brainrot Database</h1>
+      <p class="sub">Searchable fan-made list of community documented brainrots. Data may change with updates, and uncertain fields are marked for verification.</p>
+    </header>
+
+    <section class="controls card" aria-label="Database controls">
+      <div class="grid">
+        <label class="ctrl">
+          <span>Search</span>
+          <input id="searchInput" type="search" placeholder="Type a brainrot name..." autocomplete="off" />
+        </label>
+        <label class="ctrl">
+          <span>Rarity</span>
+          <select id="rarityFilter"></select>
+        </label>
+        <label class="ctrl">
+          <span>Spawn method</span>
+          <select id="spawnFilter"></select>
+        </label>
+        <label class="ctrl">
+          <span>Sort</span>
+          <select id="sortSelect">
+            <option value="name-asc">Name A-Z</option>
+            <option value="name-desc">Name Z-A</option>
+            <option value="rarity">Rarity</option>
+          </select>
+        </label>
+      </div>
+      <div class="toolbar">
+        <strong id="resultCount">0 results</strong>
+        <button class="btn2" id="clearFiltersBtn">Clear filters</button>
+      </div>
+    </section>
+
+    <section id="statusArea" class="section"></section>
+    <section id="results" class="section gridCards" aria-live="polite"></section>
+
+    <section class="card section">
+      <h2 class="sectionTitle">About / Disclaimer</h2>
+      <p class="sub">Unofficial fan-made database. Not affiliated with Roblox or the game developers.</p>
+      <p class="sub">RoadWeight is treated as a weight value (not guaranteed spawn percentage). Event/admin/exclusive behaviors can change fast; always re-check source links.</p>
+    </section>
+
+    <footer class="tiny">Built by JWorld Creations · <a href="./index.html">Message Media Space Home</a></footer>
+  </div>
+
+  <dialog id="detailModal" class="modal" aria-labelledby="modalTitle">
+    <article class="modalCard">
+      <div class="topRow">
+        <h3 id="modalTitle"></h3>
+        <button id="closeModalBtn" class="btn2" aria-label="Close detail panel">Close</button>
+      </div>
+      <div id="modalBody"></div>
+      <div class="toolbar">
+        <button id="copyItemLinkBtn" class="btn">Copy deep-link</button>
+      </div>
+    </article>
+  </dialog>
+
+  <script src="./assets/js/brainrot-database.js" defer></script>
+</body>
+</html>

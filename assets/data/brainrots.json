@@ -1,0 +1,2103 @@
+[
+  {
+    "id": "admin-lucky-block",
+    "name": "Admin Lucky Block",
+    "aliases": [],
+    "rarity": "Unknown",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Admin class in source; stored as Unknown primary rarity with admin tag.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification",
+      "Admin"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "agarrini-la-palini",
+    "name": "Agarrini La Palini",
+    "aliases": [],
+    "rarity": "Secret",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Secret in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "avocadini-guffo",
+    "name": "Avocadini Guffo",
+    "aliases": [],
+    "rarity": "Epic",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "avocadorilla",
+    "name": "Avocadorilla",
+    "aliases": [],
+    "rarity": "Mythic",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "ballerina-cappuccina",
+    "name": "Ballerina Cappuccina",
+    "aliases": [],
+    "rarity": "Legendary",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "ballerino-lololo",
+    "name": "Ballerino Lololo",
+    "aliases": [],
+    "rarity": "Brainrot God",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "bambini-crostini",
+    "name": "Bambini Crostini",
+    "aliases": [],
+    "rarity": "Epic",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "bananita-dolphinita",
+    "name": "Bananita Dolphinita",
+    "aliases": [],
+    "rarity": "Epic",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "bandito-bobritto",
+    "name": "Bandito Bobritto",
+    "aliases": [],
+    "rarity": "Rare",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "blackhole-goat",
+    "name": "Blackhole Goat",
+    "aliases": [],
+    "rarity": "Unknown",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Exclusive in source; mapped to Unknown primary rarity until confirmed against in-game primary rarity tiers.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification",
+      "Exclusive"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "blueberrinni-octopusini",
+    "name": "Blueberrinni Octopusini",
+    "aliases": [],
+    "rarity": "Legendary",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "bombardini-tortinii",
+    "name": "Bombardini Tortinii",
+    "aliases": [],
+    "rarity": "Unknown",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Exclusive in source; mapped to Unknown primary rarity until confirmed against in-game primary rarity tiers.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification",
+      "Exclusive"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "bombardiro-crocodilo",
+    "name": "Bombardiro Crocodilo",
+    "aliases": [],
+    "rarity": "Mythic",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "bombombini-gusini",
+    "name": "Bombombini Gusini",
+    "aliases": [],
+    "rarity": "Mythic",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "boneca-ambalabu",
+    "name": "Boneca Ambalabu",
+    "aliases": [],
+    "rarity": "Rare",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "brainrot-god-lucky-block",
+    "name": "Brainrot God Lucky Block",
+    "aliases": [],
+    "rarity": "Brainrot God",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "brr-brr-patapim",
+    "name": "Brr Brr Patapim",
+    "aliases": [],
+    "rarity": "Epic",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "brr-es-teh-patipum",
+    "name": "Brr Es Teh Patipum",
+    "aliases": [],
+    "rarity": "Brainrot God",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "brri-brri-bicus-dicus-bombicus",
+    "name": "Brri Brri Bicus Dicus Bombicus",
+    "aliases": [],
+    "rarity": "Epic",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "bulbito-bandito-traktorito",
+    "name": "Bulbito Bandito Traktorito",
+    "aliases": [],
+    "rarity": "Brainrot God",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "burbaloni-loliloli",
+    "name": "Burbaloni Loliloli",
+    "aliases": [],
+    "rarity": "Legendary",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "cacto-hipopotamo",
+    "name": "Cacto Hipopotamo",
+    "aliases": [],
+    "rarity": "Rare",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "cappuccino-assassino",
+    "name": "Cappuccino Assassino",
+    "aliases": [],
+    "rarity": "Epic",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "carloo",
+    "name": "Carloo",
+    "aliases": [],
+    "rarity": "Mythic",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "cavallo-virtuoso",
+    "name": "Cavallo Virtuoso",
+    "aliases": [],
+    "rarity": "Mythic",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "chef-crabracadabra",
+    "name": "Chef Crabracadabra",
+    "aliases": [],
+    "rarity": "Legendary",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "chicleteira-bicicleteira",
+    "name": "Chicleteira Bicicleteira",
+    "aliases": [],
+    "rarity": "Secret",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Secret in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "chimpanzini-bananini",
+    "name": "Chimpanzini Bananini",
+    "aliases": [],
+    "rarity": "Legendary",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "cocofanto-elefanto",
+    "name": "Cocofanto Elefanto",
+    "aliases": [],
+    "rarity": "Brainrot God",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "cocosini-mama",
+    "name": "Cocosini Mama",
+    "aliases": [],
+    "rarity": "Legendary",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "dragon-cannelloni",
+    "name": "Dragon Cannelloni",
+    "aliases": [],
+    "rarity": "Secret",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Secret in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "dul-dul-dul",
+    "name": "Dul Dul Dul",
+    "aliases": [],
+    "rarity": "Unknown",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Exclusive in source; mapped to Unknown primary rarity until confirmed against in-game primary rarity tiers.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification",
+      "Exclusive"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "esok-sekolah",
+    "name": "Esok Sekolah",
+    "aliases": [],
+    "rarity": "Secret",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Secret in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "espresso-signora",
+    "name": "Espresso Signora",
+    "aliases": [],
+    "rarity": "Unknown",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Exclusive in source; mapped to Unknown primary rarity until confirmed against in-game primary rarity tiers.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification",
+      "Exclusive"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "fluriflura",
+    "name": "Fluriflura",
+    "aliases": [],
+    "rarity": "Common",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "frigo-camelo",
+    "name": "Frigo Camelo",
+    "aliases": [],
+    "rarity": "Mythic",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "ganganzelli-trulala",
+    "name": "Ganganzelli Trulala",
+    "aliases": [],
+    "rarity": "Mythic",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "gangster-footera",
+    "name": "Gangster Footera",
+    "aliases": [],
+    "rarity": "Rare",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "garama-and-mandundung",
+    "name": "Garama And Mandundung",
+    "aliases": [],
+    "rarity": "Secret",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Secret in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "gattatino-neonino",
+    "name": "Gattatino Neonino",
+    "aliases": [],
+    "rarity": "Unknown",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Exclusive in source; mapped to Unknown primary rarity until confirmed against in-game primary rarity tiers.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification",
+      "Exclusive"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "girafa-celestre",
+    "name": "Girafa Celestre",
+    "aliases": [],
+    "rarity": "Brainrot God",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "glorbo-fruttodrillo",
+    "name": "Glorbo Fruttodrillo",
+    "aliases": [],
+    "rarity": "Legendary",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "gorillo-watermelondrillo",
+    "name": "Gorillo Watermelondrillo",
+    "aliases": [],
+    "rarity": "Mythic",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "graipuss-medussi",
+    "name": "Graipuss Medussi",
+    "aliases": [],
+    "rarity": "Secret",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Secret in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "job-job-job-sahur",
+    "name": "Job Job Job Sahur",
+    "aliases": [],
+    "rarity": "Secret",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Secret in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "karkerkar-kurkur",
+    "name": "Karkerkar Kurkur",
+    "aliases": [],
+    "rarity": "Unknown",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Exclusive in source; mapped to Unknown primary rarity until confirmed against in-game primary rarity tiers.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification",
+      "Exclusive"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "ketupat-kepat",
+    "name": "Ketupat Kepat",
+    "aliases": [],
+    "rarity": "Secret",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Secret in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "la-grande-combinasion",
+    "name": "La Grande Combinasion",
+    "aliases": [],
+    "rarity": "Secret",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Secret in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "la-supreme-combinasion",
+    "name": "La Supreme Combinasion",
+    "aliases": [],
+    "rarity": "Secret",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Secret in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "la-vacca-saturno-saturnita",
+    "name": "La Vacca Saturno Saturnita",
+    "aliases": [],
+    "rarity": "Secret",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Secret in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "las-tralaleritas",
+    "name": "Las Tralaleritas",
+    "aliases": [],
+    "rarity": "Secret",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Secret in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "las-vaquitas-saturnitas",
+    "name": "Las Vaquitas Saturnitas",
+    "aliases": [],
+    "rarity": "Secret",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Secret in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "lerulerulerule",
+    "name": "Lerulerulerule",
+    "aliases": [],
+    "rarity": "Mythic",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "lionel-cactuseli",
+    "name": "Lionel Cactuseli",
+    "aliases": [],
+    "rarity": "Legendary",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "lirili-larila",
+    "name": "Lirili Larila",
+    "aliases": [],
+    "rarity": "Common",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "los-combinasionas",
+    "name": "Los Combinasionas",
+    "aliases": [],
+    "rarity": "Secret",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Secret in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "los-crocodillitos",
+    "name": "Los Crocodillitos",
+    "aliases": [],
+    "rarity": "Brainrot God",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "los-hotspotsitos",
+    "name": "Los Hotspotsitos",
+    "aliases": [],
+    "rarity": "Secret",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Secret in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "los-matteos",
+    "name": "Los Matteos",
+    "aliases": [],
+    "rarity": "Secret",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Secret in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "los-orcalitos",
+    "name": "Los Orcalitos",
+    "aliases": [],
+    "rarity": "Brainrot God",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "los-spyderinis",
+    "name": "Los Spyderinis",
+    "aliases": [],
+    "rarity": "Secret",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Secret in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "los-tralaleritos",
+    "name": "Los Tralaleritos",
+    "aliases": [],
+    "rarity": "Secret",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Secret in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "los-tungtungtungcitos",
+    "name": "Los Tungtungtungcitos",
+    "aliases": [],
+    "rarity": "Brainrot God",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "matteo",
+    "name": "Matteo",
+    "aliases": [],
+    "rarity": "Unknown",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Exclusive in source; mapped to Unknown primary rarity until confirmed against in-game primary rarity tiers.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification",
+      "Exclusive"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "mythic-lucky-block",
+    "name": "Mythic Lucky Block",
+    "aliases": [],
+    "rarity": "Mythic",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "noobini-pizzanini",
+    "name": "Noobini Pizzanini",
+    "aliases": [],
+    "rarity": "Common",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "nooo-my-hotspot",
+    "name": "Nooo My Hotspot",
+    "aliases": [],
+    "rarity": "Unknown",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Exclusive in source; mapped to Unknown primary rarity until confirmed against in-game primary rarity tiers.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification",
+      "Exclusive"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "nuclearo-dinossauro",
+    "name": "Nuclearo Dinossauro",
+    "aliases": [],
+    "rarity": "Secret",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Secret in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "odin-din-din-dun",
+    "name": "Odin Din Din Dun",
+    "aliases": [],
+    "rarity": "Brainrot God",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "orangutini-ananassini",
+    "name": "Orangutini Ananassini",
+    "aliases": [],
+    "rarity": "Mythic",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "orcalero-orcala",
+    "name": "Orcalero Orcala",
+    "aliases": [],
+    "rarity": "Brainrot God",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "pakrahmatmamat",
+    "name": "Pakrahmatmamat",
+    "aliases": [],
+    "rarity": "Brainrot God",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "pandaccini-bananini",
+    "name": "Pandaccini Bananini",
+    "aliases": [],
+    "rarity": "Legendary",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "penguino-cocosino",
+    "name": "Penguino Cocosino",
+    "aliases": [],
+    "rarity": "Epic",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "perochello-lemonchello",
+    "name": "Perochello Lemonchello",
+    "aliases": [],
+    "rarity": "Epic",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "pi-pi-watermelon",
+    "name": "Pi Pi Watermelon",
+    "aliases": [],
+    "rarity": "Legendary",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "piccione-macchina",
+    "name": "Piccione Macchina",
+    "aliases": [],
+    "rarity": "Brainrot God",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "pipi-avocado",
+    "name": "Pipi Avocado",
+    "aliases": [],
+    "rarity": "Rare",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "pipi-corni",
+    "name": "Pipi Corni",
+    "aliases": [],
+    "rarity": "Common",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "pipi-kiwi",
+    "name": "Pipi Kiwi",
+    "aliases": [],
+    "rarity": "Common",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "pipi-potato",
+    "name": "Pipi Potato",
+    "aliases": [],
+    "rarity": "Legendary",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "pot-hotspot",
+    "name": "Pot Hotspot",
+    "aliases": [],
+    "rarity": "Secret",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Secret in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "racooni-jandelini",
+    "name": "Racooni Jandelini",
+    "aliases": [],
+    "rarity": "Common",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "rhino-toasterino",
+    "name": "Rhino Toasterino",
+    "aliases": [],
+    "rarity": "Mythic",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "salamino-penguino",
+    "name": "Salamino Penguino",
+    "aliases": [],
+    "rarity": "Epic",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "sammyni-sypderini",
+    "name": "Sammyni Sypderini",
+    "aliases": [],
+    "rarity": "Unknown",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Exclusive in source; mapped to Unknown primary rarity until confirmed against in-game primary rarity tiers.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification",
+      "Exclusive"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "secret-lucky-block",
+    "name": "Secret Lucky Block",
+    "aliases": [],
+    "rarity": "Secret",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Secret in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "sigma-boy",
+    "name": "Sigma Boy",
+    "aliases": [],
+    "rarity": "Legendary",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "spaghetti-tualetti",
+    "name": "Spaghetti Tualetti",
+    "aliases": [],
+    "rarity": "Secret",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Secret in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "spioniro-golubiro",
+    "name": "Spioniro Golubiro",
+    "aliases": [],
+    "rarity": "Mythic",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "strawberelli-flamingelli",
+    "name": "Strawberelli Flamingelli",
+    "aliases": [],
+    "rarity": "Legendary",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "strawberry-elephant",
+    "name": "Strawberry Elephant",
+    "aliases": [],
+    "rarity": "Brainrot God",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "svinina-bombardino",
+    "name": "Svinina Bombardino",
+    "aliases": [],
+    "rarity": "Common",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "ta-ta-ta-ta-sahur",
+    "name": "Ta Ta Ta Ta Sahur",
+    "aliases": [],
+    "rarity": "Rare",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "talpa-di-fero",
+    "name": "Talpa Di Fero",
+    "aliases": [],
+    "rarity": "Common",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "tataruga-cisterna",
+    "name": "Tataruga Cisterna",
+    "aliases": [],
+    "rarity": "Brainrot God",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "te-te-te-sahur",
+    "name": "Te Te Te Sahur",
+    "aliases": [],
+    "rarity": "Mythic",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "ti-ti-ti-sahur",
+    "name": "Ti Ti Ti Sahur",
+    "aliases": [],
+    "rarity": "Epic",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "tigrilini-watermelini",
+    "name": "Tigrilini Watermelini",
+    "aliases": [],
+    "rarity": "Mythic",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "tigroligre-frutonni",
+    "name": "Tigroligre Frutonni",
+    "aliases": [],
+    "rarity": "Brainrot God",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "tim-cheese",
+    "name": "Tim Cheese",
+    "aliases": [],
+    "rarity": "Common",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "tipi-topi-taco",
+    "name": "Tipi Topi Taco",
+    "aliases": [],
+    "rarity": "Unknown",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Exclusive in source; mapped to Unknown primary rarity until confirmed against in-game primary rarity tiers.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification",
+      "Exclusive"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "tob-tobi-tobi",
+    "name": "Tob Tobi Tobi",
+    "aliases": [],
+    "rarity": "Mythic",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "torrtuginni-dragonfrutini",
+    "name": "Torrtuginni Dragonfrutini",
+    "aliases": [],
+    "rarity": "Secret",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Secret in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "tralalero-tralala",
+    "name": "Tralalero Tralala",
+    "aliases": [],
+    "rarity": "Brainrot God",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "tralalita-tralala",
+    "name": "Tralalita Tralala",
+    "aliases": [],
+    "rarity": "Brainrot God",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "trenostruzzo-turbo-3000",
+    "name": "Trenostruzzo Turbo 3000",
+    "aliases": [],
+    "rarity": "Brainrot God",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "tric-trac-baraboom",
+    "name": "Tric Trac Baraboom",
+    "aliases": [],
+    "rarity": "Rare",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "trippi-troppi",
+    "name": "Trippi Troppi",
+    "aliases": [],
+    "rarity": "Rare",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "trippi-troppi-troppa-trippa",
+    "name": "Trippi Troppi Troppa Trippa",
+    "aliases": [],
+    "rarity": "Brainrot God",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "trulimero-trulicina",
+    "name": "Trulimero Trulicina",
+    "aliases": [],
+    "rarity": "Epic",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "tukanno-bananno",
+    "name": "Tukanno Bananno",
+    "aliases": [],
+    "rarity": "Brainrot God",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Brainrot God in community source; verify against in-game updates.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "tung-tung-tung-sahur",
+    "name": "Tung Tung Tung Sahur",
+    "aliases": [],
+    "rarity": "Rare",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "unclito-samito",
+    "name": "Unclito Samito",
+    "aliases": [],
+    "rarity": "Unknown",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Exclusive in source; mapped to Unknown primary rarity until confirmed against in-game primary rarity tiers.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification",
+      "Exclusive"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "urubini-flamenguini",
+    "name": "Urubini Flamenguini",
+    "aliases": [],
+    "rarity": "Unknown",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Listed as Exclusive in source; mapped to Unknown primary rarity until confirmed against in-game primary rarity tiers.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification",
+      "Exclusive"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  },
+  {
+    "id": "zibra-zubra-zibralini",
+    "name": "Zibra Zubra Zibralini",
+    "aliases": [],
+    "rarity": "Mythic",
+    "summary": "",
+    "spawnMethod": "Unknown",
+    "roadWeight": null,
+    "notes": "Name and rarity sourced from community index; verify if game updates changed tier.",
+    "sourceTags": [
+      "Community List",
+      "Manual Verification"
+    ],
+    "sourceUrls": [
+      "https://stealabrainrot.codes/brainrots"
+    ],
+    "lastUpdated": "2026-04-01"
+  }
+]
