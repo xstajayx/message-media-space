@@ -1,4 +1,4 @@
-export const RELEASE='2026.4';
+export const RELEASE='2026.5';
 export const GAME_TYPES=['welcome','quest','stack','factory','echo','quiz','trivia','tunes','catch','puzzle','find','memory','target','riddles','tree','wheel','race','delivery','letter'];
 export const TYPES=[...GAME_TYPES,'cracker','recipe','kindness','code','box','eve'];
 export function londonDate(now=new Date()){const p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/London',year:'numeric',month:'numeric',day:'numeric'}).formatToParts(now);return Object.fromEntries(p.filter(x=>['year','month','day'].includes(x.type)).map(x=>[x.type,Number(x.value)]));}

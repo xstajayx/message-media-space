@@ -1,11 +1,11 @@
 // Increment together with core.js and the module/stylesheet URLs in index.html.
-const RELEASE = '2026.4';
+const RELEASE = '2026.5';
 const CACHE = `christmas-shell-${RELEASE}`;
-const FILES = ['index.html', 'style.css', 'app.js', 'core.js', 'audio.js', 'content.json', 'icon.svg', 'icon-192.png', 'icon-512.png', 'puzzle.svg', 'manifest.webmanifest', 'games/index.js', 'games/engine.js', 'games/adventures.js', 'games/arcade.js', 'games/workshop.js', 'games/workshop-art.js'];
+const FILES = ['index.html', 'style.css', 'app.js', 'core.js', 'audio.js', 'content.json', 'stories.js', 'sample.js', 'icon.svg', 'icon-192.png', 'icon-512.png', 'puzzle.svg', 'manifest.webmanifest', 'games/index.js', 'games/engine.js', 'games/adventures.js', 'games/arcade.js', 'games/workshop.js', 'games/workshop-art.js'];
 const versioned = path => /\.(?:js|css|json)$/.test(path) ? `${path}?v=${RELEASE}` : path;
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => Promise.all(
-    FILES.filter(path => !path.startsWith('games/')).map(async path => {
+    FILES.filter(path => !path.startsWith('games/') && !['stories.js','sample.js'].includes(path)).map(async path => {
       const url = versioned(path);
       const response = await fetch(url, { cache: 'reload' });
       if (!response.ok) throw Error(`Unable to cache ${path}: HTTP ${response.status}`);

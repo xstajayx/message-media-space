@@ -1,6 +1,6 @@
-import { createGame } from './engine.js?v=2026.4';
-import { randomInt, shuffled } from '../core.js?v=2026.4';
-import { svgNode, searchArt, SEARCH_ITEMS, plainTree, treeWidth } from './workshop-art.js?v=2026.4';
+import { createGame } from './engine.js?v=2026.5';
+import { randomInt, shuffled } from '../core.js?v=2026.5';
+import { svgNode, searchArt, SEARCH_ITEMS, plainTree, treeWidth } from './workshop-art.js?v=2026.5';
 
 export function signalState(tiles) {
   const visited=new Set(), queue=tiles[0].includes(3)?[0]:[];
