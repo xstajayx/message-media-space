@@ -1,0 +1,6 @@
+let ctx,timer;let prefs;try{prefs=JSON.parse(localStorage.getItem('christmas-audio')||'{}')}catch{prefs={}}export const audio={music:!!prefs.music,effects:!!prefs.effects};
+function context(){ctx??=new(window.AudioContext||window.webkitAudioContext)();if(ctx.state==='suspended')ctx.resume();return ctx;}
+function tone(freq=660,duration=.13){try{const c=context(),o=c.createOscillator(),g=c.createGain();o.type='sine';o.frequency.value=freq;g.gain.setValueAtTime(.035,c.currentTime);g.gain.exponentialRampToValueAtTime(.001,c.currentTime+duration);o.connect(g).connect(c.destination);o.start();o.stop(c.currentTime+duration);}catch{}}
+export function effect(kind='button'){if(audio.effects){tone(kind==='success'?880:kind==='door'?440:600);if(kind==='success')setTimeout(()=>tone(1100),140);}}
+export function toggle(kind){audio[kind]=!audio[kind];try{localStorage.setItem('christmas-audio',JSON.stringify(audio));}catch{}if(kind==='music'){clearInterval(timer);if(audio.music){let i=0;const melody=[523,659,784,659,587,698,880,698,659,784,1047,784,587,659,523,392];tone(melody[i++]);timer=setInterval(()=>{if(!document.hidden)tone(melody[i++%melody.length],.4)},650);}}else effect();return audio[kind];}
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&ctx)ctx.suspend();else if(ctx&&audio.music)ctx.resume();});
