@@ -1,5 +1,5 @@
-import { createGame, stackOverlap, sortScore } from './engine.js';
-import { randomInt, shuffled } from '../core.js';
+import { createGame, stackOverlap, sortScore } from './engine.js?v=2026.3';
+import { randomInt, shuffled } from '../core.js?v=2026.3';
 
 export function mountAdventure(root, type, c, api) {
   let game;
