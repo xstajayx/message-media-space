@@ -37,8 +37,8 @@ try:
   stale_page.goto(base+'christmas/');stale_page.wait_for_selector('.door')
   stale_page.locator('#preview').click();stale_page.get_by_role('button',name='3 · The Great Gift Stack',exact=True).click();stale_page.get_by_role('button',name='Start stacking',exact=True).wait_for()
   js_requests=[url for url in release_requests if '.js' in url.split('/')[-1] and '/sw.js' not in url]
-  ok(all('?v=2026.3' in url for url in js_requests),'entire application/game module graph bypasses stale unversioned assets')
-  ok(any('/content.json?v=2026.3' in url for url in release_requests),'content uses the same release as its validator')
+  ok(all('?v=2026.4' in url for url in js_requests),'entire application/game module graph bypasses stale unversioned assets')
+  ok(any('/content.json?v=2026.4' in url for url in release_requests),'content uses the same release as its validator')
   stale_context.close()
   retry_context=browser.new_context(service_workers='block')
   saved_profile={'id':'existing-family','name':'Existing family','avatar':'🎅','opened':[2],'awards':{'door:2':1},'scores':{'game:2':3},'design':[]}
@@ -106,8 +106,13 @@ try:
    page.get_by_role('button',name='Drop present · Space',exact=True).click()
   ok('A towering triumph!' in page.locator('.game-result').inner_text(),'ten actual overlapping gifts complete tower');page.locator('#close').click()
   demo(13);page.get_by_role('button',name='Start the conveyor',exact=True).click()
+  sack_order=page.locator('.sorting-bins button').all_text_contents()
+  ok(page.locator('.factory-stage h4').inner_text().lower().startswith('parcel'),'factory no longer prints the answer category')
   for parcel in range(15):
-   label=page.locator('.factory-stage h4').inner_text();page.locator('.sorting-bins').get_by_role('button',name=re.compile(re.escape(label))).click();page.clock.run_for(350)
+   symbol=page.locator('.factory-toy').inner_text();category='Cuddly toys' if symbol in '🧸🐰🐧🐻🦊🐼' else 'Things that move' if symbol in '🚂🚗🚀🚁🚲🚤' else 'Music makers';page.locator('.sorting-bins').get_by_role('button',name=re.compile(re.escape(category))).click();page.clock.run_for(350)
+   if parcel in (4,9):
+    new_order=page.locator('.sorting-bins button').all_text_contents();ok(new_order!=sack_order,f'factory sacks move at wave {2 if parcel==4 else 3}');sack_order=new_order
+
   ok('The sleigh is packed!' in page.locator('.game-result').inner_text(),'factory completes after 15 correct sorts');ok('15 correct' in page.locator('.game-result').inner_text(),'factory reports actual correct answers');page.locator('#close').click()
   demo(19);page.get_by_role('button',name='Follow Frosty',exact=True).click()
   for length in range(1,9):
@@ -135,6 +140,39 @@ try:
    if int(page.locator('.game-hud strong').first.inner_text())>0:break
   ok(int(page.locator('.game-hud strong').first.inner_text())>0,'moving basket catches an actual falling snowflake');page.locator('#close').click()
   page.clock.run_for(2000);ok(page.locator('#activity .game-result').count()==0,'closing active games cancels their work')
+  demo(15)
+  ok(page.locator('.plain-tree').count()==1 and page.locator('.tree-ornament').count()==0,'decorating starts with a genuinely plain evergreen')
+  page.get_by_role('button',name='Add at selected position',exact=True).click();page.get_by_role('button',name='Select Star',exact=True).click();page.get_by_role('combobox',name='Decoration position',exact=True).select_option('61,50');page.get_by_role('button',name='Add at selected position',exact=True).click()
+  ok(page.locator('.tree-ornament').count()==2,'tree decorations are added by the player')
+  page.get_by_role('button',name='Clear tree',exact=True).click();ok(page.locator('.tree-ornament').count()==0,'clear removes every decoration')
+  page.get_by_role('button',name='Undo',exact=True).click();ok(page.locator('.tree-ornament').count()==2,'tree undo restores a cleared design')
+  page.locator('.tree-ornament').first.click();ok(page.locator('.tree-ornament').count()==1,'individual ornaments can be removed')
+  canvas=page.locator('.decorate-stage');canvas.click(position={'x':12,'y':160});ok(page.locator('.tree-ornament').count()==1,'decorations cannot be placed outside branches')
+  page.get_by_role('button',name='Add fairy lights',exact=True).click();ok(page.locator('.tree-ornament').count()==11,'fairy lights appear only after the player adds them');page.locator('#close').click()
+  demo(8);page.get_by_role('button',name='Search the village',exact=True).click()
+  ok(page.locator('.search-object').count()==24,'Santa search has 24 illustrated lookalikes per scene')
+  clues=page.locator('.search-clues li').all_text_contents();page.locator('.santa-search-scene').get_by_role('button',name=clues[0],exact=True).click()
+  ok(page.locator('.game-hud strong').first.inner_text()=='1 / 12','finding a detail awards progress once')
+  decoy=next(label for label in page.locator('.search-object:enabled').evaluate_all('els=>els.map(e=>e.getAttribute("aria-label"))') if label not in clues)
+  page.locator('.santa-search-scene').get_by_role('button',name=decoy,exact=True).click();ok(page.locator('.game-hud strong').nth(1).inner_text()=='20','lookalikes deduct points instead of counting as finds')
+  page.get_by_role('button',name='Spotlight a clue · −15',exact=True).click();ok(page.locator('.search-object.spotlight').count()==1,'search hint spotlights one true clue');ok(page.locator('.game-hud strong').nth(1).inner_text()=='5','search hint has a real score cost')
+  page.get_by_role('button',name='Zoom view',exact=True).click();ok(page.locator('.santa-search-scene').evaluate('e=>e.scrollWidth>e.clientWidth'),'magnifier provides a larger pannable scene');page.get_by_role('button',name='Zoom out',exact=True).click()
+  for scene in range(3):
+   for clue in page.locator('.search-clues li:not(.clue-found)').all_text_contents():page.locator('.santa-search-scene').get_by_role('button',name=clue,exact=True).click()
+   if scene<2:page.get_by_role('button',name='Next neighbourhood',exact=True).click()
+  ok('An eagle-eyed Christmas detective!' in page.locator('.game-result').inner_text(),'all twelve detailed clues complete three Santa scenes');page.locator('#close').click()
+  demo(9);page.get_by_role('button',name='Restore Santa’s signal',exact=True).click();ok(page.get_by_role('button',name='Send the secret signal',exact=True).is_disabled(),'Santa letter stays sealed until the signal puzzle is solved')
+  solution=[[3,1],[3,1],[3,2],[1,2],[1,3],[0,3],[0,1],[3,1],[3,1]];directions=['up','right','down','left']
+  for tile,ports in enumerate(solution):
+   button=page.locator('.signal-tile').nth(tile)
+   for _ in range(4):
+    label=button.get_attribute('aria-label')
+    if all(directions[d] in label for d in ports):break
+    button.click()
+  ok(page.locator('.signal-tile.powered').count()==9,'rotating real signal tiles connects all nine positions')
+  page.get_by_role('button',name='Send the secret signal',exact=True).click();page.clock.run_for(2300)
+  ok(page.locator('.santa-letter').is_visible() and 'Star Keeper' in page.locator('.santa-letter').inner_text(),'completed signal delivers Santa’s personalised mission letter')
+  ok(page.locator('.game-result').count()==1,'transmission creates one result and reward');page.locator('#close').click()
   demo(2);page.get_by_role('button',name='Start',exact=True).click()
   choices=['Reindeer','Six','Mistletoe','A star or angel','24 December']
   for i,answer in enumerate(choices):
@@ -170,13 +208,16 @@ try:
   page.locator('.door').first.click();page.locator('#close').click();page.reload();page.wait_for_selector('.door.opened');ok('1 / 24' in page.locator('#stats').inner_text(),'opening progress reloads');page.locator('.door').first.click();page.locator('#close').click();ok('1 stars' in page.locator('#stats').inner_text(),'duplicate opening award prevented')
   page.locator('.door').nth(12).click();page.get_by_role('button',name='Start the conveyor',exact=True).click()
   for _ in range(15):
-   label=page.locator('.factory-stage h4').inner_text();page.locator('.sorting-bins').get_by_role('button',name=re.compile(re.escape(label))).click();page.clock.run_for(350)
+   symbol=page.locator('.factory-toy').inner_text();category='Cuddly toys' if symbol in '🧸🐰🐧🐻🦊🐼' else 'Things that move' if symbol in '🚂🚗🚀🚁🚲🚤' else 'Music makers';page.locator('.sorting-bins').get_by_role('button',name=re.compile(re.escape(category))).click();page.clock.run_for(350)
   earned=page.locator('#stats').inner_text();ok('5 stars' in earned,'real game completion earns stars alongside opened doors')
   page.get_by_role('button',name='Play again',exact=True).click();page.get_by_role('button',name='Start the conveyor',exact=True).click()
   for _ in range(15):
-   label=page.locator('.factory-stage h4').inner_text();page.locator('.sorting-bins').get_by_role('button',name=re.compile(re.escape(label))).click();page.clock.run_for(350)
+   symbol=page.locator('.factory-toy').inner_text();category='Cuddly toys' if symbol in '🧸🐰🐧🐻🦊🐼' else 'Things that move' if symbol in '🚂🚗🚀🚁🚲🚤' else 'Music makers';page.locator('.sorting-bins').get_by_role('button',name=re.compile(re.escape(category))).click();page.clock.run_for(350)
   ok(page.locator('#stats').inner_text()==earned,'replaying a completed game cannot farm stars');page.locator('#close').click()
   page.reload();page.wait_for_selector('.door');ok('5 stars' in page.locator('#stats').inner_text(),'new game rewards survive reload')
+  page.locator('.door').nth(14).click();page.get_by_role('button',name='Add at selected position',exact=True).click();page.get_by_role('combobox',name='Decoration position',exact=True).select_option('39,50');page.get_by_role('button',name='Add at selected position',exact=True).click();page.get_by_role('combobox',name='Decoration position',exact=True).select_option('71,77');page.get_by_role('button',name='Add at selected position',exact=True).click();page.get_by_role('button',name='Save finished tree',exact=True).click();page.locator('#close').click()
+  page.reload();page.wait_for_selector('.door');page.locator('.door').nth(14).click();page.locator('.plain-tree').wait_for();ok(page.locator('.tree-ornament').count()==3,'player tree decorations persist across reloads')
+  page.get_by_role('button',name='Clear tree',exact=True).click();page.locator('#close').click();page.reload();page.wait_for_selector('.door');page.locator('.door').nth(14).click();page.locator('.plain-tree').wait_for();ok(page.locator('.tree-ornament').count()==0,'clearing a saved tree persists the plain tree');page.locator('#close').click()
   page.locator('#finale').click();ok(page.locator('#activity').get_by_text('MERRY CHRISTMAS!',exact=True).is_visible(),'Christmas Day finale');page.get_by_role('button',name='Christmas party game · Toy Factory',exact=True).click();page.get_by_role('button',name='Start the conveyor',exact=True).wait_for();ok(page.get_by_role('button',name='Start the conveyor',exact=True).is_visible(),'finale includes a playable party game');page.locator('#close').click()
   page.locator('#addProfile').click();page.locator('input[name=name]').fill('Elf Tester');page.get_by_role('button',name='Save profile',exact=True).click();ok('0 / 24' in page.locator('#stats').inner_text(),'separate profile progress');page.reload();page.wait_for_selector('.door');ok('Elf Tester' in page.locator('#profiles').inner_text(),'profile reload')
   page.keyboard.press('Tab');ok(page.evaluate('document.activeElement !== document.body'),'keyboard focus');page.locator('.door').first.focus();page.keyboard.press('Enter');ok(page.locator('#surprise').evaluate('(e)=>e.open'),'keyboard opens door');page.keyboard.press('Escape');ok(not page.locator('#surprise').evaluate('(e)=>e.open'),'Escape closes modal')
@@ -185,7 +226,7 @@ try:
   ok(page.locator('video,input[type=file]').count()==0,'no visitor media upload or video remains')
   for width in [320,390]:
    page.set_viewport_size({'width':width,'height':844})
-   for day,start_name in [(1,'Start the adventure'),(3,'Start stacking'),(12,'Start'),(13,'Start the conveyor'),(19,'Follow Frosty'),(20,'Start')]:
+   for day,start_name in [(1,'Start the adventure'),(3,'Start stacking'),(8,'Search the village'),(9,'Restore Santa’s signal'),(12,'Start'),(13,'Start the conveyor'),(19,'Follow Frosty'),(20,'Start')]:
     demo(day);page.get_by_role('button',name=start_name,exact=True).click()
     ok(page.locator('#surprise').evaluate('e=>e.scrollWidth<=e.clientWidth'),f'game {day} fits {width}px dialog');page.locator('#close').click()
   page.goto(base);ok(page.locator('a[href="./christmas/"]').count()==1,'homepage calendar link');ok(page.locator('#secPranks').count()==1 and page.locator('#secGames').count()==1,'existing hub retained')
