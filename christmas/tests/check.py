@@ -27,6 +27,41 @@ try:
   ok(page.locator('.door').count()==24,'24 doors and repository base routing')
   result=page.evaluate('''async()=>{const m=await import('./core.js');const c=m.validateContent(await(await fetch('content.json')).json());const tests=[!m.unlocked(1,2026,new Date('2026-11-30T23:59:59Z')),m.unlocked(1,2026,new Date('2026-12-01T00:00:00Z')),!m.unlocked(2,2026,new Date('2026-12-01T23:59:59Z')),m.unlocked(2,2026,new Date('2026-12-02T00:00:00Z')),m.unlocked(1,2026,new Date('2026-12-20T00:00:00Z')),!m.unlocked(25,2026,new Date('2026-12-24T23:59:59Z')),m.unlocked(25,2026,new Date('2026-12-25T00:00:00Z')),m.unlocked(24,2026,new Date('2027-01-01T00:00:00Z')),!m.unlocked(1,2027,new Date('2026-12-31T23:59:59Z')),m.londonDate(new Date('2026-07-01T23:30:00Z')).day===2];const p=m.profile('Unit');m.award(p,'game:2',2,3);m.award(p,'game:2',2,5);tests.push(m.total(p)===2&&p.scores['game:2']===5,m.quizStars(5,5)===3,m.quizStars(0,5)===1);const storage={value:null,getItem(){return this.value},setItem(k,v){this.value=v}};m.save(storage,{version:1,active:p.id,profiles:[p]});tests.push(m.load(storage).profiles[0].scores['game:2']===5);try{m.validateContent({...c,days:[]});tests.push(false)}catch{tests.push(true)}return tests}''')
   ok(all(result),'content, London midnight/DST/year boundaries, finale, storage, scoring and validation')
+  # Simulate stale unversioned browser/CDN entries from the previous release.
+  stale_context=browser.new_context(service_workers='block')
+  stale_page=stale_context.new_page();release_requests=[]
+  stale_page.on('request',lambda request:release_requests.append(request.url))
+  stale_page.route('**/app.js',lambda route:route.fulfill(body='throw new Error("stale application");',content_type='text/javascript'))
+  stale_page.route('**/core.js',lambda route:route.fulfill(body='export const OLD_RELEASE=true;',content_type='text/javascript'))
+  stale_page.route('**/content.json',lambda route:route.fulfill(body='{"oldRelease":true}',content_type='application/json'))
+  stale_page.goto(base+'christmas/');stale_page.wait_for_selector('.door')
+  stale_page.locator('#preview').click();stale_page.get_by_role('button',name='3 · The Great Gift Stack',exact=True).click();stale_page.get_by_role('button',name='Start stacking',exact=True).wait_for()
+  js_requests=[url for url in release_requests if '.js' in url.split('/')[-1] and '/sw.js' not in url]
+  ok(all('?v=2026.3' in url for url in js_requests),'entire application/game module graph bypasses stale unversioned assets')
+  ok(any('/content.json?v=2026.3' in url for url in release_requests),'content uses the same release as its validator')
+  stale_context.close()
+  retry_context=browser.new_context(service_workers='block')
+  saved_profile={'id':'existing-family','name':'Existing family','avatar':'🎅','opened':[2],'awards':{'door:2':1},'scores':{'game:2':3},'design':[]}
+  saved_progress={'version':1,'active':saved_profile['id'],'profiles':[saved_profile]}
+  retry_context.add_init_script('localStorage.setItem("christmas-v1",'+json.dumps(json.dumps(saved_progress))+')')
+  retry_page=retry_context.new_page();attempts=[0]
+  def content_retry(route):
+   attempts[0]+=1
+   if attempts[0]==1:route.fulfill(status=503,body='Temporarily unavailable')
+   elif attempts[0]==2:
+    old_content=json.loads((ROOT/'christmas/content.json').read_text());old_content['days'][2]['type']='gallery'
+    route.fulfill(body=json.dumps(old_content),content_type='application/json')
+   else:route.continue_()
+  retry_page.route('**/content.json?v=*',content_retry)
+  retry_page.goto(base+'christmas/');retry_page.locator('#retryLoad').wait_for(state='visible')
+  ok('HTTP 503' in retry_page.locator('#loadDetails').inner_text(),'startup reports the actual content failure')
+  ok(retry_page.locator('#preview').is_disabled(),'preview is disabled until content is valid')
+  retry_page.locator('#retryLoad').click();retry_page.locator('#loadDetails').get_by_text('Loading details: Invalid day 3',exact=True).wait_for()
+  ok(retry_page.locator('#retryLoad').is_visible(),'invalid stale content remains recoverable')
+  retry_page.locator('#retryLoad').click();retry_page.wait_for_selector('.door')
+  ok(retry_page.locator('.door').count()==24 and retry_page.locator('#preview').is_enabled(),'retry recovers all doors without a page reload')
+  ok('1 / 24' in retry_page.locator('#stats').inner_text() and 'Existing family' in retry_page.locator('#profiles').inner_text(),'retry preserves existing family profiles and progress')
+  retry_context.close()
   page.clock.install(time=__import__('datetime').datetime(2026,11,15,tzinfo=__import__('datetime').timezone.utc))
   page.reload();page.wait_for_selector('.door')
   page.locator('.door').first.click();ok('opens on 1 December' in page.locator('#activity').inner_text(),'pre-December locked message');page.locator('#close').click()
