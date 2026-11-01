@@ -46,15 +46,15 @@
     },
     {
       "day": 8,
-      "title": "Find Santa",
+      "title": "The Great Santa Search",
       "type": "find",
-      "message": "A little Christmas magic is waiting for you. Make a memory together today!"
+      "message": "Three snowy neighbourhoods, twelve tiny details and plenty of lookalikes. Read the clues and trust your detective eyes!"
     },
     {
       "day": 9,
-      "title": "Secret Christmas Message",
+      "title": "Santa’s Secret Signal",
       "type": "letter",
-      "message": "A little Christmas magic is waiting for you. Make a memory together today!"
+      "message": "An urgent North Pole transmission has been lost in a snowstorm. Repair the magic radio to unlock a special letter from Santa."
     },
     {
       "day": 10,
@@ -78,7 +78,7 @@
       "day": 13,
       "title": "Santa’s Toy Factory",
       "type": "factory",
-      "message": "The present conveyor is running! Match each toy to the right sack and get Santa’s sleigh packed."
+      "message": "No labels on this conveyor! Recognise each toy from its picture, keep your streak alive and watch for sacks swapping places."
     },
     {
       "day": 14,
@@ -90,7 +90,7 @@
       "day": 15,
       "title": "Decorate the Christmas Tree",
       "type": "tree",
-      "message": "A little Christmas magic is waiting for you. Make a memory together today!"
+      "message": "A plain evergreen is waiting for your imagination. Add every bauble, ribbon, star and fairy light yourself."
     },
     {
       "day": 16,
@@ -400,5 +400,6 @@
   "code": {
     "clue": "A=1, B=2 … Z=26. Decode 19 – 14 – 15 – 23",
     "answer": "SNOW"
-  }
+  },
+  "santaMessage": "Your golden signal has reached my sleigh! The elves have added your name to the Star Keeper crew — the people who help Christmas magic travel from one home to the next.\n\nYour secret mission: do one kind thing for someone today, without waiting for a thank-you. A helping hand, a shared laugh or a little note can shine brighter than a thousand fairy lights.\n\nKeep exploring the village. There are more surprises on the way, and Christmas Eve is getting closer with every door."
 }

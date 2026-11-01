@@ -1,5 +1,5 @@
-import { createGame, stackOverlap, sortScore } from './engine.js?v=2026.3';
-import { randomInt, shuffled } from '../core.js?v=2026.3';
+import { createGame, stackOverlap, sortScore } from './engine.js?v=2026.4';
+import { randomInt, shuffled } from '../core.js?v=2026.4';
 
 export function mountAdventure(root, type, c, api) {
   let game;
@@ -146,20 +146,24 @@ export function mountAdventure(root, type, c, api) {
   }
 
   function factory(g) {
-    g.title('SANTA’S TOY FACTORY', 'The present-sorting express', 'The sleigh leaves soon! Match each toy to its labelled sack. Build a correct streak for bonuses. Sort 15 parcels; a wrong sack costs a chance, not the whole game. Keys 1, 2 and 3 work too.');
+    g.title('SANTA’S TOY FACTORY', 'The present-sorting express', 'The sleigh leaves soon! Recognise each toy from its picture, then choose the right sack. The sacks swap places after every five parcels! Build a streak across three waves. Keys 1, 2 and 3 select the current sack positions.');
     const label = g.el('label', 'Factory shift');
     const mode = g.el('select', undefined, label);
-    [['cosy', 'Cosy — no time pressure'], ['express', 'Express — 6 seconds per parcel']].forEach(([value, text]) => { const o = g.el('option', text, mode); o.value = value; });
+    [['express', 'Express — faster each wave (6 → 5 → 4 seconds)'], ['cosy', 'Cosy — no time pressure']].forEach(([value, text]) => { const o = g.el('option', text, mode); o.value = value; });
     const startButton = g.button('Start the conveyor', () => { const timed = mode.value === 'express'; label.remove(); startButton.remove(); play(timed); }, root, 'gold');
     function play(timed) {
       g.playing();
-      const categories = [{ label: 'Cuddly toys', icon: '🧸', toys: ['🧸', '🐰', '🐧'] }, { label: 'Things that move', icon: '🚂', toys: ['🚂', '🚗', '🚀'] }, { label: 'Music makers', icon: '🥁', toys: ['🥁', '🎸', '🎺'] }];
-      const deck = shuffled(Array.from({ length: 15 }, (_, i) => ({ category: i % 3, toy: categories[i % 3].toys[randomInt(3)] })));
+      const categories = [{ label: 'Cuddly toys', icon: '🧸', toys: ['🧸', '🐰', '🐧', '🐻', '🦊', '🐼'] }, { label: 'Things that move', icon: '🚂', toys: ['🚂', '🚗', '🚀', '🚁', '🚲', '🚤'] }, { label: 'Music makers', icon: '🥁', toys: ['🥁', '🎸', '🎺', '🎻', '🎹', '🎷'] }];
+      const toyNames={'🧸':'Teddy bear','🐰':'Soft rabbit','🐧':'Soft penguin','🐻':'Soft bear','🦊':'Soft fox','🐼':'Soft panda','🚂':'Toy train','🚗':'Toy car','🚀':'Toy rocket','🚁':'Toy helicopter','🚲':'Toy bicycle','🚤':'Toy boat','🥁':'Drum','🎸':'Guitar','🎺':'Trumpet','🎻':'Violin','🎹':'Piano','🎷':'Saxophone'};
+      let order=[0,1,2];
+      const deck = shuffled(Array.from({ length: 15 }, (_, i) => ({ category: i % 3, toy: categories[i % 3].toys[randomInt(6)] })));
       let at = 0, score = 0, streak = 0, best = 0, lives = 3, elapsed = 0, last = 0, finished = false, paused = false, locked = false, correct = 0;
       const [parcels, points, hearts] = g.hud(['Parcels sorted', 'Score', 'Chances']);
       const bar = g.meter('Sleigh packed', 15);
       const stage = g.el('div', undefined, root, 'factory-stage');
+      stage.tabIndex=0;stage.setAttribute('aria-label','Toy conveyor. Use number keys 1 to 3 for the current sack positions.');
       const toy = g.el('div', '', stage, 'factory-toy');
+      toy.setAttribute('role','img');
       const toyLabel = g.el('h4', '', stage);
       const clock = g.el('p', '', stage, 'small');
       const belt = g.el('div', '▰ ▰ ▰ ▰ ▰ ▰ ▰ ▰', stage, 'conveyor');
@@ -167,8 +171,8 @@ export function mountAdventure(root, type, c, api) {
       const controls = g.el('div', undefined, root, 'sorting-bins');
       const draw = () => {
         parcels.textContent = `${at} / 15`; points.textContent = score; hearts.textContent = '♥'.repeat(lives); bar.value = at;
-        if (at < deck.length) { toy.textContent = deck[at].toy; toyLabel.textContent = categories[deck[at].category].label; }
-        clock.textContent = timed ? `${Math.max(0, Math.ceil(6 - elapsed))} seconds · Streak ${streak}` : `Take your time · Streak ${streak}`;
+        if (at < deck.length) { toy.textContent = deck[at].toy; toy.setAttribute('aria-label',toyNames[deck[at].toy]);toyLabel.textContent = `Parcel ${at+1} · Wave ${Math.floor(at/5)+1}`; }
+        clock.textContent = timed ? `${Math.max(0, Math.ceil(6-Math.floor(at/5)-elapsed))} seconds · Streak ${streak}` : `Take your time · Streak ${streak}`;
       };
       const finish = () => {
         if (finished) return; finished = true; buttons.forEach(b => b.disabled = true); pause.disabled = true;
@@ -179,21 +183,25 @@ export function mountAdventure(root, type, c, api) {
         const right = category === deck[at].category;
         if (right) { score += sortScore(true, streak); streak++; correct++; best = Math.max(best, streak); api.cue?.('success'); }
         else { lives--; streak = 0; }
-        api.feedback(right ? `Packed! ${streak >= 3 ? 'Brilliant streak! ' : ''}+${sortScore(true, streak - 1)}` : category === -1 ? 'That parcel missed the sleigh. Here comes another!' : 'Wrong sack! Look at the toy’s category before choosing.');
-        at++; elapsed = 0; locked = true; buttons.forEach(b => b.disabled = true); draw();
+        api.feedback(right ? `Packed! ${streak >= 3 ? 'Brilliant streak! ' : ''}+${sortScore(true, streak - 1)}` : category === -1 ? 'That parcel missed the sleigh. Here comes another!' : 'Wrong sack! Think about what the pictured toy does.');
+        at++; elapsed = 0; locked = true;
+        if(at===5||at===10){const previous=order.join();order=shuffled(order);if(order.join()===previous)order.push(order.shift());updateBins();api.feedback(`Wave ${Math.floor(at/5)+1}: the sacks have swapped! Check their new positions.`);} buttons.forEach(b => b.disabled = true); draw();
         if (at === deck.length || !lives) { finish(); return; }
+        stage.focus({preventScroll:true});
         g.later(() => { locked = false; buttons.forEach(b => b.disabled = paused); }, 300);
       };
-      const buttons = categories.map((cat, i) => g.button(`${i + 1} · ${cat.icon} ${cat.label}`, () => choose(i), controls));
+      const buttons = categories.map((cat, i) => g.button('', () => choose(order[i]), controls));
+      const updateBins=()=>buttons.forEach((button,i)=>{const cat=categories[order[i]];button.textContent=`${i+1} · ${cat.icon} ${cat.label}`;button.setAttribute('aria-label',`${i+1}: ${cat.label}`);});
+      updateBins();
       const pause = g.button('Pause', () => { paused = !paused; pause.textContent = paused ? 'Resume' : 'Pause'; buttons.forEach(b => b.disabled = paused || locked); });
-      g.listen(root, 'keydown', e => { if (['1', '2', '3'].includes(e.key) && !e.repeat) { e.preventDefault(); choose(Number(e.key) - 1); } });
+      g.listen(root, 'keydown', e => { if (['1', '2', '3'].includes(e.key) && !e.repeat) { e.preventDefault(); choose(order[Number(e.key) - 1]); } });
       const tick = now => {
         if (finished) return;
         const dt = last ? Math.min(.1, (now - last) / 1000) : 0; last = now;
-        if (!paused && !document.hidden && !locked) { elapsed += dt; if (timed && elapsed >= 6) choose(-1); draw(); }
+        if (!paused && !document.hidden && !locked) { elapsed += dt; if (timed && elapsed >= 6-Math.floor(at/5)) choose(-1); draw(); }
         g.frame(tick);
       };
-      draw(); if (timed) g.frame(tick); buttons[0].focus();
+      draw(); if (timed) g.frame(tick); stage.focus();
     }
   }
 
