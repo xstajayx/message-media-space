@@ -1,0 +1,407 @@
+{
+  "year": 2026,
+  "greeting": "Wishing our family a Christmas filled with love, laughter and magical memories.",
+  "days": [
+    {
+      "day": 1,
+      "title": "Welcome to Christmas",
+      "type": "welcome",
+      "message": "A little Christmas magic is waiting for you. Make a memory together today!"
+    },
+    {
+      "day": 2,
+      "title": "Christmas Quiz",
+      "type": "quiz",
+      "message": "A little Christmas magic is waiting for you. Make a memory together today!"
+    },
+    {
+      "day": 3,
+      "title": "Family Memories",
+      "type": "gallery",
+      "message": "A little Christmas magic is waiting for you. Make a memory together today!"
+    },
+    {
+      "day": 4,
+      "title": "Snowball Catch",
+      "type": "catch",
+      "message": "A little Christmas magic is waiting for you. Make a memory together today!"
+    },
+    {
+      "day": 5,
+      "title": "Christmas Cracker",
+      "type": "cracker",
+      "message": "A little Christmas magic is waiting for you. Make a memory together today!"
+    },
+    {
+      "day": 6,
+      "title": "Name That Christmas Tune",
+      "type": "tunes",
+      "message": "A little Christmas magic is waiting for you. Make a memory together today!"
+    },
+    {
+      "day": 7,
+      "title": "Christmas Puzzle",
+      "type": "puzzle",
+      "message": "A little Christmas magic is waiting for you. Make a memory together today!"
+    },
+    {
+      "day": 8,
+      "title": "Find Santa",
+      "type": "find",
+      "message": "A little Christmas magic is waiting for you. Make a memory together today!"
+    },
+    {
+      "day": 9,
+      "title": "Secret Christmas Message",
+      "type": "letter",
+      "message": "A little Christmas magic is waiting for you. Make a memory together today!"
+    },
+    {
+      "day": 10,
+      "title": "Christmas Memory Match",
+      "type": "memory",
+      "message": "A little Christmas magic is waiting for you. Make a memory together today!"
+    },
+    {
+      "day": 11,
+      "title": "Christmas Baking",
+      "type": "recipe",
+      "message": "A little Christmas magic is waiting for you. Make a memory together today!"
+    },
+    {
+      "day": 12,
+      "title": "Elf Target Practice",
+      "type": "target",
+      "message": "A little Christmas magic is waiting for you. Make a memory together today!"
+    },
+    {
+      "day": 13,
+      "title": "Family Christmas Video",
+      "type": "video",
+      "message": "A little Christmas magic is waiting for you. Make a memory together today!"
+    },
+    {
+      "day": 14,
+      "title": "Christmas Riddles",
+      "type": "riddles",
+      "message": "A little Christmas magic is waiting for you. Make a memory together today!"
+    },
+    {
+      "day": 15,
+      "title": "Decorate the Christmas Tree",
+      "type": "tree",
+      "message": "A little Christmas magic is waiting for you. Make a memory together today!"
+    },
+    {
+      "day": 16,
+      "title": "Festive Lucky Wheel",
+      "type": "wheel",
+      "message": "A little Christmas magic is waiting for you. Make a memory together today!"
+    },
+    {
+      "day": 17,
+      "title": "Christmas Trivia Championship",
+      "type": "trivia",
+      "message": "A little Christmas magic is waiting for you. Make a memory together today!"
+    },
+    {
+      "day": 18,
+      "title": "Reindeer Race",
+      "type": "race",
+      "message": "A little Christmas magic is waiting for you. Make a memory together today!"
+    },
+    {
+      "day": 19,
+      "title": "Then and Now",
+      "type": "then",
+      "message": "A little Christmas magic is waiting for you. Make a memory together today!"
+    },
+    {
+      "day": 20,
+      "title": "Santa’s Delivery",
+      "type": "delivery",
+      "message": "A little Christmas magic is waiting for you. Make a memory together today!"
+    },
+    {
+      "day": 21,
+      "title": "Christmas Kindness Challenge",
+      "type": "kindness",
+      "message": "A little Christmas magic is waiting for you. Make a memory together today!"
+    },
+    {
+      "day": 22,
+      "title": "Secret Christmas Code",
+      "type": "code",
+      "message": "A little Christmas magic is waiting for you. Make a memory together today!"
+    },
+    {
+      "day": 23,
+      "title": "Christmas Eve Eve Surprise",
+      "type": "box",
+      "message": "A little Christmas magic is waiting for you. Make a memory together today!"
+    },
+    {
+      "day": 24,
+      "title": "Christmas Eve Spectacular",
+      "type": "eve",
+      "message": "A little Christmas magic is waiting for you. Make a memory together today!"
+    }
+  ],
+  "quiz": [
+    [
+      "Which animal pulls Santa’s sleigh?",
+      [
+        "Reindeer",
+        "Badger",
+        "Lion"
+      ],
+      0
+    ],
+    [
+      "How many sides does a snowflake usually have?",
+      [
+        "Five",
+        "Six",
+        "Eight"
+      ],
+      1
+    ],
+    [
+      "Which plant is traditionally hung for a kiss?",
+      [
+        "Mistletoe",
+        "Basil",
+        "Fern"
+      ],
+      0
+    ],
+    [
+      "What is traditionally placed on top of a tree?",
+      [
+        "A star or angel",
+        "A boot",
+        "A kettle"
+      ],
+      0
+    ],
+    [
+      "Which date is Christmas Eve?",
+      [
+        "23 December",
+        "24 December",
+        "26 December"
+      ],
+      1
+    ]
+  ],
+  "trivia": [
+    [
+      "Which animal pulls Santa’s sleigh?",
+      [
+        "Reindeer",
+        "Badger",
+        "Lion"
+      ],
+      0
+    ],
+    [
+      "How many sides does a snowflake usually have?",
+      [
+        "Five",
+        "Six",
+        "Eight"
+      ],
+      1
+    ],
+    [
+      "Which plant is traditionally hung for a kiss?",
+      [
+        "Mistletoe",
+        "Basil",
+        "Fern"
+      ],
+      0
+    ],
+    [
+      "What is traditionally placed on top of a tree?",
+      [
+        "A star or angel",
+        "A boot",
+        "A kettle"
+      ],
+      0
+    ],
+    [
+      "Which date is Christmas Eve?",
+      [
+        "23 December",
+        "24 December",
+        "26 December"
+      ],
+      1
+    ],
+    [
+      "Which country is associated with the modern Christmas tree tradition?",
+      [
+        "Germany",
+        "Brazil",
+        "Egypt"
+      ],
+      0
+    ],
+    [
+      "What is a baby reindeer called?",
+      [
+        "Calf",
+        "Cub",
+        "Foal"
+      ],
+      0
+    ],
+    [
+      "Which hemisphere has summer at Christmas?",
+      [
+        "Northern",
+        "Southern",
+        "Neither"
+      ],
+      1
+    ],
+    [
+      "What is the day after Christmas called in the UK?",
+      [
+        "Boxing Day",
+        "May Day",
+        "Leap Day"
+      ],
+      0
+    ],
+    [
+      "How many Advent doors are in this village?",
+      [
+        "12",
+        "24",
+        "31"
+      ],
+      1
+    ]
+  ],
+  "tunes": [
+    [
+      "Dashing through the snow in a one-horse open sleigh…",
+      [
+        "Jingle Bells",
+        "Silent Night",
+        "Deck the Halls"
+      ],
+      0
+    ],
+    [
+      "A peaceful night, a holy night…",
+      [
+        "Jingle Bells",
+        "Silent Night",
+        "We Wish You a Merry Christmas"
+      ],
+      1
+    ],
+    [
+      "Decorate the halls with boughs of holly…",
+      [
+        "Deck the Halls",
+        "Silent Night",
+        "Jingle Bells"
+      ],
+      0
+    ],
+    [
+      "A wish for a merry Christmas and a happy new year…",
+      [
+        "Silent Night",
+        "Deck the Halls",
+        "We Wish You a Merry Christmas"
+      ],
+      2
+    ],
+    [
+      "A tree whose leaves stay green…",
+      [
+        "O Christmas Tree",
+        "Jingle Bells",
+        "Silent Night"
+      ],
+      0
+    ]
+  ],
+  "jokes": [
+    "What do snowmen eat for breakfast? Frosted flakes!",
+    "What do elves learn at school? The elf-abet!",
+    "What do reindeer say before a joke? This will sleigh you!",
+    "What do snowmen wear on their heads? Ice caps!",
+    "Why was the snowman looking at carrots? He was picking his nose!",
+    "What do you call a singing elf? A wrapper!",
+    "What falls but never gets hurt? Snow!",
+    "Why did Santa visit the garden? To hoe, hoe, hoe!",
+    "What is Santa’s favourite type of music? Wrap!",
+    "What do you call a cold dog? A chilli dog!",
+    "How do snowmen travel? By icicle!",
+    "What do you get when you cross a bell and a skunk? Jingle smells!",
+    "What did one snowflake say to another? You’re one of a kind!",
+    "Why was the Christmas tree bad at sewing? It kept dropping its needles!",
+    "What do gingerbread people use for beds? Cookie sheets!",
+    "Why did the ornament go to school? To get a little brighter!",
+    "What is a snowman’s favourite drink? Ice tea!",
+    "What do you call Santa on a beach? Sandy Claus!",
+    "How does a sheep say Merry Christmas? Fleece Navidad!",
+    "Why did the present blush? It was all wrapped up!"
+  ],
+  "riddles": [
+    [
+      "I have needles but cannot sew.",
+      "You decorate me.",
+      "tree"
+    ],
+    [
+      "I fall from the sky but never get hurt.",
+      "Cold and white.",
+      "snow"
+    ],
+    [
+      "I have a carrot nose.",
+      "Built outside in winter.",
+      "snowman"
+    ],
+    [
+      "I carry gifts in a sack.",
+      "Red suit, white beard.",
+      "santa"
+    ],
+    [
+      "I have antlers and pull a sleigh.",
+      "Rudolph is one.",
+      "reindeer"
+    ]
+  ],
+  "challenges": [
+    "Sing a festive song together",
+    "Invent a reindeer dance",
+    "Draw a winter village",
+    "Tell everyone your favourite memory",
+    "Build a blanket snow fort",
+    "Give someone a sincere compliment"
+  ],
+  "kindness": [
+    "Help tidy a shared room",
+    "Make a card for someone you appreciate",
+    "Offer to help with the washing up",
+    "Read a story to someone",
+    "Thank someone who helps you"
+  ],
+  "photos": [],
+  "thenPhotos": [],
+  "video": "",
+  "code": {
+    "clue": "A=1, B=2 … Z=26. Decode 19 – 14 – 15 – 23",
+    "answer": "SNOW"
+  }
+}
