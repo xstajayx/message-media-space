@@ -4,9 +4,9 @@
   "days": [
     {
       "day": 1,
-      "title": "Welcome to Christmas",
+      "title": "Light Up the Christmas Village",
       "type": "welcome",
-      "message": "A little Christmas magic is waiting for you. Make a memory together today!"
+      "message": "Santa’s lantern has lost its five magic sparks. Explore the snowy lanes and bring the whole village to life!"
     },
     {
       "day": 2,
@@ -16,15 +16,15 @@
     },
     {
       "day": 3,
-      "title": "Family Memories",
-      "type": "gallery",
-      "message": "A little Christmas magic is waiting for you. Make a memory together today!"
+      "title": "The Great Gift Stack",
+      "type": "stack",
+      "message": "The sleigh needs a tower of presents. How high can you stack them before they tumble?"
     },
     {
       "day": 4,
-      "title": "Snowball Catch",
+      "title": "Snowflake Catch",
       "type": "catch",
-      "message": "A little Christmas magic is waiting for you. Make a memory together today!"
+      "message": "Catch sparkling snowflakes, chase golden stars and dodge storm clouds. A perfect winter flurry awaits."
     },
     {
       "day": 5,
@@ -70,15 +70,15 @@
     },
     {
       "day": 12,
-      "title": "Elf Target Practice",
+      "title": "Elf Snowball Showdown",
       "type": "target",
-      "message": "A little Christmas magic is waiting for you. Make a memory together today!"
+      "message": "The elves have challenged you to a workshop snowball showdown. Aim for streaks, watch for golden elves and be kind to the snowmen!"
     },
     {
       "day": 13,
-      "title": "Family Christmas Video",
-      "type": "video",
-      "message": "A little Christmas magic is waiting for you. Make a memory together today!"
+      "title": "Santa’s Toy Factory",
+      "type": "factory",
+      "message": "The present conveyor is running! Match each toy to the right sack and get Santa’s sleigh packed."
     },
     {
       "day": 14,
@@ -112,15 +112,15 @@
     },
     {
       "day": 19,
-      "title": "Then and Now",
-      "type": "then",
-      "message": "A little Christmas magic is waiting for you. Make a memory together today!"
+      "title": "Frosty’s Footsteps",
+      "type": "echo",
+      "message": "Frosty is dancing across the winter lights. Watch closely, then follow the glowing footsteps."
     },
     {
       "day": 20,
-      "title": "Santa’s Delivery",
+      "title": "Santa’s Sky Delivery",
       "type": "delivery",
-      "message": "A little Christmas magic is waiting for you. Make a memory together today!"
+      "message": "Take the reins! Line up with the glowing house and launch a present through the winter sky."
     },
     {
       "day": 21,
@@ -397,9 +397,6 @@
     "Read a story to someone",
     "Thank someone who helps you"
   ],
-  "photos": [],
-  "thenPhotos": [],
-  "video": "",
   "code": {
     "clue": "A=1, B=2 … Z=26. Decode 19 – 14 – 15 – 23",
     "answer": "SNOW"
