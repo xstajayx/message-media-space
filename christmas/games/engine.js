@@ -91,6 +91,7 @@ export function createGame(root, api) {
     api.feedback(api.demo ? 'Demo complete — family stars are unchanged.' : score > 0 ? 'Best score saved. Replay to beat it; stars are awarded once per activity.' : 'Try another round — every great elf starts somewhere.');
     button('Play again', restart, panel, 'gold');
     panel.focus();
+    return panel;
   };
   return { el, button, listen, later, frame, dispose, meter, hud, title, playing, result };
 }

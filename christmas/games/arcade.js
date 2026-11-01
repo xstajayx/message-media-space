@@ -1,5 +1,5 @@
-import { createGame, targetShot } from './engine.js?v=2026.3';
-import { randomInt } from '../core.js?v=2026.3';
+import { createGame, targetShot } from './engine.js?v=2026.4';
+import { randomInt } from '../core.js?v=2026.4';
 
 export function mountArcade(root, kind, api) {
   let game;
