@@ -35,10 +35,10 @@ try:
   stale_page.route('**/core.js',lambda route:route.fulfill(body='export const OLD_RELEASE=true;',content_type='text/javascript'))
   stale_page.route('**/content.json',lambda route:route.fulfill(body='{"oldRelease":true}',content_type='application/json'))
   stale_page.goto(base+'christmas/');stale_page.wait_for_selector('.door')
-  stale_page.locator('#preview').click();stale_page.get_by_role('button',name='3 · The Great Gift Stack',exact=True).click();stale_page.get_by_role('button',name='Start stacking',exact=True).wait_for()
+  stale_page.locator('#sample').click();stale_page.get_by_role('button',name='Shake the snow globe',exact=True).wait_for()
   js_requests=[url for url in release_requests if '.js' in url.split('/')[-1] and '/sw.js' not in url]
-  ok(all('?v=2026.4' in url for url in js_requests),'entire application/game module graph bypasses stale unversioned assets')
-  ok(any('/content.json?v=2026.4' in url for url in release_requests),'content uses the same release as its validator')
+  ok(all('?v=2026.5' in url for url in js_requests),'entire application/game module graph bypasses stale unversioned assets')
+  ok(any('/content.json?v=2026.5' in url for url in release_requests),'content uses the same release as its validator')
   stale_context.close()
   retry_context=browser.new_context(service_workers='block')
   saved_profile={'id':'existing-family','name':'Existing family','avatar':'🎅','opened':[2],'awards':{'door:2':1},'scores':{'game:2':3},'design':[]}
@@ -55,11 +55,11 @@ try:
   retry_page.route('**/content.json?v=*',content_retry)
   retry_page.goto(base+'christmas/');retry_page.locator('#retryLoad').wait_for(state='visible')
   ok('HTTP 503' in retry_page.locator('#loadDetails').inner_text(),'startup reports the actual content failure')
-  ok(retry_page.locator('#preview').is_disabled(),'preview is disabled until content is valid')
+  ok(retry_page.locator('#sample').is_disabled(),'sample is disabled until content is valid')
   retry_page.locator('#retryLoad').click();retry_page.locator('#loadDetails').get_by_text('Loading details: Invalid day 3',exact=True).wait_for()
   ok(retry_page.locator('#retryLoad').is_visible(),'invalid stale content remains recoverable')
   retry_page.locator('#retryLoad').click();retry_page.wait_for_selector('.door')
-  ok(retry_page.locator('.door').count()==24 and retry_page.locator('#preview').is_enabled(),'retry recovers all doors without a page reload')
+  ok(retry_page.locator('.door').count()==24 and retry_page.locator('#sample').is_enabled(),'retry recovers all doors without a page reload')
   ok('1 / 24' in retry_page.locator('#stats').inner_text() and 'Existing family' in retry_page.locator('#profiles').inner_text(),'retry preserves existing family profiles and progress')
   retry_context.close()
   page.clock.install(time=__import__('datetime').datetime(2026,11,15,tzinfo=__import__('datetime').timezone.utc))
@@ -68,9 +68,58 @@ try:
   page.goto(base+'christmas/?admin=true&testMode=true&date=2026-12-25');page.wait_for_selector('.door')
   ok(page.locator('.door.available').count()==0,'query parameters do not unlock calendar')
   page.locator('#finale').click();ok('opens on 25 December' in page.locator('#activity').inner_text(),'finale locked before Christmas');page.locator('#close').click()
+  ok(page.locator('#preview').count()==0,'public all-door sneak peek is removed')
+  ok(page.locator('#sample').is_visible(),'one standalone sample is available before December')
+  baseline=page.locator('#stats').inner_text();page.locator('#sample').click();page.get_by_role('button',name='Shake the snow globe',exact=True).click()
+  for _ in range(5):
+   target=page.locator('.sample-instruction').inner_text().split(': ')[-1]
+   page.locator('.sample-symbols').get_by_role('button',name=target,exact=True).click();page.clock.run_for(500)
+  ok('5 of 5 sparkles' in page.locator('.game-result').inner_text(),'standalone sample is a complete playable game')
+  page.locator('#close').click();ok(page.locator('#stats').inner_text()==baseline,'sample awards no family stars and opens no doors')
+  timing=browser.new_page(reduced_motion='no-preference')
+  timing.clock.install(time=__import__('datetime').datetime(2026,11,15,12,tzinfo=__import__('datetime').timezone.utc))
+  timing.clock.pause_at(__import__('datetime').datetime(2026,11,15,12,0,1,tzinfo=__import__('datetime').timezone.utc))
+  timing.goto(base+'christmas/');timing.wait_for_selector('.door');sample_progress=timing.evaluate('localStorage.getItem("christmas-v1")')
+  timing.locator('#sample').click();timing.get_by_role('button',name='Shake the snow globe',exact=True).click();timing.clock.run_for(16)
+  timing.get_by_role('button',name='Catch the sparkle · Space',exact=True).click();ok(timing.locator('.game-hud strong').first.inner_text()=='1 / 5','timing sample rewards an actual hit in the golden band')
+  timing.clock.run_for(450);timing.get_by_role('button',name='Pause',exact=True).click();needle=timing.locator('.sparkle-needle').get_attribute('style');timing.clock.run_for(1000);ok(timing.locator('.sparkle-needle').get_attribute('style')==needle,'sample pause freezes the timing needle');timing.get_by_role('button',name='Resume',exact=True).click()
+  for shot in range(4):
+   if shot:timing.clock.run_for(500)
+   timing.get_by_role('button',name='Catch the sparkle · Space',exact=True).click()
+  timing.clock.run_for(500)
+  ok('1 of 5 sparkles' in timing.locator('.game-result').inner_text(),'sample misses do not award sparkle points')
+  timing.get_by_role('button',name='Play again',exact=True).focus();timing.keyboard.press('Space');timing.get_by_role('button',name='Shake the snow globe',exact=True).wait_for()
+  ok(timing.evaluate('localStorage.getItem("christmas-v1")')==sample_progress,'sample completion and keyboard replay leave saved progress untouched')
+  timing.locator('#close').click();timing.clock.set_system_time(__import__('datetime').datetime(2026,12,1,tzinfo=__import__('datetime').timezone.utc));timing.reload();timing.wait_for_selector('.door')
+  timing.locator('#sample').evaluate('button=>button.click()');ok(timing.locator('#sample').is_hidden() and not timing.locator('#surprise').evaluate('e=>e.open'),'sample retires at December 1 and its handler also checks the date');timing.close()
+  production=browser.new_page();production.clock.install(time=__import__('datetime').datetime(2026,12,25,tzinfo=__import__('datetime').timezone.utc))
+  production.goto(base+'christmas/');production.wait_for_selector('.door')
+  ok(production.locator('#sample').is_hidden(),'public sample retires when December begins')
+  for day in range(1,25):
+   production.locator('.door').nth(day-1).click();production.locator('#activity[aria-busy=false]').wait_for()
+   ok(len(production.locator('#activity').inner_text())>20,f'production door {day} opens its real content after unlock')
+   production.locator('#close').click()
+  ok('24 / 24' in production.locator('#stats').inner_text(),'production door progress reaches all 24 without a preview hook');production.close()
+  # Component fixtures are mounted by the test runner, not a public preview API.
+  # Real calendar routing for every door is exercised separately below.
   def demo(day):
-   page.locator('#preview').click();page.locator('#activity').get_by_role('button',name=re.compile(r'^'+str(day)+r' ·')).click()
-   page.wait_for_timeout(100)
+   page.evaluate("""async day=>{
+    const c=await(await fetch('content.json')).json(),d=c.days[day-1];
+    const {GAME_TYPES}=await import('./core.js');
+    const dialog=document.getElementById('surprise'),root=document.getElementById('activity');
+    window.__qaDispose?.();if(window.__qaClose)dialog.removeEventListener('close',window.__qaClose);
+    root.replaceChildren();document.getElementById('surpriseTitle').textContent=d.title;
+    document.getElementById('feedback').textContent='';
+    const api={demo:true,name:'Christmas guest',feedback:t=>document.getElementById('feedback').textContent=t,complete:()=>{},design:()=>[],saveDesign:()=>{}};
+    let dispose;
+    if(GAME_TYPES.includes(d.type)){
+      const target=document.createElement('div');target.className='game-content';root.append(target);
+      dispose=(await import('./games/index.js')).mount(target,d.type,c,api);
+    }else dispose=(await import('./stories.js')).mountStory(root,d,c,api);
+    window.__qaDispose=dispose;
+    window.__qaClose=()=>{if(!dialog.open){dispose();dialog.removeEventListener('close',window.__qaClose)}};
+    dialog.addEventListener('close',window.__qaClose);dialog.showModal();document.getElementById('close').focus();
+   }""",day)
   for day in range(1,25):
    demo(day);ok(len(page.locator('#activity').inner_text())>20,f'day {day} has usable content');page.locator('#close').click()
   ok('0 / 24' in page.locator('#stats').inner_text(),'demo leaves family door progress untouched')
